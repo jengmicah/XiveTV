@@ -1,0 +1,43 @@
+{
+    "playlist": [
+        {
+            "sources": [
+                {
+                    "file":"assets/sample_video.mp4",
+                    "type":"video/mp4",
+                    "height":180,
+                    "width":320,
+                    "duration":228,
+                    "label":"H.264 320px"
+                }
+            ],
+            "mediaid": "37a30514-f956-4da1-4063-9e5276e4b79f",
+            "pubdate": "Mon, 21 Apr 2014 04:55:06 GMT",
+            "title": "Luctus Et Ultrices Luctus Posuere Cubilia Luctus Curae Et Luctus Ultrices Posuere Cubilia Curae;",
+            "image": "assets/l11.jpg",
+            "tags":"Best of NASA",
+            "description": "DESCRIPTION 1"
+        },
+        {
+            "sources": [
+                {
+                    "file":"assets/sample_video.mp4",
+                    "type":"video/mp4",
+                    "height":180,
+                    "width":320,
+                    "duration":228,
+                    "label":"H.264 320px"
+                }
+            ],
+            "mediaid": "e47f9ec3-384e-dc74-09d4-57bc60afce3f",
+            "title": "Mauris A Nunc In At Pede",
+            "pubdate": "Fri, 18 Jan 2013 19:05:13 GMT",
+            "image": "assets/l1.jpg",
+            "tags":"Best of NASA",
+            "description": "DESCRIPTION 2"
+        }
+    ],
+    "title":"Best of NASA",
+    "kind":"dynamic",
+    "feedid":"i8IZuli1"
+}

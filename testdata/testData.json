@@ -1,0 +1,1307 @@
+{ "media": [
+
+
+
+                        {  
+                           "playlist":[  
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/VJ4EJDmW.m3u8"
+                                          },
+                                          {  
+                                             "height":176,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/VJ4EJDmW-9OvfyZpF.mp4",
+                                             "duration":598,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":264,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/VJ4EJDmW-yyiisMLu.mp4",
+                                             "duration":598,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":396,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/VJ4EJDmW-6ESjHL2V.mp4",
+                                             "duration":598,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/VJ4EJDmW-NnUvYV6p.m4a",
+                                             "duration":598,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/VJ4EJDmW-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"VJ4EJDmW",
+                                       "description":"Over the centuries, scientists speculated that we could tap into the body's electrical system to restore lost functions or enhance our powers, like machines.",
+                                       "pubdate":1454554425,
+                                       "title":"Part 1 - The Cyborg Revolution",
+                                       "link":"//content.jwplatform.com/previews/VJ4EJDmW",
+                                       "image":"//content.jwplatform.com/thumbs/VJ4EJDmW-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/0x5fYgFy.m3u8"
+                                          },
+                                          {  
+                                             "height":176,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/0x5fYgFy-9OvfyZpF.mp4",
+                                             "duration":580,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":264,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/0x5fYgFy-yyiisMLu.mp4",
+                                             "duration":580,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":396,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/0x5fYgFy-6ESjHL2V.mp4",
+                                             "duration":580,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/0x5fYgFy-NnUvYV6p.m4a",
+                                             "duration":580,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/0x5fYgFy-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"0x5fYgFy",
+                                       "description":"Science fiction has returned again and again to the merger of man and machine, the Cyborg, with fascination and fear.",
+                                       "pubdate":1454554425,
+                                       "title":"Part 2 - The Invasion of the Inhuman",
+                                       "link":"//content.jwplatform.com/previews/0x5fYgFy",
+                                       "image":"//content.jwplatform.com/thumbs/0x5fYgFy-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/KP1Swvsw.m3u8"
+                                          },
+                                          {  
+                                             "height":176,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/KP1Swvsw-9OvfyZpF.mp4",
+                                             "duration":597,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":264,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/KP1Swvsw-yyiisMLu.mp4",
+                                             "duration":597,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":396,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/KP1Swvsw-6ESjHL2V.mp4",
+                                             "duration":597,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/KP1Swvsw-NnUvYV6p.m4a",
+                                             "duration":597,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/KP1Swvsw-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"KP1Swvsw",
+                                       "description":"As we steadily merge with our technology, the focus is on devices that enhance our senses and minds and knit us together in new ways.",
+                                       "pubdate":1454554425,
+                                       "title":"Part 3 - The Cyborg Mind",
+                                       "link":"//content.jwplatform.com/previews/KP1Swvsw",
+                                       "image":"//content.jwplatform.com/thumbs/KP1Swvsw-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/btDI19TH.m3u8"
+                                          },
+                                          {  
+                                             "height":176,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/btDI19TH-9OvfyZpF.mp4",
+                                             "duration":598,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":264,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/btDI19TH-yyiisMLu.mp4",
+                                             "duration":598,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":396,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/btDI19TH-6ESjHL2V.mp4",
+                                             "duration":598,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/btDI19TH-NnUvYV6p.m4a",
+                                             "duration":598,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/btDI19TH-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"btDI19TH",
+                                       "description":"Imagine a day when machines walk among us, expressing thoughts, emotions, demanding their rights. Today, we are breathing intelligence, even life, into creatures of silicon and steel.",
+                                       "pubdate":1454554425,
+                                       "title":"Part 4 - The Age of Androids",
+                                       "link":"//content.jwplatform.com/previews/btDI19TH",
+                                       "image":"//content.jwplatform.com/thumbs/btDI19TH-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/yO6fPIE9.m3u8"
+                                          },
+                                          {  
+                                             "height":178,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/yO6fPIE9-9OvfyZpF.mp4",
+                                             "duration":445,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":268,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/yO6fPIE9-yyiisMLu.mp4",
+                                             "duration":445,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":402,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/yO6fPIE9-6ESjHL2V.mp4",
+                                             "duration":445,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/yO6fPIE9-NnUvYV6p.m4a",
+                                             "duration":445,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/yO6fPIE9-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"yO6fPIE9",
+                                       "description":"To build a humanoid that can function in our world is a bold challenge being taken up by isolated labs around the world. Researchers are infusing robots with abilities ranging from grasping to hearing and vision.",
+                                       "pubdate":1454554425,
+                                       "title":"Part 5 - Designing Humanoids",
+                                       "link":"//content.jwplatform.com/previews/yO6fPIE9",
+                                       "image":"//content.jwplatform.com/thumbs/yO6fPIE9-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/iP69OUnC.m3u8"
+                                          },
+                                          {  
+                                             "height":176,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/iP69OUnC-9OvfyZpF.mp4",
+                                             "duration":222,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":264,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/iP69OUnC-yyiisMLu.mp4",
+                                             "duration":222,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":396,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/iP69OUnC-6ESjHL2V.mp4",
+                                             "duration":222,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/iP69OUnC-NnUvYV6p.m4a",
+                                             "duration":222,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/iP69OUnC-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"iP69OUnC",
+                                       "description":"If tomorrow's robots are going to share our world, they will have to have something extra: an emotional and psychological dimension to help them communicate and respond in ways people can understand.",
+                                       "pubdate":1454554426,
+                                       "title":"Part 6 - Emotion Machines",
+                                       "link":"//content.jwplatform.com/previews/iP69OUnC",
+                                       "image":"//content.jwplatform.com/thumbs/iP69OUnC-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/V6STX2p1.m3u8"
+                                          },
+                                          {  
+                                             "height":176,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/V6STX2p1-9OvfyZpF.mp4",
+                                             "duration":323,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":264,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/V6STX2p1-yyiisMLu.mp4",
+                                             "duration":323,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":396,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/V6STX2p1-6ESjHL2V.mp4",
+                                             "duration":323,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/V6STX2p1-NnUvYV6p.m4a",
+                                             "duration":323,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/V6STX2p1-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"V6STX2p1",
+                                       "description":"As robots begin to move among us, how will we regard them: as property like automobiles, or as individuals with rights and responsibilities? Can a thing be a person?",
+                                       "pubdate":1454554425,
+                                       "title":"Part 7 - Can a Robot Be a Person?",
+                                       "link":"//content.jwplatform.com/previews/V6STX2p1",
+                                       "image":"//content.jwplatform.com/thumbs/V6STX2p1-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/m0aSrn7P.m3u8"
+                                          },
+                                          {  
+                                             "height":176,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/m0aSrn7P-9OvfyZpF.mp4",
+                                             "duration":447,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":264,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/m0aSrn7P-yyiisMLu.mp4",
+                                             "duration":447,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":396,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/m0aSrn7P-6ESjHL2V.mp4",
+                                             "duration":447,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/m0aSrn7P-NnUvYV6p.m4a",
+                                             "duration":447,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/m0aSrn7P-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"m0aSrn7P",
+                                       "description":"To promote the rapid evolution of robots, one audacious group of researchers decided to start a worldwide robotic soccer competition. How soon before they challenge humans?",
+                                       "pubdate":1454554425,
+                                       "title":"Part 8 - Robot Soccer",
+                                       "link":"//content.jwplatform.com/previews/m0aSrn7P",
+                                       "image":"//content.jwplatform.com/thumbs/m0aSrn7P-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/WeHYizpP.m3u8"
+                                          },
+                                          {  
+                                             "height":176,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/WeHYizpP-9OvfyZpF.mp4",
+                                             "duration":598,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":264,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/WeHYizpP-yyiisMLu.mp4",
+                                             "duration":598,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":396,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/WeHYizpP-6ESjHL2V.mp4",
+                                             "duration":598,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/WeHYizpP-NnUvYV6p.m4a",
+                                             "duration":598,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/WeHYizpP-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"WeHYizpP",
+                                       "description":"Like it or not, technology is increasingly blurring blurring the difference between humans and their machines. A new age of Cyborgs and Androids may well be upon us.",
+                                       "pubdate":1454554425,
+                                       "title":"Part 9 - Erasing the Line Between Man and Machine",
+                                       "link":"//content.jwplatform.com/previews/WeHYizpP",
+                                       "image":"//content.jwplatform.com/thumbs/WeHYizpP-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    },
+                                    {  
+                                       "sources":[  
+                                          {  
+                                             "type":"application/vnd.apple.mpegurl",
+                                             "file":"//content.jwplatform.com/manifests/FgiRMYtL.m3u8"
+                                          },
+                                          {  
+                                             "height":178,
+                                             "width":320,
+                                             "file":"//content.jwplatform.com/videos/FgiRMYtL-9OvfyZpF.mp4",
+                                             "duration":91,
+                                             "label":"H.264 320px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":268,
+                                             "width":480,
+                                             "file":"//content.jwplatform.com/videos/FgiRMYtL-yyiisMLu.mp4",
+                                             "duration":91,
+                                             "label":"H.264 480px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":402,
+                                             "width":720,
+                                             "file":"//content.jwplatform.com/videos/FgiRMYtL-6ESjHL2V.mp4",
+                                             "duration":91,
+                                             "label":"H.264 720px",
+                                             "type":"video/mp4"
+                                          },
+                                          {  
+                                             "height":-1,
+                                             "width":-1,
+                                             "file":"//content.jwplatform.com/videos/FgiRMYtL-NnUvYV6p.m4a",
+                                             "duration":91,
+                                             "label":"AAC Audio",
+                                             "type":"audio/mp4"
+                                          }
+                                       ],
+                                       "tracks":[  
+                                          {  
+                                             "kind":"thumbnails",
+                                             "file":"//content.jwplatform.com/strips/FgiRMYtL-120.vtt"
+                                          }
+                                       ],
+                                       "mediaid":"FgiRMYtL",
+                                       "description":"A monster truck and drag racing event is no place to view the future of humanity. Or is it?",
+                                       "pubdate":1454554426,
+                                       "title":"Robot: I Will Crush You",
+                                       "link":"//content.jwplatform.com/previews/FgiRMYtL",
+                                       "image":"//content.jwplatform.com/thumbs/FgiRMYtL-720.jpg",
+                                       "tags":"Beyond Human",
+                                       "custom":{  
+
+                                       }
+                                    }
+                                       ],
+                           "title":"Beyond Human",
+                           "kind":"dynamic",
+                           "feedid":"iNnzzT6O"
+                        }
+
+,
+
+
+                        { 
+                           "playlist":[  
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/4s8Vh97A.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/4s8Vh97A-9OvfyZpF.mp4",
+                                       "duration":228,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/4s8Vh97A-yyiisMLu.mp4",
+                                       "duration":228,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/4s8Vh97A-6ESjHL2V.mp4",
+                                       "duration":228,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/4s8Vh97A-LRE1UfNv.mp4",
+                                       "duration":228,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/4s8Vh97A-NnUvYV6p.m4a",
+                                       "duration":228,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/4s8Vh97A-Hum9O0NL.mp4",
+                                       "duration":228,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/4s8Vh97A-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"4s8Vh97A",
+                                 "description":"The monsoon is a seasonal rain and wind pattern that NASA satellites and models are allowing us to see as never before. Monsoon rains provide reservoirs of water that support the natural environment by replenishing aquifers. However, too much rainfall routinely causes disasters, including flooding of the major rivers and landslides in areas of steep topography.",
+                                 "pubdate":1466626673,
+                                 "title":"Life of the Monsoon",
+                                 "link":"//content.jwplatform.com/previews/4s8Vh97A",
+                                 "image":"//content.jwplatform.com/thumbs/4s8Vh97A-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/ImsZD4c3.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/ImsZD4c3-9OvfyZpF.mp4",
+                                       "duration":89,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/ImsZD4c3-yyiisMLu.mp4",
+                                       "duration":89,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/ImsZD4c3-6ESjHL2V.mp4",
+                                       "duration":89,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/ImsZD4c3-LRE1UfNv.mp4",
+                                       "duration":89,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/ImsZD4c3-NnUvYV6p.m4a",
+                                       "duration":89,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/ImsZD4c3-Hum9O0NL.mp4",
+                                       "duration":89,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/ImsZD4c3-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"ImsZD4c3",
+                                 "description":"NASA scientists used almost 30 years of data from the NASA/USGS Landsat satellites to track changes in vegetation in Alaska and Canada. Of the more than 4 million square miles, 30% had increases in vegetation (greening) while only 3% had decreases (browning). This is the first study to produce a continent-scale map while still providing detailed information at the human scale.",
+                                 "pubdate":1466626673,
+                                 "title":"Greening of the Arctic",
+                                 "link":"//content.jwplatform.com/previews/ImsZD4c3",
+                                 "image":"//content.jwplatform.com/thumbs/ImsZD4c3-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/OnuvUlVF.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/OnuvUlVF-9OvfyZpF.mp4",
+                                       "duration":276,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/OnuvUlVF-yyiisMLu.mp4",
+                                       "duration":276,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/OnuvUlVF-6ESjHL2V.mp4",
+                                       "duration":276,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/OnuvUlVF-LRE1UfNv.mp4",
+                                       "duration":276,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/OnuvUlVF-NnUvYV6p.m4a",
+                                       "duration":276,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/OnuvUlVF-Hum9O0NL.mp4",
+                                       "duration":276,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/OnuvUlVF-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"OnuvUlVF",
+                                 "description":"Surveyor 1 landed on the lunar surface on June 2, 1966, marking humanity's first controlled touchdown on the moon, and the robotic precursor to the Apollo astronaut missions to come.",
+                                 "pubdate":1466626673,
+                                 "title":"America's First Lunar Surveyor",
+                                 "link":"//content.jwplatform.com/previews/OnuvUlVF",
+                                 "image":"//content.jwplatform.com/thumbs/OnuvUlVF-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/5UaA4obj.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/5UaA4obj-9OvfyZpF.mp4",
+                                       "duration":239,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/5UaA4obj-yyiisMLu.mp4",
+                                       "duration":239,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/5UaA4obj-6ESjHL2V.mp4",
+                                       "duration":239,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/5UaA4obj-LRE1UfNv.mp4",
+                                       "duration":239,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/5UaA4obj-NnUvYV6p.m4a",
+                                       "duration":238,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/5UaA4obj-Hum9O0NL.mp4",
+                                       "duration":239,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/5UaA4obj-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"5UaA4obj",
+                                 "description":"The size of falling raindrops depends on where the cloud is and where the drops originate in the cloud. Scientists now have 3D snapshots of raindrops and snowflakes from space. With the new global data on raindrop and snowflake sizes this mission provides, they can improve rainfall estimates from satellite data and in forecast models, helping us understand and prepare for extreme weather events.",
+                                 "pubdate":1466626673,
+                                 "title":"Rain Drops Matter",
+                                 "link":"//content.jwplatform.com/previews/5UaA4obj",
+                                 "image":"//content.jwplatform.com/thumbs/5UaA4obj-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/7AuzlBtT.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/7AuzlBtT-9OvfyZpF.mp4",
+                                       "duration":391,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/7AuzlBtT-yyiisMLu.mp4",
+                                       "duration":391,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/7AuzlBtT-6ESjHL2V.mp4",
+                                       "duration":391,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/7AuzlBtT-LRE1UfNv.mp4",
+                                       "duration":391,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/7AuzlBtT-NnUvYV6p.m4a",
+                                       "duration":391,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/7AuzlBtT-Hum9O0NL.mp4",
+                                       "duration":391,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/7AuzlBtT-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"7AuzlBtT",
+                                 "description":"NASA solar scientist Nicholeen Viall describes the Sun's journey during a year of images captured by the Solar Dynamics Observatory.  The images show 171 angstrom light, which highlights material at temperatures around 600,000 Kelvin and shows features in the upper transition region and quiet corona of the sun.",
+                                 "pubdate":1466626673,
+                                 "title":"The Solar Dynamics Observatory: Year Six",
+                                 "link":"//content.jwplatform.com/previews/7AuzlBtT",
+                                 "image":"//content.jwplatform.com/thumbs/7AuzlBtT-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/HNoQGJjP.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/HNoQGJjP-9OvfyZpF.mp4",
+                                       "duration":89,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/HNoQGJjP-yyiisMLu.mp4",
+                                       "duration":89,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/HNoQGJjP-6ESjHL2V.mp4",
+                                       "duration":89,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/HNoQGJjP-LRE1UfNv.mp4",
+                                       "duration":89,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/HNoQGJjP-NnUvYV6p.m4a",
+                                       "duration":89,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/HNoQGJjP-Hum9O0NL.mp4",
+                                       "duration":89,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/HNoQGJjP-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"HNoQGJjP",
+                                 "description":"Some 4 billion years ago, the sun shone with only about three-quarters the brightness we see today. Powerful solar explosions may have provided the crucial energy needed to warm Earth, despite the sun's faintness. The eruptions also may have furnished the energy needed to turn simple molecules into the complex molecules such as RNA and DNA that were necessary for life.",
+                                 "pubdate":1466626673,
+                                 "title":"Faint Young Sun Paradox",
+                                 "link":"//content.jwplatform.com/previews/HNoQGJjP",
+                                 "image":"//content.jwplatform.com/thumbs/HNoQGJjP-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/97wmaeti.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/97wmaeti-9OvfyZpF.mp4",
+                                       "duration":150,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/97wmaeti-yyiisMLu.mp4",
+                                       "duration":150,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/97wmaeti-6ESjHL2V.mp4",
+                                       "duration":150,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/97wmaeti-LRE1UfNv.mp4",
+                                       "duration":150,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/97wmaeti-NnUvYV6p.m4a",
+                                       "duration":150,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/97wmaeti-Hum9O0NL.mp4",
+                                       "duration":150,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/97wmaeti-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"97wmaeti",
+                                 "description":"Improving hurricane forecasts means testing historical storms with today's sophisticated models and supercomputers. NASA and NOAA work together in gathering ground and satellite observations, as well as experimenting with forecast models. As a result of this collaboration, model resolution has increased, and scientists are discovering more about the processes that occur within these storms.",
+                                 "pubdate":1466626673,
+                                 "title":"Hurricane Modeling",
+                                 "link":"//content.jwplatform.com/previews/97wmaeti",
+                                 "image":"//content.jwplatform.com/thumbs/97wmaeti-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/SNvMnY6M.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/SNvMnY6M-9OvfyZpF.mp4",
+                                       "duration":248,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/SNvMnY6M-yyiisMLu.mp4",
+                                       "duration":248,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/SNvMnY6M-6ESjHL2V.mp4",
+                                       "duration":248,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/SNvMnY6M-LRE1UfNv.mp4",
+                                       "duration":248,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/SNvMnY6M-NnUvYV6p.m4a",
+                                       "duration":248,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/SNvMnY6M-Hum9O0NL.mp4",
+                                       "duration":248,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/SNvMnY6M-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"SNvMnY6M",
+                                 "description":"Experience the thrilling events of the first 50 years of NASA missions to the Red Planet, from Viking, to Pathfinder, and Curiosity.",
+                                 "pubdate":1465850122,
+                                 "title":"Journey to Mars",
+                                 "link":"//content.jwplatform.com/previews/SNvMnY6M",
+                                 "image":"//content.jwplatform.com/thumbs/SNvMnY6M-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/8tXJ7s47.m3u8"
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/8tXJ7s47-9OvfyZpF.mp4",
+                                       "duration":140,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/8tXJ7s47-yyiisMLu.mp4",
+                                       "duration":140,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/8tXJ7s47-6ESjHL2V.mp4",
+                                       "duration":140,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/8tXJ7s47-LRE1UfNv.mp4",
+                                       "duration":140,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/8tXJ7s47-NnUvYV6p.m4a",
+                                       "duration":140,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/8tXJ7s47-Hum9O0NL.mp4",
+                                       "duration":140,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[  
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/8tXJ7s47-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"8tXJ7s47",
+                                 "description":"NASA's Mars Reconnaissance Orbiter has clocked more than a decade of service at the Red Planet and has yielded scientific discoveries and magnificent views of a distant world. These images taken by MRO's HiRISE camera are not in true color because they include infrared information in order to be optimized for geological science.",
+                                 "pubdate":1465850122,
+                                 "title":"Magnificent Mars",
+                                 "link":"//content.jwplatform.com/previews/8tXJ7s47",
+                                 "image":"//content.jwplatform.com/thumbs/8tXJ7s47-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{  
+
+                                 }
+                              },
+                              {  
+                                 "sources":[  
+                                    {  
+                                       "type":"application/vnd.apple.mpegurl",
+                                       "file":"//content.jwplatform.com/manifests/04zO83HH.m3u8" 
+                                    },
+                                    {  
+                                       "height":180,
+                                       "width":320,
+                                       "file":"//content.jwplatform.com/videos/04zO83HH-9OvfyZpF.mp4",
+                                       "duration":237,
+                                       "label":"H.264 320px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":270,
+                                       "width":480,
+                                       "file":"//content.jwplatform.com/videos/04zO83HH-yyiisMLu.mp4",
+                                       "duration":237,
+                                       "label":"H.264 480px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":406,
+                                       "width":720,
+                                       "file":"//content.jwplatform.com/videos/04zO83HH-6ESjHL2V.mp4",
+                                       "duration":237,
+                                       "label":"H.264 720px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":720,
+                                       "width":1280,
+                                       "file":"//content.jwplatform.com/videos/04zO83HH-LRE1UfNv.mp4",
+                                       "duration":237,
+                                       "label":"H.264 1280px",
+                                       "type":"video/mp4"
+                                    },
+                                    {  
+                                       "height":-1,
+                                       "width":-1,
+                                       "file":"//content.jwplatform.com/videos/04zO83HH-NnUvYV6p.m4a",
+                                       "duration":237,
+                                       "label":"AAC Audio",
+                                       "type":"audio/mp4"
+                                    },
+                                    {  
+                                       "height":1080,
+                                       "width":1920,
+                                       "file":"//content.jwplatform.com/videos/04zO83HH-Hum9O0NL.mp4",
+                                       "duration":237,
+                                       "label":"H.264 1920px",
+                                       "type":"video/mp4"
+                                    }
+                                 ],
+                                 "tracks":[
+                                    {  
+                                       "kind":"thumbnails",
+                                       "file":"//content.jwplatform.com/strips/04zO83HH-120.vtt"
+                                    }
+                                 ],
+                                 "mediaid":"04zO83HH",
+                                 "description":"Nearly 10 billion years ago, the black hole at the center of a distant galaxy produced a powerful outburst, and light from this blast began arriving at Earth in 2012. Astronomers using data from NASA's Fermi Gamma-ray Space Telescope and other space- and ground-based observatories have shown that a record-breaking neutrino seen around the same time likely was born in the same event.",
+                                 "pubdate":1465850122,
+                                 "title":"Blazar Hunting",
+                                 "link":"//content.jwplatform.com/previews/04zO83HH",
+                                 "image":"//content.jwplatform.com/thumbs/04zO83HH-720.jpg",
+                                 "tags":"Best of NASA",
+                                 "custom":{
+
+                                 }
+                              }
+                           ],
+                           "title":"Best of NASA",
+                           "kind":"dynamic",
+                           "feedid":"i8IZuli1"
+                        }
+
+
+
+
+] }

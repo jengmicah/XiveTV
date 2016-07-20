@@ -1,0 +1,112 @@
+{
+  "apiName": "collection",
+  "responseCode": 200,
+  "responseMessage": "ok",
+  "count": 8,
+  "responseData": [
+    {
+      "collectionId": 41,
+      "title": "Science TV",
+      "shortDescription": "Investigate cutting-edge technologies, visit remote corners of the planet, search for answers to our most vexing questions, and learn what makes our world tick. ",
+      "uniqueDescription": "Investigate cutting-edge technologies, visit remote corners of the planet, search for answers to our most vexing questions, and learn what makes our world tick. ",
+      "series_collection_order": 2,
+      "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/677x382_C_41_595_Quark.jpg",
+      "appleTvImageUrl": "https://cms.xivetv.com/imagesfiles/appleTv/C_41_646_Apple_TV_Collection_Banner_1740x300_Quark.jpg",
+      "image_name": "C_41_595_Quark.jpg",
+      "path": "https://cms.xivetv.com/imagesfiles/medium/",
+      "seriesCount": 16,
+      "episodesCount": 8
+    },
+    {
+      "collectionId": 43,
+      "title": "Nature TV",
+      "shortDescription": "Journey into the remote, unspoiled regions of the planet and experience nature at its wildest. Within these forgotten paradises are stories of survival and death, and of mankind's own complex relationship to the natural world.",
+      "uniqueDescription": "Journey into the remote, unspoiled regions of the planet and experience nature at its wildest. Within these forgotten paradises are stories of survival and death, and of mankind's own complex relationship to the natural world.",
+      "series_collection_order": 8,
+      "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/677x382_C_43_845_Roar.jpg",
+      "appleTvImageUrl": "https://cms.xivetv.com/imagesfiles/appleTv/C_43_154_Apple_TV_Collection_Banner_1740x300_Roar.jpg",
+      "image_name": "C_43_845_Roar.jpg",
+      "path": "https://cms.xivetv.com/imagesfiles/medium/",
+      "seriesCount": 15,
+      "episodesCount": 9
+    },
+    {
+      "collectionId": 44,
+      "title": "History TV",
+      "shortDescription": "The historical events, people, and dramas that shaped our world. This collection of full-length documentaries has been drawn from a variety of international sources and produced by top journalists and documentary filmmakers.",
+      "uniqueDescription": "The historical events, people, and dramas that shaped our world. This collection of full-length documentaries has been drawn from a variety of international sources and produced by top journalists and documentary filmmakers.",
+      "series_collection_order": 3,
+      "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/677x382_C_44_198_ChronosV4.jpg",
+      "appleTvImageUrl": "https://cms.xivetv.com/imagesfiles/appleTv/C_44_266_Apple_TV_Collection_Banner_1740x300_Chronos.jpg",
+      "image_name": "C_44_198_ChronosV4.jpg",
+      "path": "https://cms.xivetv.com/imagesfiles/medium/",
+      "seriesCount": 23,
+      "episodesCount": 27
+    },
+    {
+      "collectionId": 45,
+      "title": "Adventure TV",
+      "shortDescription": "Adrenaline & Adventure brings together documentaries of the most exciting, most pulse-pounding human adventures from around the world. These extreme sports and amazing adventures will leave you on the edge of your seat.",
+      "uniqueDescription": "Adrenaline & Adventure brings together documentaries of the most exciting, most pulse-pounding human adventures from around the world. These extreme sports and amazing adventures will leave you on the edge of your seat.",
+      "series_collection_order": 7,
+      "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/677x382_C_45_434_Rush.jpg",
+      "appleTvImageUrl": "https://cms.xivetv.com/imagesfiles/appleTv/C_45_991_Apple_TV_Collection_Banner_1740x300_Rush.jpg",
+      "image_name": "C_45_434_Rush.jpg",
+      "path": "https://cms.xivetv.com/imagesfiles/medium/",
+      "seriesCount": 11,
+      "episodesCount": 6
+    },
+    {
+      "collectionId": 46,
+      "title": "Paranormal TV",
+      "shortDescription": "Peer into the dark reaches of the human soul. Come face to face with strange beings from other times and other places. Phenom is an anthology series that will send shivers up your spine and leave you shaking in your boots.",
+      "uniqueDescription": "Peer into the dark reaches of the human soul. Come face to face with strange beings from other times and other places. Phenom is an anthology series that will send shivers up your spine and leave you shaking in your boots.",
+      "series_collection_order": 4,
+      "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/677x382_C_46_730_Enigma.jpg",
+      "appleTvImageUrl": "https://cms.xivetv.com/imagesfiles/appleTv/C_46_217_Apple_TV_Collection_Banner_1740x300_Enigma.jpg",
+      "image_name": "C_46_730_Enigma.jpg",
+      "path": "https://cms.xivetv.com/imagesfiles/medium/",
+      "seriesCount": 11,
+      "episodesCount": 10
+    },
+    {
+      "collectionId": 253,
+      "title": "Exploring Evil",
+      "shortDescription": "Look into the heart of evil. What makes a monster? Find out with these documentaries exploring human monsters, killers, and the darkness of evil.",
+      "uniqueDescription": "Look into the heart of evil. What makes a monster? Find out with these documentaries exploring human monsters, killers, and the darkness of evil.",
+      "series_collection_order": 5,
+      "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/677x382_C_253_129_Exploring_Evil.jpg",
+      "appleTvImageUrl": "https://cms.xivetv.com/imagesfiles/appleTv/C_253_137_Apple_TV_Collection_Banner_1740x300_ExploringEvil.jpg",
+      "image_name": "C_253_129_Exploring_Evil.jpg",
+      "path": "https://cms.xivetv.com/imagesfiles/medium/",
+      "seriesCount": 4,
+      "episodesCount": 11
+    },
+    {
+      "collectionId": 307,
+      "title": "Prism",
+      "shortDescription": "Human identity and sexuality is a spectrum. With Prism, you can understand the complexity of being human.",
+      "uniqueDescription": "Human identity and sexuality is a spectrum. With Prism, you can understand the complexity of being human.",
+      "series_collection_order": 6,
+      "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/677x382_C_307_866_Prism.jpg",
+      "appleTvImageUrl": "https://cms.xivetv.com/imagesfiles/appleTv/C_307_301_Apple_TV_Collection_Banner_1740x300_Prism.jpg",
+      "image_name": "C_307_866_Prism.jpg",
+      "path": "https://cms.xivetv.com/imagesfiles/medium/",
+      "seriesCount": 2,
+      "episodesCount": 11
+    },
+    {
+      "collectionId": 329,
+      "title": "Universe TV",
+      "shortDescription": "The best space and astronomy videos available. Watch stars explode and space-time rip at the seams in breaking stories about the universe.",
+      "uniqueDescription": "The best space and astronomy videos available. Watch stars explode and space-time rip at the seams in breaking stories about the universe.",
+      "series_collection_order": 1,
+      "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/677x382_C_329_909_SpaceRip_v2.jpg",
+      "appleTvImageUrl": "https://cms.xivetv.com/imagesfiles/appleTv/C_329_154_Apple_TV_Collection_Banner_1740x300_SpaceRip.jpg",
+      "image_name": "C_329_909_SpaceRip_v2.jpg",
+      "path": "https://cms.xivetv.com/imagesfiles/medium/",
+      "seriesCount": 9,
+      "episodesCount": 6
+    }
+  ]
+}

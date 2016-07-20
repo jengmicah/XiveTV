@@ -1,0 +1,93 @@
+{
+  "apiName": "video",
+  "count": 1,
+  "responseCode": 200,
+  "responseData": {
+    "cdnId": "",
+    "comments": [],
+    "imageUrl": "assets/l1.jpg",
+    "image_name": "assets/l1.jpg",
+    "isSubscribed": false,
+    "jwp_ad_breaks": [
+      {
+        "ad_break": "00:00:00"
+      },
+      {
+        "ad_break": "00:06:58"
+      },
+      {
+        "ad_break": "00:12:54"
+      },
+      {
+        "ad_break": "00:21:28"
+      },
+      {
+        "ad_break": "00:28:47"
+      },
+      {
+        "ad_break": " 00:35:40"
+      }
+    ],
+    "jwp_ad_url": "http://ad4.liverail.com/?LR_PUBLISHER_ID=65715&LR_SCHEMA=vast2-vpaid&LR_AUTOPLAY=1",
+    "jwp_video_id": "Ky5R0uNt",
+    "jwp_video_url": "assets/sample_video.mp4",
+    "path": "https://cms.xivetv.com/videoimages/medium/",
+    "playerId": null,
+    "rating": 0,
+    "relatedContent": {
+      "relatedCollection": [],
+      "relatedSeries": [
+        {
+          "episodesCount": 3,
+          "imageUrl": "assets/l1.jpg",
+          "image_name": "assets/l1.jpg",
+          "path": "https://cms.xivetv.com/videoimages/medium/",
+          "relatedOrder": 2,
+          "seriesId": 147,
+          "short_description": "RELATED SERIES DESC #1",
+          "title": "RELATED SERIES TITLE #1"
+        }
+      ],
+      "relatedVideos": [
+        {
+          "cdnId": "tpMnZkbzqCfQVXzPvvAFVLSDGPM34ENX",
+          "duration": "44:88",
+          "imageUrl": "assets/l1.jpg",
+          "image_name": "assets/l1.jpg",
+          "jwp_video_id": "UKJB0i35",
+          "path": "https://cms.xivetv.com/videoimages/medium/",
+          "playerId": "455e815617aa460f90bfa505b3206278",
+          "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_847_446_Alliant_PureHistorySpecials_MaosChinavstheUS.jpg",
+          "title": "RELATED VIDEO TITLE #1",
+          "uniqueDescription": "RELATED VIDEO DESC #1",
+          "videoId": 847,
+          "videoName": "RELATED VIDEO NAME #1",
+          "videoViewCount": 270
+        },
+        {
+          "cdnId": "pkdGE3bzpW0luoH4So2C9192wE14jt-x",
+          "duration": "49:81",
+          "imageUrl": "assets/l1.jpg",
+          "image_name": "assets/l1.jpg",
+          "jwp_video_id": "bHISVEmk",
+          "path": "https://cms.xivetv.com/videoimages/medium/",
+          "playerId": "455e815617aa460f90bfa505b3206278",
+          "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_148_481_TLP_CosmicJourneys_ReinventingSpaceFlight.jpg",
+          "title": "RELATED VIDEO TITLE #2",
+          "uniqueDescription": "RELATED VIDEO DESC #2",
+          "videoId": 148,
+          "videoName": "RELATED VIDEO NAME #2",
+          "videoViewCount": 308
+        }
+      ]
+    },
+    "rokuImageUrl": "assets/l1.jpg",
+    "title": "VIDEO TITLE",
+    "uniqueDescription": "VIDEO DESCRIPTION\n",
+    "videoDuration": "00:43:39",
+    "videoId": 1,
+    "videoName": "VIDEO NAME",
+    "videoViewCount": 533
+  },
+  "responseMessage": "ok"
+}

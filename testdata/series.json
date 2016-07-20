@@ -1,0 +1,169 @@
+{
+  "apiName": "series",
+  "responseCode": 200,
+  "responseMessage": "ok",
+  "count": 1,
+  "responseData": {
+    "seriesId": 335,
+    "title": "Earth Unbound",
+    "uniqueDescription": "Large scale events from hurricanes to the melting of ice sheets have energized a new era of Earth science.\n",
+    "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/S_335_714_AppArt%20EarthUnbound.jpg",
+    "image_name": "S_335_714_AppArt EarthUnbound.jpg",
+    "path": "https://cms.xivetv.com/imagesfiles/medium/",
+    "episodesCount": 9,
+    "episodeList": [
+      {
+        "videoId": 1693,
+        "title": "Highways of Light- Star Trail Time-lapse",
+        "jw_video_id": "RxrOrGcd",
+        "videoName": "Highways Of Light - Star Trail Time-lapse (1080p)",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_1693_458_Screen Shot 2015-09-17 at 5.15.45 PM.png",
+        "order": 1,
+        "duration": "00:02:00",
+        "image_name": "V_1693_458_Screen Shot 2015-09-17 at 5.15.45 PM.png",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_1693_458_Screen%20Shot%202015-09-17%20at%205.15.45%20PM.png",
+        "shortDescription": "\"The sun & the stars dear, they'll shine on our highway. They'll shine on our home here, by my highway of light.\""
+      },
+      {
+        "videoId": 133,
+        "title": "Super Hurricanes and Typhoons",
+        "jw_video_id": "4jLZi8B5",
+        "videoName": "TLP_CosmicJourneys_SuperHurricanes",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_133_534_SuperHurricanesAndTyphoons_App_Art.jpg",
+        "order": 2,
+        "duration": "30:32",
+        "image_name": "V_133_534_SuperHurricanesAndTyphoons_App_Art.jpg",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_133_534_SuperHurricanesAndTyphoons_App_Art.jpg",
+        "shortDescription": "Hurricanes and typhoons are creatures of tropical seas that sweep up heat-laden waters, converting it to wind, rain, and waves. Why do a rare few evolve into colossal monsters, that leave in their wake a trail of destruction, death, and despair? "
+      },
+      {
+        "videoId": 2277,
+        "title": "The Dream of Interstellar Flight",
+        "jw_video_id": "W3doP0YB",
+        "videoName": "AlliantContent-EarthUnbound_S1E2_TheDreamOfInterstellarFlight",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_2277_953_AlliantContent-EarthUnbound_S1E2_TheDreamOfInterstellarFlight-Full-Image-en-US.jpg",
+        "order": 3,
+        "duration": "00:25:03",
+        "image_name": "V_2277_953_AlliantContent-EarthUnbound_S1E2_TheDreamOfInterstellarFlight-Full-Image-en-US.jpg",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_2277_953_AlliantContent-EarthUnbound_S1E2_TheDreamOfInterstellarFlight-Full-Image-en-US.jpg",
+        "shortDescription": "Explore the challenges of interstellar flight and the technological possibilities that may one day send us on a long voyage out into the galaxy. "
+      },
+      {
+        "videoId": 2279,
+        "title": "Earth's Most Destructive Supervolcanoes",
+        "jw_video_id": "YVF5cpId",
+        "videoName": "AlliantContent-EarthUnbound_S1E3_EarthsMostDestructiveSupervol",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_2279_530_AlliantContent-EarthUnbound_S1E3_EarthsMostDestructiveSupervol-Full-Image-en-US.jpg",
+        "order": 4,
+        "duration": "00:28:04",
+        "image_name": "V_2279_530_AlliantContent-EarthUnbound_S1E3_EarthsMostDestructiveSupervol-Full-Image-en-US.jpg",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_2279_530_AlliantContent-EarthUnbound_S1E3_EarthsMostDestructiveSupervol-Full-Image-en-US.jpg",
+        "shortDescription": "They are eruptions so vast, so Earth-shattering, they have changed the history of our planet. Climate collapse. Toxic turmoil. Mass extinction. Worse than a killer asteroid, or nuclear war, they are Earth's most destructive Supervolcanoes."
+      },
+      {
+        "videoId": 2281,
+        "title": "Solar Storms and Plasma Rockets",
+        "jw_video_id": "b1uNkCAx",
+        "videoName": "AlliantContent-EarthUnbound_S1E4_SolarStormsAndPlasmaRockets",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_2281_581_AlliantContent-EarthUnbound_S1E4_SolarStormsAndPlasmaRockets-Full-Image-en-US.jpg",
+        "order": 5,
+        "duration": "00:25:38",
+        "image_name": "V_2281_581_AlliantContent-EarthUnbound_S1E4_SolarStormsAndPlasmaRockets-Full-Image-en-US.jpg",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_2281_581_AlliantContent-EarthUnbound_S1E4_SolarStormsAndPlasmaRockets-Full-Image-en-US.jpg",
+        "shortDescription": "Join a small team of rocket designers as they open a window into the future of space travel.\n\n"
+      },
+      {
+        "videoId": 146,
+        "title": "Earth in 1000 Years",
+        "jw_video_id": "b11Wu3gU",
+        "videoName": "TLP_CosmicJourneys_EarthIn1000Years",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_146_716_TLP_CosmicJourneys_EarthIn1000Years.jpg",
+        "order": 6,
+        "duration": "31:30",
+        "image_name": "V_146_716_TLP_CosmicJourneys_EarthIn1000Years.jpg",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_146_716_TLP_CosmicJourneys_EarthIn1000Years.jpg",
+        "shortDescription": "There are signs that Earth's great stores of ice are beginning to melt. With sea levels beginning to rise, scientists are looking back at climates past to see where our planet may be headed 1000 into the future and beyond. "
+      },
+      {
+        "videoId": 1971,
+        "title": "The Earth is Burning",
+        "jw_video_id": "cuYzByjF",
+        "videoName": "TheBurningEarth",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_1971_832_EarthIsBurning.jpg",
+        "order": 7,
+        "duration": "00:04:30",
+        "image_name": "V_1971_832_EarthIsBurning.jpg",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_1971_832_EarthIsBurning.jpg",
+        "shortDescription": "This is the age of the Mega Fire. With more people living on Earth than ever before, we are seeing catastrophic blazes, harrowing droughts, and devastating deforestation. Are these the products of man or are they all part of the Earth's natural rhythm?"
+      },
+      {
+        "videoId": 2285,
+        "title": "The Fate of Antarctica",
+        "jw_video_id": "B5cx7aVk",
+        "videoName": "AlliantContent-EarthUnbound_S1E7_FateOfAntarctica",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_2285_696_AlliantContent-EarthUnbound_S1E7_FateOfAntarctica-Full-Image-en-US.jpg",
+        "order": 8,
+        "duration": "00:25:00",
+        "image_name": "V_2285_696_AlliantContent-EarthUnbound_S1E7_FateOfAntarctica-Full-Image-en-US.jpg",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_2285_696_AlliantContent-EarthUnbound_S1E7_FateOfAntarctica-Full-Image-en-US.jpg",
+        "shortDescription": "Through its turbulent history, Antarctica has played an important role in the evolution of planet Earth. This role will likely continue as a warming global climate begins to eat away at the ice sheets that cover the continent. "
+      },
+      {
+        "videoId": 2287,
+        "title": "Day of the Asteroid",
+        "jw_video_id": "IQkOVu2q",
+        "videoName": "AlliantContent-EarthUnbound_S1E8_DayOfTheAsteroid",
+        "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_2287_805_AlliantContent-EarthUnbound_S1E8_DayOfTheAsteroid-Full-Image-en-US.jpg",
+        "order": 9,
+        "duration": "00:25:03",
+        "image_name": "V_2287_805_AlliantContent-EarthUnbound_S1E8_DayOfTheAsteroid-Full-Image-en-US.jpg",
+        "path": "https://cms.xivetv.com/videoimages/medium/",
+        "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_2287_805_AlliantContent-EarthUnbound_S1E8_DayOfTheAsteroid-Full-Image-en-US.jpg",
+        "shortDescription": "Asteroids racing through the solar system have smashed into Earth before. What are the chances we'll get hit again? Armed with new defensive technologies, scientists are getting ready for the inevitable day, a decade, century, or millennia from now:"
+      }
+    ],
+    "comments": [],
+    "rating": 0,
+    "relatedContent": {
+      "relatedVideos": [],
+      "relatedCollection": [],
+      "relatedSeries": [
+        {
+          "seriesId": 317,
+          "title": "Mega Disaster",
+          "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/S_317_743_AppArt.jpg",
+          "image_name": "S_317_743_AppArt.jpg",
+          "relatedOrder": 1,
+          "path": "https://cms.xivetv.com/imagesfiles/medium/",
+          "episodesCount": 4
+        },
+        {
+          "seriesId": 315,
+          "title": "Man Made Marvels: Asia",
+          "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/S_315_498_AppArt.jpg",
+          "image_name": "S_315_498_AppArt.jpg",
+          "relatedOrder": 3,
+          "path": "https://cms.xivetv.com/imagesfiles/medium/",
+          "episodesCount": 8
+        },
+        {
+          "seriesId": 293,
+          "title": "Billion Dollar Disasters",
+          "imageUrl": "https://cms.xivetv.com/imagesfiles/medium/S_293_961_BillionDollarDisasters_App_Art.jpg",
+          "image_name": "S_293_961_BillionDollarDisasters_App_Art.jpg",
+          "relatedOrder": 4,
+          "path": "https://cms.xivetv.com/imagesfiles/medium/",
+          "episodesCount": 5
+        }
+      ]
+    }
+  }
+}
