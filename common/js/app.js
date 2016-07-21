@@ -79,9 +79,7 @@
         * Handle the call to the model to get our data 
         */
         this.makeInitialDataCall = function () {
-            this.data.loadCollections(this.dataLoaded); //Once List is loaded, load program details
-            // this.data.loadVideos(); // Load videos based on category user is currently in/selected
-            // this.data.loadTestData(this.dataLoaded);
+            this.data.loadCollections(this.dataLoaded); // Once collections are loaded, load program details;
         };
 
        /**
@@ -101,7 +99,7 @@
                 logo = app.data.appLogo;
             } 
             else {
-                logo = "assets/img_logo.png";
+                logo = "assets/logo.png";
             }
             
             var html = utils.buildTemplate($("#app-header-template"), {

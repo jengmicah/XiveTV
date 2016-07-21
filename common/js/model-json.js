@@ -1,27 +1,25 @@
-/* Model
- *
+/* 
  * Model for JSON data 
  */
 
 (function(exports) {
     "use strict";
 
-    // the model for the Media Sample Data
     // {Object} appSettings are the user-defined settings from the index page
     function JSONMediaModel(appSettings) {
         // mixin inheritance, initialize this as an event handler for these events:
         Events.call(this, ['error']);
 
         // this.mediaData = [];
-        this.categoryData = []; // Holds all the TV program TITLES (ScienceTV, NatureTV, etc...)
-        this.currSubCategory = [];
-        this.currData = [];
-        this.currentCategory = 0;
-        this.currentItem = 0;
+        this.categoryData = []; // Holds the TV program titles (ScienceTV, NatureTV, etc...)
+        this.currSubCategory = []; // Holds data in current subcategory
+        this.currData = []; // Holds data in current category
+        this.currentCategory = 0; // Index of current category
+        this.currentItem = 0; 
         this.defaultTheme = "default";
         this.currentlySearchData = false;
 
-        this.collectionFolder = []; //Holds all the TV program OBJECTS (8)
+        this.collectionFolder = []; //Holds all the TV program objects
         this.mediaFolder = []; //Holds responseData with seriesList and episodeList
 
         //timeout default to 1 min
@@ -31,48 +29,13 @@
          * This function loads the initial data needed to start the app and calls the provided callback with the data when it is fully loaded
          * @param {function} the callback function to call with the loaded data
          */
-        this.loadTestData = function(dataLoadedCallback) {
-            var requestData = {
-                url: appSettings.dataURL,
-                type: 'GET',
-                crossDomain: true,
-                dataType: 'json',
-                context: this,
-                cache: true,
-                timeout: this.TIMEOUT,
-                success: function() {
-                    var contentData = arguments[0];
-                    this.handleJsonData(contentData);
-                    dataLoadedCallback();
-                }.bind(this),
-                error: function(jqXHR, textStatus) {
-                    if (jqXHR.status === 0) {
-                        this.trigger("error", ErrorTypes.INITIAL_NETWORK_ERROR, errorHandler.genStack());
-                        return;
-                    }
-                    switch (textStatus) {
-                        case "timeout":
-                            this.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
-                            break;
-                        case "parsererror":
-                            this.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
-                            break;
-                        default:
-                            this.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
-                            break;
-                    }
-                }.bind(this)
-            };
-            utils.ajaxWithRetry(requestData);
-        }.bind(this);
-
         this.loadCollections = function(dataLoadedCallback) {
-            // var queue = [];
+            // var queue = []; // Holds the dynamic data for the ajax calls
             // for(var i = 0; i < this.count; i++) {
             //     queue.push("https://cms.xivetv.com/api/v3/collection/" + this.collectionListArray[i].collectionId);
             // }
 
-            var queue = [ //Holds the URL's for the ajax calls
+            var queue = [ // Holds the static URL's for the ajax calls
                 appSettings.collection1,
                 appSettings.collection2,
                 appSettings.collection3,
@@ -83,9 +46,9 @@
                 appSettings.collection8
             ];
 
-            var promises = []; //Will hold all the ajax calls
-            for (var i = 0; i < queue.length; i++) {
-                promises.push($.ajax({
+            var requests = [];
+            for (var i = 0; i < queue.length; i++) { // Load the requests [] with all the ajax calls
+                requests.push($.ajax({
                     url: queue[i],
                     type: 'GET',
                     crossDomain: true,
@@ -115,86 +78,69 @@
                     }.bind(this)
                 }));
             }
-            $.when.apply($, promises).then(function() {
-                console.log("All Collection Details Loaded");
+
+            var element = this;
+            $.when.apply($, requests).done(function() { // Make the ajax calls
+                for (var i = 0; i < element.collectionFolder.length; i++) { // Once all the calls are made, fill the left-nav with titles
+                    element.categoryData[i] = element.collectionFolder[i].title;
+                }
                 dataLoadedCallback();
             });
         }.bind(this);
-
-        // this.loadVideos = function() {
-        //     // Add based on series/episode lists
-        //     // var queue = [];
-        //     // for(var i = 0; i < this.count; i++) {
-        //     //     queue.push("https://cms.xivetv.com/api/v3/collection/" + this.collectionListArray[i].collectionId);
-        //     // }
-
-        //     var queue = [ //Holds the URL's for the ajax calls
-        //         appSettings.video
-        //     ];
-
-        //     var promises = []; //Will hold all the ajax calls
-        //     for (var i = 0; i < queue.length; i++) {
-        //         promises.push($.ajax({
-        //             url: queue[i],
-        //             type: 'GET',
-        //             crossDomain: true,
-        //             dataType: 'json',
-        //             context: this,
-        //             cache: true,
-        //             timeout: this.TIMEOUT,
-        //             success: function() {
-        //                 // dataLoadedCallback();
-        //                 this.handleVideoData(arguments[0]);
-        //                 // console.log(arguments[0].responseData.title + " Loaded");
-        //             }.bind(this),
-        //             error: function(jqXHR, textStatus) {
-        //                 if (jqXHR.status === 0) {
-        //                     this.trigger("error", ErrorTypes.INITIAL_NETWORK_ERROR, errorHandler.genStack());
-        //                     return;
-        //                 }
-        //                 switch (textStatus) {
-        //                     case "timeout":
-        //                         this.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
-        //                         break;
-        //                     case "parsererror":
-        //                         this.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
-        //                         break;
-        //                     default:
-        //                         this.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
-        //                         break;
-        //                 }
-        //             }.bind(this)
-        //         }));
-        //     }
-        //     $.when.apply($, promises).then(function() {
-        //         console.log("All Videos Loaded");
-        //     });
-        // }
 
         /**
          * Handles requests that contain json data
          * @param {Object} collectionDetails data returned from request
          */
         this.handleCollections = function(collectionDetails) {
-            this.collectionFolder.push(collectionDetails.responseData);
-            // create left nav based on the folder stucture object
-            this.categoryData.push(collectionDetails.responseData.title);
+            this.insert(collectionDetails.responseData, this.comparer(), "series_collection_order", this.collectionFolder);
         }
-
-        // this.handleVideoData = function(videoData) {
-        //     this.mediaData = videoData.responseData;
-        // }
 
         /***************************
          *
-         * Utility Methods
+         * Sorting Methods
          *
          ***************************/
         /**
-         * Sort the data array
+         * O(log(n)) Insertion Sort
+         * @param {Object} element to be inserted into array
+         * @param {Method} comparer function to determine placement in array
+         * @param {String} key used to determine order in JSON object
+         * @param {Array} array in which the elemented will be inserted 
+         */
+        this.insert = function(element, comparer, key, array) {
+            var index = this.locationOf(element, array, comparer, key) + 1;
+            array.splice(index, 0, element);
+        }
+
+        this.locationOf = function(element, array, comparer, key, start, end) {
+            if (array.length === 0) return -1;
+            start = start || 0;
+            end = end || array.length;
+            var pivot = (start + end) >> 1;
+            var c = this.comparer(element[key], array[pivot][key]);
+            if (end - start <= 1) return c == -1 ? pivot - 1 : pivot;
+
+            switch (c) {
+                case -1:
+                    return this.locationOf(element, array, comparer, key, start, pivot);
+                case 0:
+                    return pivot;
+                case 1:
+                    return this.locationOf(element, array, comparer, key, pivot, end);
+            };
+        };
+
+        this.comparer = function(a, b) {
+            if (a < b) return -1;
+            if (a > b) return 1;
+            return 0;
+        };
+
+        /**
+         * Sort JSON array by specific key value
          */
         this.sort_by = function(field, reverse, primer) {
-
             var key = primer ?
                 function(x) {
                     return primer(x[field])
@@ -202,25 +148,11 @@
                 function(x) {
                     return x[field]
                 };
-
             reverse = !reverse ? 1 : -1;
-
             return function(a, b) {
                 return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
             }
         };
-
-        /***************************
-         *
-         * Media Data Methods
-         *
-         ***************************/
-        /**
-         * For single views just send the whole media object
-         */
-        // this.getAllMedia = function() {
-        //     return mediaData;
-        // };
 
         /***************************
          *
@@ -275,28 +207,21 @@
          */
         this.getFullContentsForFolder = function(folder) {
             var contents = [];
-            if (folder.hasOwnProperty("collectionId")) {
-                var currSeriesContents = folder.seriesList,
-                    currEpiContents = folder.episodeList;
-
-                for (var i = 0; i < folder.seriesList.length; i++) {
+            if (folder.hasOwnProperty("collectionId")) { // Check if current folder is a collection
+                for (var i = 0; i < folder.seriesList.length; i++) { // Add all series and episodes to content []
                     folder.seriesList[i].type = "subcategory";
-                    contents.push(folder.seriesList[i]);
+                    this.insert(folder.seriesList[i], this.comparer(), "order", contents);
                 }
                 for (var i = 0; i < folder.episodeList.length; i++) {
-                    contents.push(folder.episodeList[i]);
+                    this.insert(folder.episodeList[i], this.comparer(), "order", contents);
                 }
-                console.log("Collection Selected");
-            } else if (folder.hasOwnProperty("seriesId")) {
-                for (var i = 0; i < folder.episodeList.length; i++) {
-                    contents.push(folder.episodeList[i]);
+            } else if (folder.hasOwnProperty("seriesId")) { // Check if current folder is a series
+                for (var i = 0; i < folder.episodeList.length; i++) { // Add all episodes to content []
+                    this.insert(folder.episodeList[i], this.comparer(), "order", contents);
                 }
-                console.log("Series Selected");
-            } // else if(folder.hasOwnProperty("videoId")) {
-
-            // }
-
-            return contents.sort(this.sort_by("order", false, parseInt));
+            }
+            return contents;
+            // return contents.sort(this.sort_by("order", false, parseInt));
         };
 
         /** 
@@ -304,7 +229,6 @@
          * @param {Function} subCategoryCallback method to call with returned requested data
          */
         this.getSubCategoryData = function(subCategoryCallback) {
-            // clone the original object
             var returnData = JSON.parse(JSON.stringify(this.currSubCategory));
             returnData.contents = this.getFullContentsForFolder(this.currSubCategory);
             subCategoryCallback(returnData);

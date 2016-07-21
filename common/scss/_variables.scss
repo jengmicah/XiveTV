@@ -12,7 +12,27 @@
  *         items that are repeated in the styles more than once .
  *
  */
-
+@font-face {
+  font-family: 'Raleway-ExtraLight';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Raleway-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v11/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Raleway-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v11/CcKI4k9un7TZVWzRVT-T8_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
 //
 //Images
 //
@@ -27,7 +47,7 @@ $img-skip-indicator : url('assets/skip_indicator.png') !default;
 $img-left-arrow     : url('assets/icon_subcat_arrowLeft.png') !default;
 $img-subcat-bg     : url('assets/bg_subcat.png') !default;
 $img-live     : url('assets/live.png') !default;
-
+$img-content-loader-spinner : url('assets/loader.png') !default;
 
 //
 //Fonts - used by FireTV
@@ -37,16 +57,16 @@ $img-live     : url('assets/live.png') !default;
 $font-base-size : 20pt !default;
 
 //font-family
-$font-family-light   : 'Helvetica Neue Light', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif !default;
-$font-family-medium  : 'Helvetica Neue Medium', 'HelveticaNeue-Medium', Helvetica, Arial, sans-serif !default;
-$font-family-bold    : 'Helvetica Neue Bold', 'HelveticaNeue-Bold', Helvetica, Arial, sans-serif !default;
+$font-family-light   : 'Raleway-ExtraLight', sans-serif !default;
+$font-family-medium  : 'Raleway-Light', sans-serif !default;
+$font-family-bold    : 'Raleway-Medium', sans-serif !default;
 
 
 //Colors
 //
 
 $color-app-base-bg   : #5a656f !default;
-$color-app-header-bg : rgba(#000000, 0.1) !default;
+$color-app-header-bg : transparent !default;
 
 $color-overlay-bg   : #000000 !default;
 $color-overlay-text : #e8e8e8 !default;
