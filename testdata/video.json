@@ -1,13 +1,23 @@
 {
   "apiName": "video",
-  "count": 1,
   "responseCode": 200,
+  "responseMessage": "ok",
+  "count": 1,
   "responseData": {
+    "videoId": 1723,
     "cdnId": "",
-    "comments": [],
-    "imageUrl": "assets/l1.jpg",
-    "image_name": "assets/l1.jpg",
-    "isSubscribed": false,
+    "jwp_video_id": "Ky5R0uNt",
+    "playerId": null,
+    "title": "China's Long March into Space",
+    "videoName": "Alliant_PureScienceSpecials_China'sLongMarchIntoSpace",
+    "uniqueDescription": "Inside a spaceship at Jiuquan Launch Facility, three men sit on top of 500 tons of liquid fuel. A controlled explosion will blast them three hundred kilometers into space, and into the record books. This is China’s next great leap into space.\n",
+    "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_1723_310_ChinasLongMarchIntoSpace.jpg",
+    "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_1723_310_ChinasLongMarchIntoSpace.jpg",
+    "image_name": "V_1723_310_ChinasLongMarchIntoSpace.jpg",
+    "path": "https://cms.xivetv.com/videoimages/medium/",
+    "videoDuration": "00:43:39",
+    "jwp_video_url": "assets/test.m3u8",
+    "jwp_ad_url": "http://ad4.liverail.com/?LR_PUBLISHER_ID=65715&LR_SCHEMA=vast2-vpaid&LR_AUTOPLAY=1",
     "jwp_ad_breaks": [
       {
         "ad_break": "00:00:00"
@@ -28,66 +38,56 @@
         "ad_break": " 00:35:40"
       }
     ],
-    "jwp_ad_url": "http://ad4.liverail.com/?LR_PUBLISHER_ID=65715&LR_SCHEMA=vast2-vpaid&LR_AUTOPLAY=1",
-    "jwp_video_id": "Ky5R0uNt",
-    "jwp_video_url": "assets/sample_video.mp4",
-    "path": "https://cms.xivetv.com/videoimages/medium/",
-    "playerId": null,
     "rating": 0,
+    "comments": [],
+    "videoViewCount": 554,
     "relatedContent": {
+      "relatedVideos": [
+        {
+          "videoId": 847,
+          "cdnId": "tpMnZkbzqCfQVXzPvvAFVLSDGPM34ENX",
+          "jwp_video_id": "UKJB0i35",
+          "playerId": "455e815617aa460f90bfa505b3206278",
+          "title": "Mao's China vs. the U.S.",
+          "videoName": "Alliant_PureHistorySpecials_MaosChinavstheUS",
+          "uniqueDescription": "For over fifty years, the Chinese army guarded a top-secret film record of the Cold War. Now, this film showcases front line footage, combined with first-person accounts, revealing the secret conflicts the Red Army fought and won from behind the Iron Curtain.",
+          "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_847_446_Alliant_PureHistorySpecials_MaosChinavstheUS.jpg",
+          "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_847_446_Alliant_PureHistorySpecials_MaosChinavstheUS.jpg",
+          "image_name": "V_847_446_Alliant_PureHistorySpecials_MaosChinavstheUS.jpg",
+          "path": "https://cms.xivetv.com/videoimages/medium/",
+          "duration": "44:88",
+          "videoViewCount": 284
+        },
+        {
+          "videoId": 148,
+          "cdnId": "pkdGE3bzpW0luoH4So2C9192wE14jt-x",
+          "jwp_video_id": "bHISVEmk",
+          "playerId": "455e815617aa460f90bfa505b3206278",
+          "title": "Reinventing Space Flight",
+          "videoName": "TLP_CosmicJourneys_ReinventingSpaceFlight",
+          "uniqueDescription": "A small cadre of scientists is attempting to revolutionize space travel and exploration. This action-packed episode explores a big dream at the moment of its birth, taking us along on dramatic balloon and flights into colorful geomagnetic storms.",
+          "imageUrl": "https://cms.xivetv.com/videoimages/medium/V_148_481_TLP_CosmicJourneys_ReinventingSpaceFlight.jpg",
+          "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_148_481_TLP_CosmicJourneys_ReinventingSpaceFlight.jpg",
+          "image_name": "V_148_481_TLP_CosmicJourneys_ReinventingSpaceFlight.jpg",
+          "path": "https://cms.xivetv.com/videoimages/medium/",
+          "duration": "49:81",
+          "videoViewCount": 311
+        }
+      ],
       "relatedCollection": [],
       "relatedSeries": [
         {
-          "episodesCount": 3,
-          "imageUrl": "assets/l1.jpg",
-          "image_name": "assets/l1.jpg",
-          "path": "https://cms.xivetv.com/videoimages/medium/",
-          "relatedOrder": 2,
           "seriesId": 147,
-          "short_description": "RELATED SERIES DESC #1",
-          "title": "RELATED SERIES TITLE #1"
-        }
-      ],
-      "relatedVideos": [
-        {
-          "cdnId": "tpMnZkbzqCfQVXzPvvAFVLSDGPM34ENX",
-          "duration": "44:88",
-          "imageUrl": "assets/l1.jpg",
-          "image_name": "assets/l1.jpg",
-          "jwp_video_id": "UKJB0i35",
+          "title": "Mao's China",
+          "short_description": "For over fifty years, the Chinese army guarded a top-secret film record of the Cold War. Now, this film showcases front line footage, combined with first-person accounts, revealing the secret conflicts the Red Army fought and won from behind the Iron Curt",
+          "imageUrl": "https://cms.xivetv.com/videoimages/medium/S_147_342_App_Art_MaosChina.jpg",
+          "image_name": "S_147_342_App_Art_MaosChina.jpg",
+          "relatedOrder": 2,
           "path": "https://cms.xivetv.com/videoimages/medium/",
-          "playerId": "455e815617aa460f90bfa505b3206278",
-          "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_847_446_Alliant_PureHistorySpecials_MaosChinavstheUS.jpg",
-          "title": "RELATED VIDEO TITLE #1",
-          "uniqueDescription": "RELATED VIDEO DESC #1",
-          "videoId": 847,
-          "videoName": "RELATED VIDEO NAME #1",
-          "videoViewCount": 270
-        },
-        {
-          "cdnId": "pkdGE3bzpW0luoH4So2C9192wE14jt-x",
-          "duration": "49:81",
-          "imageUrl": "assets/l1.jpg",
-          "image_name": "assets/l1.jpg",
-          "jwp_video_id": "bHISVEmk",
-          "path": "https://cms.xivetv.com/videoimages/medium/",
-          "playerId": "455e815617aa460f90bfa505b3206278",
-          "rokuImageUrl": "https://cms.xivetv.com/videoimages/medium/V_148_481_TLP_CosmicJourneys_ReinventingSpaceFlight.jpg",
-          "title": "RELATED VIDEO TITLE #2",
-          "uniqueDescription": "RELATED VIDEO DESC #2",
-          "videoId": 148,
-          "videoName": "RELATED VIDEO NAME #2",
-          "videoViewCount": 308
+          "episodesCount": 3
         }
       ]
     },
-    "rokuImageUrl": "assets/l1.jpg",
-    "title": "VIDEO TITLE",
-    "uniqueDescription": "VIDEO DESCRIPTION\n",
-    "videoDuration": "00:43:39",
-    "videoId": 1,
-    "videoName": "VIDEO NAME",
-    "videoViewCount": 533
-  },
-  "responseMessage": "ok"
+    "isSubscribed": false
+  }
 }

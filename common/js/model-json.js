@@ -15,10 +15,11 @@
         this.currSubCategory = []; // Holds data in current subcategory
         this.currData = []; // Holds data in current category
         this.currentCategory = 0; // Index of current category
-        this.currentItem = 0; 
+        this.currentItem = 0;
         this.defaultTheme = "default";
         this.currentlySearchData = false;
 
+        // this.collectionList = []; //Holds collectionId's of all collections
         this.collectionFolder = []; //Holds all the TV program objects
         this.mediaFolder = []; //Holds responseData with seriesList and episodeList
 
@@ -29,34 +30,62 @@
          * This function loads the initial data needed to start the app and calls the provided callback with the data when it is fully loaded
          * @param {function} the callback function to call with the loaded data
          */
-        this.loadCollections = function(dataLoadedCallback) {
-            // var queue = []; // Holds the dynamic data for the ajax calls
-            // for(var i = 0; i < this.count; i++) {
-            //     queue.push("https://cms.xivetv.com/api/v3/collection/" + this.collectionListArray[i].collectionId);
-            // }
 
-            var queue = [ // Holds the static URL's for the ajax calls
-                appSettings.collection1,
-                appSettings.collection2,
-                appSettings.collection3,
-                appSettings.collection4,
-                appSettings.collection5,
-                appSettings.collection6,
-                appSettings.collection7,
-                appSettings.collection8
-            ];
+        this.loadList = function(dataLoadedCallback) {
+            var requestData = {
+                url: appSettings.dataURL,
+                async: true,
+                crossDomain: true,
+                method: "GET",
+                headers: {
+                    Authorization: "eyJhdXRoVG9rZW4iOiIiLCJwYXNzd29yZCI6IiIsImF1dGhrZXkiOjEyMzQ1Njc4OSwidXNlcklkIjoiIn0"
+                },
+                timeout: this.TIMEOUT,
+                success: function() {
+                    console.log("Collection List Loaded");
+                    dataLoadedCallback(arguments[0]);
+                }.bind(this),
+                error: function(jqXHR, textStatus) {
+                    // Data feed error is passed to model's parent (app.js) to handle
+                    if (jqXHR.status === 0) {
+                        this.trigger("error", ErrorTypes.INITIAL_NETWORK_ERROR, errorHandler.genStack());
+                        return;
+                    }
+                    switch (textStatus) {
+                        case "timeout":
+                            this.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
+                            break;
+                        case "parsererror":
+                            this.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
+                            break;
+                        default:
+                            this.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
+                            break;
+                    }
+                }.bind(this)
+            };
+            utils.ajaxWithRetry(requestData);
+        }.bind(this);
+
+        this.loadCollections = function(dataLoadedCallback, collectionList) {
+            var queue = []; // Holds the dynamic data for the ajax calls
+            for (var i = 0; i < collectionList.length; i++) {
+                queue.push("https://cms.xivetv.com/api/v3/collection/" + collectionList[i].collectionId);
+            }
 
             var requests = [];
             for (var i = 0; i < queue.length; i++) { // Load the requests [] with all the ajax calls
                 requests.push($.ajax({
                     url: queue[i],
-                    type: 'GET',
+                    async: true,
                     crossDomain: true,
-                    dataType: 'json',
-                    context: this,
-                    cache: true,
+                    method: "GET",
+                    headers: {
+                        Authorization: "eyJhdXRoVG9rZW4iOiIiLCJwYXNzd29yZCI6IiIsImF1dGhrZXkiOjEyMzQ1Njc4OSwidXNlcklkIjoiIn0"
+                    },
                     timeout: this.TIMEOUT,
                     success: function() {
+                        console.log(arguments[0].responseData.title + " Loaded");
                         this.handleCollections(arguments[0]);
                     }.bind(this),
                     error: function(jqXHR, textStatus) {
@@ -92,6 +121,7 @@
          * Handles requests that contain json data
          * @param {Object} collectionDetails data returned from request
          */
+
         this.handleCollections = function(collectionDetails) {
             this.insert(collectionDetails.responseData, this.comparer(), "series_collection_order", this.collectionFolder);
         }

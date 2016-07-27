@@ -179,7 +179,8 @@
         this.remove = function() {
             this.videoElement.removeEventListener("error", this.errorHandler);
             this.clearTimeouts();
-            this.videoElement.pause();
+            // this.videoElement.pause();
+            // jwplayer().pause();
             this.videoElement.src = "";
             buttons.resetButtonIntervals();
             this.controlsView.remove();
@@ -224,71 +225,105 @@
             // Build the main content template and add it
             this.items = data;
             // Request video when user clicks video
+            var element = this;
+
             $.ajax({
-                // url: "https://cms.xivetv.com/api/v3/video/" + data[index].videoId,
-                url: settings.video,
-                type: 'GET',
+                url: "https://cms.xivetv.com/api/v3/video/" + data[index].videoId,
+                // url: settings.video,
+                async: true,
                 crossDomain: true,
-                dataType: 'json',
-                context: this,
-                cache: true,
+                method: "GET",
+                headers: {
+                    Authorization: "eyJhdXRoVG9rZW4iOiIiLCJwYXNzd29yZCI6IiIsImF1dGhrZXkiOjEyMzQ1Njc4OSwidXNlcklkIjoiIn0"
+                },
                 timeout: 60000
             }).done(function(data) {
                 var video_data = data.responseData;
-                this.currentIndex = index;
+                element.currentIndex = index;
                 var html = utils.buildTemplate($("#player-view-template"), video_data);
                 $container.append(html);
-                this.$el = $container.children().last();
+                element.$el = $container.children().last();
 
-                this.$containerControls = $container.find(".player-controls-container");
-                this.containerControls = this.$containerControls[0];
+                element.$containerControls = $container.find(".player-controls-container");
+                element.containerControls = element.$containerControls[0];
 
                 // create the video element
-                this.videoElement = document.createElement('video');
-                this.videoElement.className = 'player-content-video';
-                this.videoElement.src = video_data.jwp_video_url;
-                this.videoElement.type = 'video/mp4';
-                this.handleClosedCaptioning(video_data.tracks);
-                this.$el.append(this.videoElement);
+                element.divElement = document.createElement('div');
+                element.divElement.style.position = 'relative';
+                element.logoElement = document.createElement('div');
+                element.logoElement.id = 'video_overlays';
+                element.logoElement.style.position = 'absolute';
+                element.logoElement.style.zIndex = '999000';
+                element.logoElement.style.top = '20px';
+                element.logoElement.style.left = '20px';
+                element.logoElement.style.opacity = '0.6';
+                element.logoElement.style.width = '200px';
+                element.logoImg = document.createElement('img');
+                element.logoImg.src = "./assets/logo.png";
+                element.videoElement = document.createElement('video');
+                element.videoElement.className = 'player-content-video';
 
-                this.videoElement.focus();
+                element.divElement.appendChild(element.videoElement);
+                element.divElement.appendChild(element.logoElement);
+                element.logoElement.appendChild(element.logoImg);
+                // element.sourceElement = document.createElement('source');
+                // element.videoElement.type = 'application/x-mpegURL';
+                // element.sourceElement.type = 'application/x-mpegURL';
+                // element.sourceElement.src = video_data.jwp_video_url;
+                // element.videoElement.src = video_data.jwp_video_url;
+                // element.videoElement.appendChild(element.sourceElement);
+                // element.handleClosedCaptioning(video_data.tracks);
+                element.$el.append(element.videoElement);
+                console.log(element.divElement);
+                if (Hls.isSupported()) {
+                    var hls = new Hls();
+                    hls.loadSource(video_data.jwp_video_url);
+                    hls.attachMedia(element.videoElement);
+                    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                        element.videoElement.play();
+                    });
+                }
+                // jwplayer("player-content-video").setup({
+                //     file: video_data.jwp_video_url
+                // });
+
+                element.videoElement.focus();
 
                 //add event listeners
-                this.videoElement.addEventListener("canplay", this.canPlayHandler);
-                this.videoElement.addEventListener("ended", this.videoEndedHandler);
-                this.videoElement.addEventListener("timeupdate", this.timeUpdateHandler);
-                this.videoElement.addEventListener("pause", this.pauseEventHandler);
-                this.videoElement.addEventListener("error", this.errorHandler);
+                element.videoElement.addEventListener("canplay", element.canPlayHandler);
+                element.videoElement.addEventListener("ended", element.videoEndedHandler);
+                element.videoElement.addEventListener("timeupdate", element.timeUpdateHandler);
+                element.videoElement.addEventListener("pause", element.pauseEventHandler);
+                element.videoElement.addEventListener("error", element.errorHandler);
 
                 //listener for visual on video playback only - remove for non-visual on implementation
-                this.videoElement.addEventListener(utils.vendorPrefix('fullscreenchange').toLowerCase(), this.fullScreenChangeHandler);
+                element.videoElement.addEventListener(utils.vendorPrefix('fullscreenchange').toLowerCase(), element.fullScreenChangeHandler);
 
                 // create controls
                 if (video_data.type === "video-live") {
-                    this.isLive = true;
-                    this.controlsView = new LiveControlsView();
-                    this.controlsView.render(this.$el, video_data, this);
+                    element.isLive = true;
+                    element.controlsView = new LiveControlsView();
+                    element.controlsView.render(element.$el, video_data, element);
                 } else {
-                    this.controlsView = new ControlsView();
-                    this.controlsView.render(this.$el, video_data, this);
+                    element.controlsView = new ControlsView();
+                    element.controlsView.render(element.$el, video_data, element);
                 }
-
-                this.videoElement.addEventListener('durationchange', this.durationChangeHandler);
-                this.knownPlayerErrorTriggered = false;
+                element.videoElement.addEventListener('durationchange', element.durationChangeHandler);
+                element.knownPlayerErrorTriggered = false;
             }).fail(function(jqXHR, textStatus) {
                 if (jqXHR.status === 0) {
-                    this.trigger("error", ErrorTypes.INITIAL_NETWORK_ERROR, errorHandler.genStack());
+                    element.trigger("error", ErrorTypes.INITIAL_NETWORK_ERROR, errorHandler.genStack());
                     return;
                 }
                 switch (textStatus) {
                     case "timeout":
-                        this.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
+                        element.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
                         break;
                     case "parsererror":
-                        this.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
+                        element.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
                         break;
                     default:
-                        this.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
+                        element.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
                         break;
                 }
             });
@@ -299,6 +334,7 @@
          */
         this.playVideo = function() {
             this.videoElement.play();
+            // jwplayer().play();
             this.paused = false;
             buttons.setButtonIntervals(this.BUTTON_INTERVALS);
             this.trigger('videoStatus', this.videoElement.currentTime, this.videoElement.duration, 'playing');
@@ -312,6 +348,7 @@
             // user input, so this strictly calls the video element pause
             if (!this.isSkipping) {
                 this.videoElement.pause();
+                // jwplayer().pause();
                 this.paused = true;
             }
         };
@@ -321,6 +358,7 @@
          */
         this.resumeVideo = function() {
             this.videoElement.play();
+            // jwplayer().play();
             this.paused = false;
             this.trigger('videoStatus', this.videoElement.currentTime, this.videoElement.duration, 'resumed');
         };

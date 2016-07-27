@@ -21,11 +21,8 @@
         "common/images/rewind-arrow.png",
         "common/images/skip_indicator.png",
         "common/images/btn_previewPlay.png",
-        "common/assets/video/*",
-        "common/assets/images/*",
         "common/images/loader.png",
-        "testdata/collection_details/*.json",
-        "testdata/video.json"
+        "common/images/bg_overlay.png"
     ],
     "appJS": [
         "common/js/util.js",
@@ -48,7 +45,7 @@
         "init.js"
     ],
     "libJS": [
-        "libs/jquery.js",
-        "libs/handlebars-v1.3.0.js"
+        "libs/handlebars-v1.3.0.js",
+        "libs/jquery.js"
     ]
 }

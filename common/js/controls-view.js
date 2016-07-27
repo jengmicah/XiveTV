@@ -122,14 +122,13 @@
         this.render = function ($container, data, playerView) {
             // Build the  content template and add it
             var html = utils.buildTemplate($("#controls-view-template"), {});
-
             $container.append(html);
             this.$containerControls = $container.children().last();
             this.containerControls = $container.children().last()[0];
             this.playIcon = $container.find(".player-pause-button")[0];
 
             this.$containerControls.find(".player-controls-content-title").text(data.title);
-            this.$containerControls.find(".player-controls-content-subtitle").text(this.truncateSubtitle(data.description));
+            this.$containerControls.find(".player-controls-content-subtitle").text(this.truncateSubtitle(data.uniqueDescription));
             this.seekHead = this.$containerControls.find(".player-controls-timeline-playhead")[0];
             this.$currSeekTime = this.$containerControls.find(".player-controls-timestamp-curtime");
             this.$forwardIndicator = this.$containerControls.find("#forward-indicator");
