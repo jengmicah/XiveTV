@@ -294,19 +294,11 @@
                         dirty = true;
                         break;
                     case buttons.DOWN:
-                        //handle button view if we have one
-                        if (this.buttonView) { //content buttons are visible
-                            if (this.currentView !== this.buttonView) {
-                                this.transitionToButtonView();
-                            } else {
-                                this.trigger('bounce', buttons.DOWN);
-                            }
-                        } else { //no buttons
-                            if (this.currentView === this.shovelerView) {
-                                this.trigger('bounce', buttons.DOWN);
-                            }
+                      if (this.currentView !== this.shovelerView) {
+                            this.transitionToShovelerView();
+                        } else {
+                            this.trigger('bounce', null);
                         }
-
                         dirty = true;
                         break;
                 }

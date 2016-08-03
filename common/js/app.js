@@ -465,7 +465,6 @@
                     this.oneDView.fadeIn();
                     this.selectView(this.oneDView);
                 }
-
             }, this);
          }.bind(this);
 

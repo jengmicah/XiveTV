@@ -225,56 +225,56 @@
         */
         this.handleControls = function (e) {
             if (e.type === 'swipe') {
-                if(!this.isDisplayed) { return; }
+                // if(!this.isDisplayed) { return; }
                 if(e.keyCode === touches.DOWN) {
-                    this.incrementCurrentSelectedIndex(-1);
-                } else if(e.keyCode === touches.UP) {
                     this.incrementCurrentSelectedIndex(1);
+                } else if(e.keyCode === touches.UP) {
+                    this.incrementCurrentSelectedIndex(-1);
                 }
             } else if (e.type === 'buttonpress') {
                 switch (e.keyCode) {
                     case buttons.UP:
-                        if(this.isDisplayed) {
+                        // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(-1);
-                        }
+                        // }
                         break;
                     case buttons.DOWN:
-                        if(this.isDisplayed) {
+                        // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(1);
-                        } else {
-                            this.setChosenElement();
-                            this.trigger('deselect');
-                        }
+                        // } else {
+                        //     this.setChosenElement();
+                        //     this.trigger('deselect');
+                        // }
                         break;
-                    case buttons.LEFT:
+                    case buttons.RIGHT:
+                        // this.confirmNavSelection();
+                        // break;
                     case buttons.BACK:
                         this.currSelectedIndex = this.confirmedSelection;
                         this.selectLeftNavItem();
                         this.collapse();
                         this.trigger('deselect');
                         break;
+                    case buttons.LEFT: break;
                     case buttons.SELECT:
-                        if(!this.isDisplayed) {
-                            this.expand();
-                            break;
-                        }
-                        this.confirmNavSelection();
-                        break;
-                    case buttons.RIGHT:
+                        // if(!this.isDisplayed) {
+                            // this.expand();
+                            // break;
+                        // }
                         this.confirmNavSelection();
                         break;
                 }
             } else if (e.type === 'buttonrepeat') {
                 switch (e.keyCode) {
                     case buttons.UP:
-                        if(this.isDisplayed) {
+                        // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(-1);
-                        }
+                        // }
                         break;
                     case buttons.DOWN:
-                        if(this.isDisplayed) {
+                        // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(1);
-                        }
+                        // }
                         break;
                 }
            }
@@ -287,6 +287,9 @@
         * @param {number} direction to move the left nav
         */
         this.incrementCurrentSelectedIndex = function(direction) {
+            console.log("Direction: " + direction);
+            console.log("Number of Items: " + this.$menuItems.length - 1);
+            console.log("Curr Selected: " + this.currSelectedIndex);
             if ((direction > 0 && this.currSelectedIndex !== (this.$menuItems.length - 1)) || (direction < 0 && this.currSelectedIndex !== 0)) {
                 this.currSelectedIndex += direction;
                 this.selectLeftNavItem();
@@ -349,9 +352,9 @@
                 this.translateAmount = this.currentSelectionEle.getBoundingClientRect().height + 2;
             }
 
-            //shift the nav as selection changes
-            var translateHeight = 0 - (this.translateAmount * this.currSelectedIndex);
-            this.scrollingContainerEle.style.webkitTransform = "translateY(" + translateHeight + "px)";
+            //shift the cursor as selection changes
+            // var translateHeight = 0 - (this.translateAmount * this.currSelectedIndex);
+            // this.scrollingContainerEle.style.webkitTransform = "translateY(" + translateHeight + "px)";
         };
 
     }

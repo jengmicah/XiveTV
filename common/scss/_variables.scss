@@ -73,7 +73,7 @@ $font-family-player    : 'Ubuntu', sans-serif !default;
 //
 
 $color-app-base-bg   : #5a656f !default;
-$color-app-header-bg : transparent !default;
+$color-app-header-bg : #5a656f !default;
 
 $color-overlay-bg   : #fff !default;
 $color-overlay-text : #e8e8e8 !default;
@@ -101,12 +101,14 @@ $color-box-shadow : rgba(0,0,0,0.44) !default;
 
 $color-menu-base-bg : rgba(#000000, 0.9) !default;
 
-$color-menu-item-text :  #b9bbbd !default;
-$color-menu-item-bg: rgba(#e8e8e8, 0.1) !default;
-$color-menu-item-chosen-text    : #e8e8e8 !default;
-$color-menu-item-chosen-bg: #3f484f !default;
-$color-menu-item-highlight-text: #e8e8e8 !default;
-$color-menu-item-highlight-bg: #000000 !default;
+$color-menu-item-text :  rgba(#fff, 0.4) !default;
+// $color-menu-item-bg: rgba(#e8e8e8, 0.1) !default;
+$color-menu-item-bg: transparent !default;
+$color-menu-item-chosen-text    : #fff !default;
+$color-menu-item-chosen-bg: #5a656f !default;
+$color-menu-item-highlight-text: #000 !default;
+// $color-menu-item-highlight-bg: rgba(#e8e8e8, 0.1) !default;
+$color-menu-item-highlight-bg: #fff !default;
 $color-menu-item-selected-text: #000000 !default;
 $color-menu-item-selected-bg: #ffffff !default;
 
@@ -141,7 +143,7 @@ $size-leftnav-collapsed-height: 92px !default;
 //Positions
 //
 $pos-top-leftnav-content      : 148px !default;
-$pos-left-content-position    : 150px !default;
+$pos-left-content-position    : 30% !default;
 $pos-right-leftnav-arrow-icon : right 40px !default;
 
 //
