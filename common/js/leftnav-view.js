@@ -287,9 +287,6 @@
         * @param {number} direction to move the left nav
         */
         this.incrementCurrentSelectedIndex = function(direction) {
-            console.log("Direction: " + direction);
-            console.log("Number of Items: " + this.$menuItems.length - 1);
-            console.log("Curr Selected: " + this.currSelectedIndex);
             if ((direction > 0 && this.currSelectedIndex !== (this.$menuItems.length - 1)) || (direction < 0 && this.currSelectedIndex !== 0)) {
                 this.currSelectedIndex += direction;
                 this.selectLeftNavItem();
