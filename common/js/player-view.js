@@ -21,7 +21,6 @@
         this.canplay = null;
         this.controlsView = null;
         this.durationFound = false;
-        this.isLive = false;
 
         //class variables
         this.fullscreenOpen = false;
@@ -180,7 +179,6 @@
             this.videoElement.removeEventListener("error", this.errorHandler);
             this.clearTimeouts();
             // this.videoElement.pause();
-            // jwplayer().pause();
             this.videoElement.src = "";
             buttons.resetButtonIntervals();
             this.controlsView.remove();
@@ -219,6 +217,13 @@
         };
 
         /**
+         * Prototype string splicing function for securing HTTP request
+         */
+        String.prototype.splice = function(idx, rem, str) {
+            return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+        };
+
+        /**
          * Creates the main content view from the template and appends it to the given element
          */
         this.render = function($container, data, index) {
@@ -232,6 +237,7 @@
                 // url: settings.video,
                 async: true,
                 crossDomain: true,
+                cache: true,
                 method: "GET",
                 headers: {
                     Authorization: "eyJhdXRoVG9rZW4iOiIiLCJwYXNzd29yZCI6IiIsImF1dGhrZXkiOjEyMzQ1Njc4OSwidXNlcklkIjoiIn0"
@@ -248,44 +254,26 @@
                 element.containerControls = element.$containerControls[0];
 
                 // create the video element
-                element.divElement = document.createElement('div');
+                element.divElement = document.createElement('div'); // <div> surrounding video element
+                element.divElement.className = 'video-wrapper';
                 element.divElement.style.position = 'relative';
-                element.logoElement = document.createElement('div');
-                element.logoElement.id = 'video_overlays';
-                element.logoElement.style.position = 'absolute';
-                element.logoElement.style.zIndex = '999000';
-                element.logoElement.style.top = '20px';
-                element.logoElement.style.left = '20px';
-                element.logoElement.style.opacity = '0.6';
-                element.logoElement.style.width = '200px';
-                element.logoImg = document.createElement('img');
-                element.logoImg.src = "./assets/logo.png";
-                element.videoElement = document.createElement('video');
+                element.videoElement = document.createElement('video'); // <video> tag inside div element 
                 element.videoElement.className = 'player-content-video';
-
                 element.divElement.appendChild(element.videoElement);
-                element.divElement.appendChild(element.logoElement);
-                element.logoElement.appendChild(element.logoImg);
-                // element.sourceElement = document.createElement('source');
-                // element.videoElement.type = 'application/x-mpegURL';
-                // element.sourceElement.type = 'application/x-mpegURL';
-                // element.sourceElement.src = video_data.jwp_video_url;
-                // element.videoElement.src = video_data.jwp_video_url;
-                // element.videoElement.appendChild(element.sourceElement);
+
                 // element.handleClosedCaptioning(video_data.tracks);
                 element.$el.append(element.videoElement);
-                console.log(element.divElement);
-                if (Hls.isSupported()) {
-                    var hls = new Hls();
-                    hls.loadSource(video_data.jwp_video_url);
-                    hls.attachMedia(element.videoElement);
+
+                var videoUrl = video_data.jwp_video_url.splice(4, 0, "s");
+
+                if (Hls.isSupported()) { // hls.js
+                    var hls = new Hls(); // Utilizes HTML5 standard <video> element
+                    hls.loadSource(videoUrl); // Link to video URL
+                    hls.attachMedia(element.videoElement); // Connect library to <video> element
                     hls.on(Hls.Events.MANIFEST_PARSED, function() {
                         element.videoElement.play();
                     });
                 }
-                // jwplayer("player-content-video").setup({
-                //     file: video_data.jwp_video_url
-                // });
 
                 element.videoElement.focus();
 
@@ -300,14 +288,10 @@
                 element.videoElement.addEventListener(utils.vendorPrefix('fullscreenchange').toLowerCase(), element.fullScreenChangeHandler);
 
                 // create controls
-                if (video_data.type === "video-live") {
-                    element.isLive = true;
-                    element.controlsView = new LiveControlsView();
-                    element.controlsView.render(element.$el, video_data, element);
-                } else {
-                    element.controlsView = new ControlsView();
-                    element.controlsView.render(element.$el, video_data, element);
-                }
+
+                element.controlsView = new ControlsView();
+                element.controlsView.render(element.$el, video_data, element);
+
                 element.videoElement.addEventListener('durationchange', element.durationChangeHandler);
                 element.knownPlayerErrorTriggered = false;
             }).fail(function(jqXHR, textStatus) {
@@ -334,7 +318,6 @@
          */
         this.playVideo = function() {
             this.videoElement.play();
-            // jwplayer().play();
             this.paused = false;
             buttons.setButtonIntervals(this.BUTTON_INTERVALS);
             this.trigger('videoStatus', this.videoElement.currentTime, this.videoElement.duration, 'playing');
@@ -348,7 +331,6 @@
             // user input, so this strictly calls the video element pause
             if (!this.isSkipping) {
                 this.videoElement.pause();
-                // jwplayer().pause();
                 this.paused = true;
             }
         };
@@ -358,7 +340,6 @@
          */
         this.resumeVideo = function() {
             this.videoElement.play();
-            // jwplayer().play();
             this.paused = false;
             this.trigger('videoStatus', this.videoElement.currentTime, this.videoElement.duration, 'resumed');
         };
@@ -427,16 +408,14 @@
 
                     case buttons.LEFT:
                     case buttons.REWIND:
-                        if (!this.isLive) {
-                            this.seekVideo(this.videoElement.currentTime - this.skipLength);
-                        }
+                        this.seekVideo(this.videoElement.currentTime - this.skipLength);
+
                         break;
 
                     case buttons.RIGHT:
                     case buttons.FAST_FORWARD:
-                        if (!this.isLive) {
-                            this.seekVideo(this.videoElement.currentTime + this.skipLength);
-                        }
+                        this.seekVideo(this.videoElement.currentTime + this.skipLength);
+
                         break;
 
                     case buttons.SELECT:
@@ -461,17 +440,15 @@
                     case buttons.LEFT:
                     case buttons.REWIND:
                         this.isSkipping = true;
-                        if (!this.isLive) {
-                            this.seekVideoRepeat(-1);
-                        }
+                        this.seekVideoRepeat(-1);
+
                         break;
 
                     case buttons.RIGHT:
                     case buttons.FAST_FORWARD:
                         this.isSkipping = true;
-                        if (!this.isLive) {
-                            this.seekVideoRepeat(1);
-                        }
+                        this.seekVideoRepeat(1);
+
                         break;
                 }
 

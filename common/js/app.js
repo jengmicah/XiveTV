@@ -5,13 +5,13 @@
  *
  */
 
-(function(exports) {
+ (function(exports) {
     "use strict";
 
     /**
      * The 'pause' event is fired when the app is sent to the background (app completely hidden) or when its partially obscured 
      */
-    function onPause() {
+     function onPause() {
         if (app.playerView) {
             app.playerView.pauseVideo();
         }
@@ -20,7 +20,7 @@
     /**
      * The 'resume' event is fired when the app is brought to the foreground (app completely visible) including when the Voice Search Dialog is dismissed
      */
-    function onResume() {
+     function onResume() {
         if (app.playerView) {
             app.playerView.resumeVideo();
         }
@@ -29,7 +29,7 @@
     /**
      * Add listeners for pause and resume when the platform is ready
      */
-    function onAmazonPlatformReady() {
+     function onAmazonPlatformReady() {
         document.addEventListener("pause", onPause, false);
         document.addEventListener("resume", onResume, false);
     }
@@ -39,7 +39,7 @@
      * When in portrait mode put up the app overlay div and notify the user
      * to change back to landscape
      */
-    function handleDeviceOrientation() {
+     function handleDeviceOrientation() {
         //disregard on FireTV
         if (navigator.userAgent.match(/AFT/i)) {
             return;
@@ -67,7 +67,7 @@
      *                 settingsParams.dataURL {String} url of the initial data request 
      *                 settingsParams.displayButtons {Boolean} flag that tells the app to display the buttons or not
      */
-    function App(settingsParams) {
+     function App(settingsParams) {
 
         //hold onto the app settings
         this.settingsParams = settingsParams;
@@ -79,17 +79,17 @@
         /**
          * Handle the call to the model to get our data 
          */
-        this.makeInitialDataCall = function() {
+         this.makeInitialDataCall = function() {
             var element = this;
-            this.data.loadList(function() {
-                element.data.loadCollections(element.dataLoaded, arguments[0].responseData); // Once collections are loaded, load program details;
+            this.data.loadList(function() { // Once collections are loaded, load program details;
+                element.data.loadCollections(element.dataLoaded, arguments[0].responseData); 
             });
         };
 
         /**
          * Callback from XHR to load the data model, this really starts the app UX
          */
-        this.dataLoaded = function() {
+         this.dataLoaded = function() {
             var logo;
             this.$appContainer.empty();
 
@@ -122,14 +122,14 @@
          * Set the application's current view
          * @param {Object} view the current view
          */
-        this.selectView = function(view) {
+         this.selectView = function(view) {
             this.currentView = view;
         };
 
         /**
          * User has pressed the back button
          */
-        this.exitApp = function() {
+         this.exitApp = function() {
             if (confirm("Are you sure you want to exit?")) {
                 window.open('', '_self').close();
             }
@@ -139,8 +139,6 @@
         this.exitPlayerView = function() {
             this.loadingSpinner.hide.all();
 
-            // incase this was a livestream we need to clear the livestream updater
-            clearTimeout(this.liveUpdater);
             if (this.subCategoryView) {
                 this.transitionFromPlayerToSubCategory();
             } else {
@@ -156,7 +154,7 @@
          * will handle all key events
          * @param {Event} e
          */
-        this.handleButton = function(e) {
+         this.handleButton = function(e) {
             //TODO: hijack button events when error dialog is active. We may not need special logic if we set dialog view to currentView.
             //Pending implementation detail.
             if (this.currentView) {
@@ -169,7 +167,7 @@
         /**
          * Handle touch events
          */
-        this.handleTouch = function(e) {
+         this.handleTouch = function(e) {
             if (e.type === 'swipe') {
                 if ($("#left-nav-list-container").hasClass('leftnav-menulist-collapsed')) {
                     this.currentView = this.oneDView;
@@ -185,25 +183,25 @@
          * IAP Purchase Flow 
          *
          **************************/
-        this.initializeEntitlementView = function() {
+         this.initializeEntitlementView = function() {
             var entitlementView = this.entitlementView = new EntitlementView();
 
             /**
              * Event Handler - Handle leaving the entitlement view
              */
-            entitlementView.on('exit', function() {
+             entitlementView.on('exit', function() {
                 this.transitionOutOfEntitlementView();
             }, this);
 
-            entitlementView.render(app.$appContainer);
-        };
+             entitlementView.render(app.$appContainer);
+         };
 
         /***************************
          *
          * Left Nav View Object
          *
          **************************/
-        this.initializeLeftNavView = function() {
+         this.initializeLeftNavView = function() {
 
             var leftNavView = this.leftNavView = new LeftNavView();
             if (this.showSearch) {
@@ -214,7 +212,7 @@
              * Event Handler - Select menu item
              * @param {Number} index the index of the selected item
              */
-            leftNavView.on('select', function(index) {
+             leftNavView.on('select', function(index) {
                 if (!this.showSearch || index !== 0) {
                     //remove the contents of the oneDView
                     this.oneDView.remove();
@@ -260,7 +258,7 @@
             /**
              * Event Handler - deselect leftnav view
              */
-            leftNavView.on('deselect', function() {
+             leftNavView.on('deselect', function() {
                 this.transitionFromLefNavToOneD();
                 if (this.oneDView.noItems) {
                     this.exitApp();
@@ -270,12 +268,12 @@
             /**
              * Event Handler - exit the left nav back to oneD
              */
-            leftNavView.on('exit', function() {
+             leftNavView.on('exit', function() {
                 this.leftNavView.collapse();
                 this.transitionToLeftNavView();
             }, this);
 
-            if (this.showSearch) {
+             if (this.showSearch) {
                 this.searchInputView.on('searchQueryEntered', function() {
                     if (this.leftNavView.currSelectedIndex === 0) {
                         this.leftNavView.searchUpdated = true;
@@ -287,7 +285,7 @@
             /**
              * Event Handler - Make this the active view
              */
-            leftNavView.on('makeActive', function() {
+             leftNavView.on('makeActive', function() {
                 this.transitionToExpandedLeftNavView();
             }, this);
 
@@ -295,7 +293,7 @@
              * Event Handler - Change index of currently selected menu item 
              * @param {Number} index the index of the selected item
              */
-            leftNavView.on('indexChange', function(index) {
+             leftNavView.on('indexChange', function(index) {
                 //set the newly selected category index
                 if (this.showSearch && index === 0) {
                     this.searchInputView.select();
@@ -316,7 +314,7 @@
              * Event Handler - When the left nav is loaded remove the 
              *                 app overlay until the content is loaded
              */
-            leftNavView.on('loadComplete', function() {
+             leftNavView.on('loadComplete', function() {
                 this.loadingSpinner.hide.overlay();
             }, this);
 
@@ -336,7 +334,7 @@
          * One D View 
          *
          **************************/
-        this.initializeOneDView = function() {
+         this.initializeOneDView = function() {
             // create and set up the 1D view
             var oneDView = this.oneDView = new OneDView();
 
@@ -344,15 +342,11 @@
              * Event Handler - Select shoveler item
              * @param {Number} index the index of the selected item
              */
-            oneDView.on('select', function(index) {
+             oneDView.on('select', function(index) {
                 this.data.setCurrentItem(index);
                 if (this.categoryData[index].type === "subcategory") {
                     this.transitionToSubCategory(this.categoryData, index);
-                } else if (this.categoryData[index].type === "video-live" && !this.categoryData[index].isLiveNow) {
-                    alert("This video is not yet available.");
-                    buttons.resync();
                 } else {
-                    this.createLiveStreamUpdater(this.categoryData, index);
                     this.transitionToPlayer(this.categoryData, index);
                 }
             }, this);
@@ -360,7 +354,7 @@
             /** 
              * Event Handler - No content found for oneD event
              */
-            oneDView.on('noContent', function() {
+             oneDView.on('noContent', function() {
                 window.setTimeout(function() {
                     this.loadingSpinner.hide.spinner();
                     this.transitionToLeftNavView();
@@ -372,7 +366,7 @@
              * Go back to the left-nav menu list
              * @param {String} direction keypress direction
              */
-            oneDView.on('bounce', function(dir) {
+             oneDView.on('bounce', function(dir) {
                 if (dir === buttons.DOWN) {
                     if (this.settingsParams.entitlement) {
                         this.transitionToEntitlementView();
@@ -385,7 +379,7 @@
             /**
              * Exit the application if they go back from the oneD view
              */
-            oneDView.on('exit', function() {
+             oneDView.on('exit', function() {
                 this.exitApp();
             }, this);
 
@@ -393,7 +387,7 @@
              * Event Handler - Load Complete 
              * @param {Number} index the index of the selected item
              */
-            oneDView.on('loadComplete', function() {
+             oneDView.on('loadComplete', function() {
                 this.loadingSpinner.hide.spinner();
                 handleDeviceOrientation();
             }, this);
@@ -402,8 +396,10 @@
              * Success Callback handler for category data request
              * @param {Object} categoryData
              */
-            var successCallback = function(categoryData) {
+             var successCallback = function(categoryData) {
+
                 this.succeededCategoryIndex = this.leftNavView.confirmedSelection;
+                document.body.style.background = 'url(\'assets/'+ this.succeededCategoryIndex + '.jpg\')';
                 this.categoryData = categoryData;
                 $("#one-D-view-item-elements").remove();
                 oneDView.render(this.$appContainer, categoryData, this.settingsParams.displayButtons);
@@ -412,7 +408,7 @@
             /**
              * Get data set for newly-selected category
              */
-            oneDView.updateCategoryFromSearch = function(searchTerm) {
+             oneDView.updateCategoryFromSearch = function(searchTerm) {
                 app.data.getDataFromSearch(searchTerm, successCallback);
             }.bind(this);
 
@@ -446,14 +442,10 @@
              * Event Handler - Select shoveler item
              * @param {Number} index the index of the selected item
              */
-            subCategoryView.on('select', function(index) {
+             subCategoryView.on('select', function(index) {
                 if (this.subCategoryView.data[index].type === "subcategory") {
                     this.transitionToSubCategory(this.subCategoryView.data, index);
-                } else if (this.subCategoryView.data[index].type === "video-live" && !this.subCategoryView.data[index].isLiveNow) {
-                    alert("This video is not yet available.");
-                    buttons.resync();
                 } else {
-                    this.createLiveStreamUpdater(this.subCategoryView.data, index);
                     this.transitionToPlayer(this.subCategoryView.data, index);
                 }
             }, this);
@@ -461,7 +453,7 @@
             /**
              * Go back to the left-nav menu list if the user presses back
              */
-            subCategoryView.on('exit', function() {
+             subCategoryView.on('exit', function() {
                 this.subCategoryView.remove();
                 this.subCategoryView = null;
                 if (this.subCategoryStack && this.subCategoryStack.length > 0) {
@@ -475,50 +467,23 @@
                 }
 
             }, this);
-        }.bind(this);
+         }.bind(this);
 
         /**
          * Change to subcategory
          * @param {Object} data subcategory
          * @param {Number} index the index of the category
          */
-        this.transitionToSubCategory = function(data, index) {
+         this.transitionToSubCategory = function(data, index) {
             app.data.setCurrentSubCategory(data[index]);
             app.data.getSubCategoryData(this.openSubCategory);
-        }.bind(this);
-
-        /** 
-         * Sets up the update function for changing the live stream title and description when the content changes on it.
-         * @param {Object} data to get the updated information from
-         * @param {Number} current index what is playing
-         */
-        this.createLiveStreamUpdater = function(data, index) {
-            if (index + 1 < data.length) {
-                var nextIndex = index + 1;
-                if (data[nextIndex].type === "video-live") {
-                    var startTime = new Date(data[nextIndex].startTime).getTime();
-                    var currTime = new Date().getTime();
-                    var updateTime = startTime - currTime;
-                    this.liveUpdater = setTimeout(function() {
-                        this.updateLiveStream(data, nextIndex);
-                    }.bind(this), updateTime);
-                }
-            }
-        }.bind(this);
-
-        /* Update the title and description of the live stream when the time has come and set up the next updator */
-        this.updateLiveStream = function(data, index) {
-            if (this.playerView) {
-                this.playerView.updateTitleAndDescription(data[index].title, data[index].description);
-            }
-            this.createLiveStreamUpdater(data, index);
         }.bind(this);
 
         /**
          * loadingSpinner Object 
          * Used to show/hide the loading spinner and app overlay
          */
-        this.loadingSpinner = {
+         this.loadingSpinner = {
             show: {
                 overlay: function() {
                     $('#app-overlay').fadeIn(250);
@@ -529,6 +494,7 @@
                 all: function() {
                     this.overlay();
                     this.spinner();
+                    buttons.suspend();
                 }
             },
 
@@ -542,6 +508,7 @@
                 all: function() {
                     this.overlay();
                     this.spinner();
+                    buttons.reset();
                 }
             },
         };
@@ -550,14 +517,14 @@
          * Hide application header bar - typically used
          * when another view takes over the screen (i.e. player)
          */
-        this.hideHeaderBar = function() {
+         this.hideHeaderBar = function() {
             $("#app-header-bar").hide();
         };
 
         /**
          * Show application header bar 
          */
-        this.showHeaderBar = function() {
+         this.showHeaderBar = function() {
             $("#app-header-bar").show();
         };
 
@@ -569,7 +536,7 @@
         /**
          * Set the UI appropriately for the left-nav view
          */
-        this.transitionToLeftNavView = function() {
+         this.transitionToLeftNavView = function() {
             this.selectView(this.leftNavView);
             this.leftNavView.setHighlightedElement();
 
@@ -580,7 +547,7 @@
         /**
          * Set the UI appropriately for the entitlement view
          */
-        this.transitionToEntitlementView = function() {
+         this.transitionToEntitlementView = function() {
             this.selectView(this.entitlementView);
 
             //handle content buttons
@@ -593,7 +560,7 @@
         /**
          * Set the UI back to the oneDView 
          */
-        this.transitionOutOfEntitlementView = function() {
+         this.transitionOutOfEntitlementView = function() {
             this.selectView(this.oneDView);
 
             //set active view in the oneDView
@@ -607,7 +574,7 @@
          * For touch there is no need to select the chosen left-nav
          * item, so we go directly to the expanded view
          */
-        this.transitionToExpandedLeftNavView = function() {
+         this.transitionToExpandedLeftNavView = function() {
             this.selectView(this.leftNavView);
 
             //expand the left nav
@@ -620,7 +587,7 @@
         /**
          * Transition from left nav to the oneD view
          */
-        this.transitionFromLefNavToOneD = function() {
+         this.transitionFromLefNavToOneD = function() {
             if (this.oneDView.noItems) {
                 this.leftNavView.setHighlightedElement();
                 return;
@@ -635,7 +602,7 @@
         /**
          * Transition from player view to one-D view 
          */
-        this.transitionFromPlayerToOneD = function() {
+         this.transitionFromPlayerToOneD = function() {
             this.selectView(this.oneDView);
             if (this.playerView) {
                 this.playerView.off('videoStatus', this.handleVideoStatus, this);
@@ -651,7 +618,7 @@
         /**
          * Transition from player view to SubCategory view 
          */
-        this.transitionFromPlayerToSubCategory = function() {
+         this.transitionFromPlayerToSubCategory = function() {
             this.selectView(this.subCategoryView);
             if (this.playerView) {
                 this.playerView.off('videoStatus', this.handleVideoStatus, this);
@@ -667,10 +634,10 @@
          * @param {Array} data of current play list
          * @param {integer} index of currently selected item
          */
-        this.transitionToPlayer = function(data, index) {
+         this.transitionToPlayer = function(data, index) {
             var playerView;
             this.playerSpinnerHidden = false;
-            if (this.settingsParams.PlaylistView && data[index].type !== "video-live") {
+            if (this.settingsParams.PlaylistView) {
                 playerView = this.playerView = new this.settingsParams.PlaylistView(this.settingsParams);
             } else {
                 playerView = this.playerView = new this.settingsParams.PlayerView(this.settingsParams);
@@ -703,10 +670,10 @@
 
                 switch (errType) {
                     case ErrorTypes.PLAYER_ERROR:
-                        var buttons = this.createOkButtonForErrorDialog(this.exitAppCallback);
-                        errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
-                        this.transitionToErrorDialog(errorDialog);
-                        break;
+                    var buttons = this.createOkButtonForErrorDialog(this.exitAppCallback);
+                    errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
+                    this.transitionToErrorDialog(errorDialog);
+                    break;
                     case ErrorTypes.CONTENT_SRC_ERROR:
                     case ErrorTypes.CONTENT_DECODE_ERROR:
                     case ErrorTypes.VIDEO_NOT_FOUND:
@@ -714,14 +681,14 @@
                     case ErrorTypes.NETWORK_ERROR:
                     case ErrorTypes.HTML5_PLAYER_ERROR:
                     case ErrorTypes.EMBEDDED_PLAYER_ERROR:
-                        var buttons = this.createButtonsForErrorDialog(this.playerErrorOkCallback, this.playerErrorRetryCallback);
-                        errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
-                        this.transitionToErrorDialog(errorDialog);
-                        break;
+                    var buttons = this.createButtonsForErrorDialog(this.playerErrorOkCallback, this.playerErrorRetryCallback);
+                    errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
+                    this.transitionToErrorDialog(errorDialog);
+                    break;
                     default:
-                        errType.errToDev = "An unknown error occurred in the player adapter";
-                        errType.errToUser = "There is an error with the player.";
-                        break;
+                    errType.errToDev = "An unknown error occurred in the player adapter";
+                    errType.errToUser = "There is an error with the player.";
+                    break;
                 }
                 errorHandler.writeToConsole(errType, errType.errToDev, errStack);
                 errorHandler.informDev(errType, errType.errToDev, errStack);
@@ -733,7 +700,7 @@
         /**
          * Apps player status handler, currently just checks for playing and hides spinner and turns off the handler.
          */
-        this.handleVideoStatus = function(currTime, duration, type) {
+         this.handleVideoStatus = function(currTime, duration, type) {
             if (!this.playerSpinnerHidden && type === "playing") {
                 this.loadingSpinner.hide.all();
                 this.playerSpinnerHidden = true;
@@ -932,45 +899,45 @@
                     errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
                     this.transitionToErrorDialog(errorDialog);
                     break;
-                case ErrorTypes.CATEGORY_FEED_ERROR:
-                case ErrorTypes.CATEGORY_PARSING_ERROR:
-                case ErrorTypes.CATEGORY_FEED_TIMEOUT:
-                case ErrorTypes.CATEGORY_NETWORK_ERROR:
+                    case ErrorTypes.CATEGORY_FEED_ERROR:
+                    case ErrorTypes.CATEGORY_PARSING_ERROR:
+                    case ErrorTypes.CATEGORY_FEED_TIMEOUT:
+                    case ErrorTypes.CATEGORY_NETWORK_ERROR:
                     buttons = this.createButtonsForErrorDialog(this.categoryErrorOkCallback, this.categoryErrorRetryCallback);
                     errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
                     this.transitionToErrorDialog(errorDialog);
                     break;
-                case ErrorTypes.SUBCATEGORY_ERROR:
-                case ErrorTypes.SUBCATEGORY_PARSING_ERROR:
-                case ErrorTypes.SUBCATEGORY_TIMEOUT:
-                case ErrorTypes.SUBCATEGORY_NETWORK_ERROR:
+                    case ErrorTypes.SUBCATEGORY_ERROR:
+                    case ErrorTypes.SUBCATEGORY_PARSING_ERROR:
+                    case ErrorTypes.SUBCATEGORY_TIMEOUT:
+                    case ErrorTypes.SUBCATEGORY_NETWORK_ERROR:
                     buttons = this.createButtonsForErrorDialog(this.subCategoryErrorOkCallback, this.subCategoryErrorRetryCallback);
                     errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
                     this.transitionToErrorDialog(errorDialog);
                     break;
-                case ErrorTypes.SEARCH_ERROR:
-                case ErrorTypes.SEARCH_PARSING_ERROR:
-                case ErrorTypes.SEARCH_TIMEOUT:
-                case ErrorTypes.SEARCH_NETWORK_ERROR:
+                    case ErrorTypes.SEARCH_ERROR:
+                    case ErrorTypes.SEARCH_PARSING_ERROR:
+                    case ErrorTypes.SEARCH_TIMEOUT:
+                    case ErrorTypes.SEARCH_NETWORK_ERROR:
                     buttons = this.createButtonsForErrorDialog(this.searchErrorOkCallback, this.searchErrorRetryCallback);
                     errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
                     this.transitionToErrorDialog(errorDialog);
                     break;
-                case ErrorTypes.TOKEN_ERROR:
+                    case ErrorTypes.TOKEN_ERROR:
                     buttons = this.createOkButtonForErrorDialog(this.exitAppCallback);
                     errorDialog = errorHandler.createErrorDialog(errType.errTitle, errType.errToUser, buttons);
                     this.transitionToErrorDialog(errorDialog);
                     break;
-                default:
+                    default:
                     //won't show an error dialog for unknown errors, so that users don't see many bad error messages
                     errType.errToDev = "An unknown error occurred in the data model adapter";
                     errType.errToUser = "There is an error with the data.";
                     break;
 
-            }
-            errorHandler.writeToConsole(errType, errType.errToDev, errStack);
-            errorHandler.informDev(errType, errType.errToDev, errStack);
-        }.bind(this));
+                }
+                errorHandler.writeToConsole(errType, errType.errToDev, errStack);
+                errorHandler.informDev(errType, errType.errToDev, errStack);
+            }.bind(this));
 
         this.makeInitialDataCall();
     }

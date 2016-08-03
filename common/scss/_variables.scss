@@ -13,13 +13,6 @@
  *
  */
 @font-face {
-  font-family: 'Raleway-ExtraLight';
-  font-style: normal;
-  font-weight: 200;
-  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-@font-face {
   font-family: 'Raleway-Light';
   font-style: normal;
   font-weight: 300;
@@ -33,10 +26,24 @@
   src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v11/CcKI4k9un7TZVWzRVT-T8_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
+@font-face {
+  font-family: 'Raleway-ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(https://fonts.gstatic.com/s/ubuntu/v9/sDGTilo5QRsfWu6Yc11AXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
 //
 //Images
 //
-$img-app-background : url('assets/bg_app.jpg') !default;
+
 $img-icon-leftnav   : url('assets/icon_leftnav_arrowDown.png') !default;
 $img-icon-search    : url('assets/search.png') !default;
 $img-icon-lock      : url('assets/icon_lock.png') !default;
@@ -46,8 +53,8 @@ $img-nextvideo-preview-play   : url('assets/btn_previewPlay.png') !default;
 $img-skip-indicator : url('assets/skip_indicator.png') !default;
 $img-left-arrow     : url('assets/icon_subcat_arrowLeft.png') !default;
 $img-subcat-bg     : url('assets/bg_subcat.png') !default;
-$img-live     : url('assets/live.png') !default;
 $img-content-loader-spinner : url('assets/loader.png') !default;
+$img-overlay-bg: url('assets/bg_overlay.png') !default;
 
 //
 //Fonts - used by FireTV
@@ -57,10 +64,10 @@ $img-content-loader-spinner : url('assets/loader.png') !default;
 $font-base-size : 20pt !default;
 
 //font-family
-$font-family-light   : 'Raleway-ExtraLight', sans-serif !default;
-$font-family-medium  : 'Raleway-Light', sans-serif !default;
-$font-family-bold    : 'Raleway-Medium', sans-serif !default;
-
+$font-family-light   : 'Raleway-Light', sans-serif !default;
+$font-family-medium  : 'Raleway-Medium', sans-serif !default;
+$font-family-bold    : 'Raleway-ExtraBold', sans-serif !default;
+$font-family-player    : 'Ubuntu', sans-serif !default;
 
 //Colors
 //
@@ -68,7 +75,6 @@ $font-family-bold    : 'Raleway-Medium', sans-serif !default;
 $color-app-base-bg   : #5a656f !default;
 $color-app-header-bg : transparent !default;
 
-$img-overlay-bg: url('assets/bg_overlay.png') !default;
 $color-overlay-bg   : #fff !default;
 $color-overlay-text : #e8e8e8 !default;
 
@@ -84,10 +90,13 @@ $color-dialog-entitlement-text  : #949393;
 $color-dialog-entitlement-price : #464646;
 $color-dialog-button-hightlight-text : black;
 
-$color-title-text : #e8e8e8 !default;
 $color-meta-primary-text : #e8e8e8 !default;
-$color-meta-secondary-text: #b9bbbd !default;
+$color-meta-secondary-text: #e8e8e8 !default;
+$color-meta-primary-text-player : #696969 !default;
+$color-meta-secondary-text-player: #696969 !default;
+$color-title-text : #e8e8e8 !default;
 $color-description-text : #e8e8e8 !default;
+
 $color-box-shadow : rgba(0,0,0,0.44) !default;
 
 $color-menu-base-bg : rgba(#000000, 0.9) !default;
@@ -112,14 +121,13 @@ $color-btn-selected-border: #ffffff !default;
 
 $color-spinner-bg : #394149 !default;
 
-$color-player-controls-bg: rgba(#000000, 0.8) !default;
-$color-timeline-border : #25435a !default;
-$color-timeline-bg   : #707070 !default;
+$color-player-controls-bg: rgba(#E9EEF2, 0.9) !default;
+$color-timeline-border :  #a9a9a9 !default;
+$color-timeline-bg   :  #a9a9a9 !default;
 $color-playhead-border : #394149 !default;
-$color-playhead-bg   : #e8e8e8 !default;
+$color-playhead-bg   : #1e90ff !default;
 
 $color-thumbnail-border: #ffffff !default;
-$color-time-live-text: #FF704D !default;
 $color-time-upcoming-text: #66E066 !default;
 
 

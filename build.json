@@ -12,17 +12,15 @@
         "common/images/icon_subcat_arrowLeft.png",
         "common/images/bg_app.jpg",
         "common/images/bg_subcat.png",
-        "common/images/btn_pause.png",
-        "common/images/btn_back.png",
         "common/images/logo.png",
         "common/images/search.png",
         "common/images/default-image.png",
         "common/images/forward-arrow.png",
         "common/images/rewind-arrow.png",
         "common/images/skip_indicator.png",
-        "common/images/btn_previewPlay.png",
         "common/images/loader.png",
-        "common/images/bg_overlay.png"
+        "common/images/bg_overlay.png",
+        "common/assets/images/*.jpg"
     ],
     "appJS": [
         "common/js/util.js",
@@ -37,7 +35,6 @@
         "common/js/shoveler-view.js",
         "common/js/subcat-view.js",
         "common/js/player-view.js",
-        "common/js/playlist-player-view.js",
         "common/js/controls-view.js",
         "common/js/search-input-view.js",
         "common/js/model-json.js",
@@ -46,6 +43,7 @@
     ],
     "libJS": [
         "libs/handlebars-v1.3.0.js",
-        "libs/jquery.js"
+        "libs/jquery.js",
+        "libs/hls.min.js"
     ]
 }

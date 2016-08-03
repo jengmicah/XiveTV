@@ -133,8 +133,13 @@
 
 <!-- Custom Controls Template -->
 <script id="controls-view-template" type="text/x-handlebars-template">
+    <img class="player-watermark" src="assets/logo.png">
     <div class="player-pause-button">
-        <img class="player-pause-indicator" src="assets/btn_pause.png"/>
+        <!-- <img class="player-pause-indicator" src="assets/btn_pause.png"/> -->
+        <i class="fa fa-pause player-pause-indicator" aria-hidden="true"></i>
+    </div>
+    <div class="player-play-button">
+        <i class="fa fa-play player-play-indicator" aria-hidden="true"></i>
     </div>
     <div class="player-controls-container">
         <div class="player-controls-timeline-container">
@@ -142,42 +147,25 @@
                 <div class="player-controls-timeline-playhead"></div>
             </div>
             <div id = "forward-indicator" class="player-controls-skip-indicator">
-                <img src="assets/forward-arrow.png" />
-                <span class = "player-controls-skip-symbol">+</span>
+                <!-- <img src="assets/forward-arrow.png" /> -->
+                <i class="fa fa-forward" aria-hidden="true"></i>
+<!--                 <span class = "player-controls-skip-symbol">+</span>
                 <span class = "player-controls-skip-number">10</span>
-                <span class = "player-controls-skip-text">s</span>
+                <span class = "player-controls-skip-text">s</span> -->
             </div>
             <div id = "rewind-indicator" class="player-controls-skip-indicator">
-                <img src="assets/rewind-arrow.png" />
-                <span class = "player-controls-skip-symbol">-</span>
+                <!-- <img src="assets/rewind-arrow.png" /> -->
+                <i class="fa fa-backward" aria-hidden="true"></i>
+        <!--         <span class = "player-controls-skip-symbol">-</span>
                 <span class = "player-controls-skip-number">10</span>
-                <span class = "player-controls-skip-text">s</span>
+                <span class = "player-controls-skip-text">s</span> -->
             </div>
         </div>
         <div class="player-controls-timestamp-curtime">00:00</div>
         <div class="player-controls-timestamp-totaltime"></div>
-        <div class="player-controls-content-title">Content Title</div>
-        <div class="player-controls-button-back"><img class="player-back-button" src="assets/btn_back.png" /></div>
-        <div class="player-controls-content-subtitle">Subtitle</div>
-    </div>
-</script>
-
-<!-- Custom Live Controls Template -->
-<script id="controls-live-view-template" type="text/x-handlebars-template">
-    <div class="player-pause-button">
-        <img class="player-pause-indicator" src="assets/btn_pause.png"/>
-    </div>
-    <div class="player-controls-container">
-        <div class="player-controls-timeline-container">
-            <div class="player-controls-timeline">
-            </div>
-        </div>
-        <div class="player-controls-timestamp-curtime">
-            <img src="assets/live.png"/>
-        </div>
-        <div class="player-controls-content-title">Content Title</div>
-        <div class="player-controls-button-back"><img class="player-back-button" src="assets/btn_back.png" /></div>
-        <div class="player-controls-content-subtitle">Subtitle</div>
+        <!-- <div class="player-controls-content-title">Content Title</div> -->
+        <!-- <div class="player-controls-button-back"><img class="player-back-button" src="assets/btn_back.png" /></div> -->
+        <!-- <div class="player-controls-content-subtitle">Subtitle</div> -->
     </div>
 </script>
 
@@ -190,9 +178,8 @@
     </div>
 </script>
 
-<!-- build:js -->
-<!-- gulp will insert scripts for .js file specified in build.json here, or minified / combined / inlined versions -->
-<!-- endbuild -->
+<script src="https://use.fontawesome.com/aebfcbb97c.js"></script>
+<script type="text/javascript" src="all.min.js"></script>
 
 </body>
 </html>

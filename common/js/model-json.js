@@ -36,13 +36,14 @@
                 url: appSettings.dataURL,
                 async: true,
                 crossDomain: true,
+                cache: true,
                 method: "GET",
                 headers: {
                     Authorization: "eyJhdXRoVG9rZW4iOiIiLCJwYXNzd29yZCI6IiIsImF1dGhrZXkiOjEyMzQ1Njc4OSwidXNlcklkIjoiIn0"
                 },
                 timeout: this.TIMEOUT,
                 success: function() {
-                    console.log("Collection List Loaded");
+                    // console.log("Collection List Loaded");
                     dataLoadedCallback(arguments[0]);
                 }.bind(this),
                 error: function(jqXHR, textStatus) {
@@ -70,7 +71,7 @@
         this.loadCollections = function(dataLoadedCallback, collectionList) {
             var queue = []; // Holds the dynamic data for the ajax calls
             for (var i = 0; i < collectionList.length; i++) {
-                queue.push("https://cms.xivetv.com/api/v3/collection/" + collectionList[i].collectionId);
+                queue.push(appSettings.dataURL + "/" + collectionList[i].collectionId);
             }
 
             var requests = [];
@@ -79,13 +80,14 @@
                     url: queue[i],
                     async: true,
                     crossDomain: true,
+                    cache: true,
                     method: "GET",
                     headers: {
                         Authorization: "eyJhdXRoVG9rZW4iOiIiLCJwYXNzd29yZCI6IiIsImF1dGhrZXkiOjEyMzQ1Njc4OSwidXNlcklkIjoiIn0"
                     },
                     timeout: this.TIMEOUT,
                     success: function() {
-                        console.log(arguments[0].responseData.title + " Loaded");
+                        // console.log(arguments[0].responseData.title + " Loaded");
                         this.handleCollections(arguments[0]);
                     }.bind(this),
                     error: function(jqXHR, textStatus) {
@@ -113,14 +115,9 @@
                 for (var i = 0; i < element.collectionFolder.length; i++) { // Once all the calls are made, fill the left-nav with titles
                     element.categoryData[i] = element.collectionFolder[i].title;
                 }
-                dataLoadedCallback();
+                dataLoadedCallback(); // Tell app.js that data is loaded
             });
         }.bind(this);
-
-        /**
-         * Handles requests that contain json data
-         * @param {Object} collectionDetails data returned from request
-         */
 
         this.handleCollections = function(collectionDetails) {
             this.insert(collectionDetails.responseData, this.comparer(), "series_collection_order", this.collectionFolder);

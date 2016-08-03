@@ -402,7 +402,7 @@
             for (i = start; i < this.$rowElements.length; i++) {
                 if (this.elementWidths[i] > 0) {
                     this.$rowElements[i].style[this.transformStyle] = "translate3d(" + currX + "px,0,0px) scale(0.75)";
-                    this.$rowElements[i].style.opacity = "0.5";
+                    this.$rowElements[i].style.opacity = "0.75";
                 } else {
                     //keep element offscreen if we have no width yet
                     this.$rowElements[i].style[this.transformStyle] = "translate3d("+ this.transformLimit +" +px,0,0px)";
@@ -432,7 +432,7 @@
 
                 if (this.elementWidths[i] > 0) {
                     this.$rowElements[i].style[this.transformStyle] = itemTrans;
-                    this.$rowElements[i].style.opacity = "0.5";
+                    this.$rowElements[i].style.opacity = "0.75";
                 } else {
                     //keep element offscreen if we have no width yet
                     this.$rowElements[i].style[this.transformStyle] = "translate3d("+ (-this.transformLimit) + "px,0,0px)";
