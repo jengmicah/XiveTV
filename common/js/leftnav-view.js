@@ -4,19 +4,19 @@
  * left side of the screen
  * 
  */
-(function (exports) {
+ (function (exports) {
     "use strict";
 
     //gloabl constants
     var CONTAINER_SCROLLING_LIST    = "#left-nav-scrolling-list",
-        
-        CONTAINER_MAIN              = "#left-nav-list-container",
-        
-        CLASS_MENU_ITEM_SELECTED    = "leftnav-list-item-selected",
+    
+    CONTAINER_MAIN              = "#left-nav-list-container",
+    
+    CLASS_MENU_ITEM_SELECTED    = "leftnav-list-item-selected",
 
-        CLASS_MENU_ITEM_HIGHLIGHTED = "leftnav-list-item-highlighted",
+    CLASS_MENU_ITEM_HIGHLIGHTED = "leftnav-list-item-highlighted",
 
-        CLASS_MENU_ITEM_CHOSEN      = "leftnav-list-item-chosen";
+    CLASS_MENU_ITEM_CHOSEN      = "leftnav-list-item-chosen";
 
    /**
     * @class LeftNavView
@@ -42,10 +42,12 @@
         this.$menuItems            = [];
 
         this.fadeOut = function() {
+            this.$el.css({"display":"none"});
             this.$el.fadeOut();
         };
 
         this.fadeIn = function() {
+            this.$el.css({"display":""});
             this.$el.fadeIn();
         };
         
@@ -59,7 +61,7 @@
         /**
          * Display the left nav view
          */
-        this.show = function () {
+         this.show = function () {
             this.$el.show();
         };
 
@@ -162,7 +164,7 @@
             } else {
                 this.setCurrentSelectedIndex($(e.target).parent().index());
                 this.confirmNavSelection();
-           }
+            }
         }.bind(this); 
 
         /**
@@ -171,7 +173,7 @@
          * @param {Array} catData category data
          * @param {integer} startIndex initial item to select
          */
-        this.render = function ($el, catData, startIndex) {
+         this.render = function ($el, catData, startIndex) {
             this.leftNavItems = catData;
             var leftNavStrings = [];
             for (var i = 0; i < catData.length; i++) {
@@ -186,6 +188,7 @@
             });
             $el.append(html);
             this.$el = $el.children().last();
+            this.$el.css({'transition':'0.5s'});
             this.$menuItems = $(CONTAINER_SCROLLING_LIST).children();
             for (i = 0; i < catData.length; i++) {
                 if (typeof catData[i] === "object") {
@@ -238,7 +241,7 @@
                             this.incrementCurrentSelectedIndex(-1);
                         // }
                         break;
-                    case buttons.DOWN:
+                        case buttons.DOWN:
                         // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(1);
                         // } else {
@@ -246,40 +249,40 @@
                         //     this.trigger('deselect');
                         // }
                         break;
-                    case buttons.RIGHT:
+                        case buttons.RIGHT:
                         // this.confirmNavSelection();
                         // break;
-                    case buttons.BACK:
+                        case buttons.BACK:
                         this.currSelectedIndex = this.confirmedSelection;
                         this.selectLeftNavItem();
                         this.collapse();
                         this.trigger('deselect');
                         break;
-                    case buttons.LEFT: break;
-                    case buttons.SELECT:
+                        case buttons.LEFT: break;
+                        case buttons.SELECT:
                         // if(!this.isDisplayed) {
                             // this.expand();
                             // break;
                         // }
                         this.confirmNavSelection();
                         break;
-                }
-            } else if (e.type === 'buttonrepeat') {
-                switch (e.keyCode) {
-                    case buttons.UP:
+                    }
+                } else if (e.type === 'buttonrepeat') {
+                    switch (e.keyCode) {
+                        case buttons.UP:
                         // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(-1);
                         // }
                         break;
-                    case buttons.DOWN:
+                        case buttons.DOWN:
                         // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(1);
                         // }
                         break;
+                    }
                 }
-           }
 
-        }.bind(this);
+            }.bind(this);
 
        /**
         * Increment the index of the currently selected item 

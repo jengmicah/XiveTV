@@ -3,13 +3,13 @@
  * Handles the display of buttons under the content description  
  * 
  */
-(function (exports) {
+ (function (exports) {
     "use strict";
 
     //constants
     var CLASS_BUTTON_STATIC = "detail-item-button-static",
 
-        CLASS_BUTTON_SELECTED = "detail-item-button-selected";
+    CLASS_BUTTON_SELECTED = "detail-item-button-selected";
 
    /**
     * @class ButtonView 
@@ -38,7 +38,7 @@
         /**
          * Display the button view
          */
-        this.show = function () {
+         this.show = function () {
             this.$el.show();
         };
 
@@ -113,7 +113,7 @@
          * @param {Array} buttonArr the buttons that need to be added
          * @param {Function} buttonCallbackHandler callback method for button selection 
          */
-        this.render = function ($el, buttonArr, buttonCallbackHandler) {
+         this.render = function ($el, buttonArr, buttonCallbackHandler) {
             // Build the left nav template and add its
             var html = utils.buildTemplate($("#button-view-template"), {
                 items:buttonArr 
@@ -122,6 +122,7 @@
             $el.append(html);
 
             this.$el = $el.children().last();
+            this.$el.css({'transition':'0.5s'});
             this.$buttons = $el.find(".detail-item-button-static");
 
             this.handleButtonCallback = buttonCallbackHandler;
@@ -142,29 +143,29 @@
             if (e.type === 'buttonpress') {
                 switch (e.keyCode) {
                     case buttons.UP:
-                        this.setStaticButton();
-                        this.trigger('exit');
-                        break;
+                    this.setStaticButton();
+                    this.trigger('exit');
+                    break;
 
                     case buttons.DOWN:
-                        break;
+                    break;
                     case buttons.LEFT:
-                        this.incrementCurrentSelectedIndex(-1);
-                        break;
+                    this.incrementCurrentSelectedIndex(-1);
+                    break;
                     case buttons.BACK:
-                        this.setStaticButton();
-                        this.trigger('exit');
-                        break;
+                    this.setStaticButton();
+                    this.trigger('exit');
+                    break;
                     case buttons.SELECT:
                         //do button action
                         this.handleButtonEvent();
                         break;
-                    case buttons.RIGHT:
+                        case buttons.RIGHT:
                         this.incrementCurrentSelectedIndex(1);
                         break;
+                    }
                 }
-           }
-        }.bind(this);
+            }.bind(this);
 
        /**
         * Get the currently selected button
@@ -200,7 +201,7 @@
             if(newIdx >= 0 && newIdx < this.$buttons.length) {
                 this.selectedButtonIndex = newIdx;
                 this.updateSelectedButton();
-             }
+            }
         };
 
     }

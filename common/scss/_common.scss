@@ -1,6 +1,4 @@
-/**
-* All of the common css rules for the entire template.
-*/
+
 
 * {
     box-sizing: border-box;
@@ -18,7 +16,7 @@ body {
     margin   : 0;
     font-size: $font-base-size;
     font-family : $font-family-light;
-    background: $color-app-base-bg;
+    background-color: $color-app-base-bg;
     background-repeat: no-repeat;
     background-origin: center;
     background-clip: center;
@@ -28,13 +26,15 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    border:none; outline:0;
-    @include transition(1s);
 }
 
 div {
   @include box-sizing(border-box);
 }
+
+html, body, div, p, i, span, p, img, ul, li, ol, h1, h2, h3 {
+    @include transition-duration(0.5s);
+} 
 
 //
 //Application Styles
@@ -51,19 +51,19 @@ div {
     width    : 25%;
     height   : 100%;
     background : $color-app-header-bg;
-    background: -webkit-linear-gradient(left, $color-app-header-bg , #414447); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, $color-app-header-bg #414447); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, $color-app-header-bg, #414447); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, $color-app-header-bg , #414447); /* Standard syntax */
+    background: -webkit-linear-gradient(left, $color-app-header-bg , rgba(#414447, 0.9)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, $color-app-header-bg rgba(#414447, 0.9)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, $color-app-header-bg, rgba(#414447, 0.9)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, $color-app-header-bg , rgba(#414447, 0.9)); /* Standard syntax */
     border-right: 10px solid #fff;
-    // @include box-shadow(5px 0px 10px rgba(#414447,0.9));
-        @include box-shadow(15px 0px 10px $color-box-shadow);
+    @include box-shadow(15px 0px 10px $color-box-shadow);
     z-index:99;
 }
 
 .app-logo {
     width:inherit;
     height:inherit;
+    @include transition(0.5s);
 }
 .app-logo img {
     position : absolute;
@@ -74,15 +74,40 @@ div {
 //
 // Left Nav Styles
 //
+
+#back {
+    position:absolute;
+    width:25%;
+    top:0;
+    left:0; 
+    height:100%;
+    opacity:0;
+    z-index:9999;
+    @include transition(0s);
+}
+#back i {
+    position:absolute;
+    font-size:100px;
+    color:#fff;
+    top:50%;
+    left:50%;
+    margin:auto;
+    @include transform(translate(-50%,-50%));
+}
+
 .leftnav-main-container {
     position : absolute;
     top    : 75px;
     left   : 0;
     height : 100%;
     width  : 25%;
-    margin : 0;
+    // margin : 0 25% 0 0;
     text-align:center;
     z-index:99;
+}
+
+.leftnav-main-container.slide {
+    margin-right:0;
 }
 
 .leftnav-menu-list {
@@ -90,7 +115,6 @@ div {
     width    : 100%;
     height   : 100%;
     padding  : 0px;
-    // overflow : hidden;
     background-color : transparent;
 }
 
@@ -126,7 +150,8 @@ div {
 .leftnav-list-item-static.leftnav-list-item-chosen.subcat-header {
     position: absolute;
     top: 148px;
-    width: 40%;
+    left:30%;
+    width: 50%;
     background: none;
     border: none;
 }
@@ -171,34 +196,6 @@ div {
     background-color : transparent;
 }
 
-.search-icon {
-    height : 50px;
-    width  : 50px;
-}
-
-.leftnav-search-box {
-    border : none;
-    width  : 100%;
-    color  : $color-menu-search-text;
-    padding-left : 140px;
-    background-image    : $img-icon-search;
-    background-position : 85px 30px;
-    background-size     : 40px 40px;
-    background-repeat   : no-repeat;
-    background-origin   : initial;
-    background-clip     : initial;
-    background-attachment : initial;
-    outline-width: 0;
-}
-
-.leftnav-search-box.leftnav-list-item-highlighted {
-    color     : $color-menu-item-highlight-text;
-    border-color: $color-menu-item-highlight-text;
-    border-style: solid;
-    border-width: 0;
-    background: $color-menu-item-highlight-bg $pos-right-leftnav-arrow-icon center;
-}
-
 
 //
 // Full Row View
@@ -236,42 +233,48 @@ div {
 
 .one-D-details-summary-text {
     position : absolute;
-    top      : 690px;
-    width    : 60%;
-    left     : $pos-left-content-position;
+    // top      : 700px;
+    bottom:70px;
+    width    : 75%;
+    height:28%;
+    left     : 25%;
     color    : $color-title-text;
     z-index:10;
+    text-align:center;
+    padding:auto 70px;
+    background:rgba(#000, 0.5);
+
     .one-D-summary-title {
-        line-height: 1.4;
         color       : $color-title-text;
         font-size   : 1.8em;
         font-family : $font-family-medium;
-        height      : 62px;
         overflow    : hidden;
-        margin-top  : 10px;
+        margin-top : 30px;
         @include display-box;
         @include box-orient(vertical);
         @include line-clamp(1);
     }
-    .one-D-summary-pubdate {
-        font-weight: 200;
-        height : 30px;
-        font-size: 1em;
-        font-family: $font-family-player;
-        color : $color-meta-secondary-text;
-        .time-upcoming {
-            color: $color-time-upcoming-text;
-        }
-    }
     .one-D-summary-description {
         color       : $color-description-text;
         font-style  : italic;
+        text-align:center;
+        margin:15px auto;
+        width:70%;
         font-size   : 1.1em;
         overflow    : hidden;
         align-items : center;
         @include display-box;
         @include box-orient(vertical);
-        @include line-clamp(2);
+        @include line-clamp(3);
+    }
+    .one-D-summary-pubdate {
+        font-family: $font-family-player;
+        font-weight: 200;
+        font-size:1.5em;
+        color : $color-meta-secondary-text;
+        .time-upcoming {
+            color: $color-time-upcoming-text;
+        }
     }
 }
 
@@ -388,13 +391,75 @@ div {
   height   : 100%;
 }
 
-.player-watermark {
+.pauseOverlay {
     position:absolute;
-    left:20px; top:20px;
-    width:200px;
-    z-index:10000;
-    opacity:0.7;
+    opacity:0.9;
+    z-index:101;
+    width:100vw;
+    height:100vh;
+    background:rgba(#000,0.8);
+    text-align:center;
+    margin-top:100%;
+    @include transition(0.5s);
 }
+
+.pauseOverlay.slide {
+    margin-top:0;
+}
+
+.pause-left {
+    position:absolute;
+    left:0;
+    padding:100px;
+    width:50%;
+    height:100%;
+}
+
+.pause-left-inner {
+    position:absolute;
+    width:100%;
+    left:0;
+}
+
+.player-watermark {
+    width:300px;
+}
+
+.pause-title {
+    margin: 50px 0;
+    color     : $color-description-text;
+    text-align:center;
+    font-size : 1.8em;
+}
+
+.pause-thumb {
+    color     : $color-description-text;
+    text-align:center;
+    font-size : 1.8em;
+}
+
+.pause-thumb img {
+    width:60%;
+}
+
+.pause-right {
+    position:absolute;
+    width:50%;
+    height:88%;
+    left:50%;
+}
+
+.pause-right span {
+    width:100%;
+    color       : $color-description-text;
+    font-size   : 1.3em;
+    position:absolute;
+    padding:100px;
+    left:0;
+    top:50%;
+    @include transform(translateY(-50%));
+}
+
 
 .player-content-video {
     position : absolute;
@@ -412,7 +477,7 @@ div {
     opacity  : 0;
     background-color : $color-player-controls-bg;
     @include transition(0.5s);
-    z-index: 100;
+    z-index: 102;
 }
 
 .player-controls-timeline-container {
@@ -546,9 +611,10 @@ div {
     position   : absolute;
     top        : 250px;
     left       : 50%;
-    transform: translateX(-50%);
     opacity    : 0;
+    @include transform(translateX(-50%));
     @include transition(0.25s);
+    z-index:105;
 }
 
 .player-pause-button i,
@@ -580,11 +646,11 @@ div {
 }
 
 .next-video-thumbnail {
-    height: 250px;
-    max-width: 425px;
+    height     : 250px;
+    max-width  : 425px;
     margin-left: 50px;
-    margin-top: 30px;
-    width: auto;
+    margin-top : 30px;
+    width      : auto;
     img {
         width : 100%;
         height: 100%;
@@ -593,16 +659,16 @@ div {
 }
 
 .next-video-thumbnail:after {
-    position : relative;
-    top      : -250px;
-    height   : 100%;
-    width    : 100%;
-    z-index  : 90;
-    content  : " ";
-    display  : block;
-    background-position : center;
-    background-repeat   : no-repeat;
-    background-image    : $img-nextvideo-preview-play;
+    position           : relative;
+    top                : -250px;
+    height             : 100%;
+    width              : 100%;
+    z-index            : 90;
+    content            : " ";
+    display            : block;
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-image   : $img-nextvideo-preview-play;
 }
 
 .next-video-playingtext {
@@ -611,22 +677,22 @@ div {
 }
 
 .next-video-title {
-    margin-left : 50px;
-    margin-top  : 30px;
-    color       : $color-title-text;
-    font-weight : lighter;
-    font-size       : 2.5em;
+    margin-left: 50px;
+    margin-top : 30px;
+    color      : $color-title-text;
+    font-weight: lighter;
+    font-size  : 2.5em;
     line-height: 1;
 }
 
 .next-video-description {
-    margin-top  : 30px;
-    margin-left : 50px;
-    overflow    : hidden;
-    font-size   :  1.1em;
-    color: $color-description-text;
-    text-overflow : ellipsis;
-    display       : -webkit-box;
+    margin-top   : 30px;
+    margin-left  : 50px;
+    overflow     : hidden;
+    font-size    :  1.1em;
+    color        : $color-description-text;
+    text-overflow: ellipsis;
+    display      : -webkit-box;
     @include line-clamp(5);
     @include box-orient(vertical)
 }
@@ -635,19 +701,19 @@ div {
 // Overlay and Spinner
 //
 .app-overlay-container {
-    position : absolute;
-    top      : 0;
-    left     : 0;
-    width    : 100%;
-    height   : 100%;
-    z-index  : 500;
-    background: $img-overlay-bg no-repeat center center fixed;
-    background-size : 100% 100%;
+    position               : absolute;
+    top                    : 0;
+    left                   : 0;
+    width                  : 100%;
+    height                 : 100%;
+    z-index                : 500;
+    background             : $img-overlay-bg no-repeat center center fixed;
+    background-size        : 100% 100%;
     -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    // background-color : $color-overlay-bg;
+    -moz-background-size   : cover;
+    -o-background-size     : cover;
+    background-size        : cover;
+    // background-color    : $color-overlay-bg;
 }
 
 .app-overlay-message {
@@ -657,36 +723,36 @@ div {
 }
 
 .spinnerParent {
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;left:0;
-    display: flex;
+    width          :100%;
+    height         :100%;
+    position       :absolute;
+    top            :0;left:0;
+    display        : flex;
     justify-content: center;
-    align-items: center;
+    align-items    : center;
 }
 
 .content-load-spinner {
-  position: relative;
-  background:$img-content-loader-spinner no-repeat;
+  position       : relative;
+  background     :$img-content-loader-spinner no-repeat;
   background-size: 200px;
-  width:200px;
-  height:200px;
-  z-index: 600;
-  opacity:0.6;
+  width          :200px;
+  height         :200px;
+  z-index        : 600;
+  opacity        :0.6;
   @include animation(spin 1.5s infinite linear);
 }
 
 .modal-dialog {
-  z-index: 650;
+  z-index         : 650;
   background-color: $color-app-dialog-bg;
-  color: $color-app-dialog-btn-text;
-  position: absolute;
-  left: 515px;
-  top: 30%;
-  width: 890px;
-  min-height: 500px;
-  padding: 60px;
+  color           : $color-app-dialog-btn-text;
+  position        : absolute;
+  left            : 515px;
+  top             : 30%;
+  width           : 890px;
+  min-height      : 500px;
+  padding         : 60px;
   .dialog-title {
     margin-bottom: 30px;
     font-size   : 48pt;

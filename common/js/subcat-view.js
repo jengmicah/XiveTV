@@ -52,10 +52,11 @@
         /**
          * Creates the subcategory view from the template and appends it to the given element
          */
-        this.render = function ($el, title, rowData, displayButtonsParam) {
+        this.render = function ($el, title, rowData, displayButtonsParam, subCatCallback) {
             var html = utils.buildTemplate($("#subcategory-view-template"), {"title": title});
             $el.append(html);
             this.$el = $el.children().last();
+            this.$el.css({'transition':'0.5s'});
 
             this.oneDView = new OneDView();
             this.oneDView.render(this.$el, rowData, displayButtonsParam);
@@ -92,6 +93,7 @@
             
             this.oneDView.on('loadComplete', function() {
                 this.trigger('loadComplete');
+                subCatCallback();
             }, this);
         };
 

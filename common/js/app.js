@@ -68,6 +68,15 @@
      *                 settingsParams.displayButtons {Boolean} flag that tells the app to display the buttons or not
      */
      function App(settingsParams) {
+        /**
+         * Handle the call to the model to get our data 
+         */
+         this.makeInitialDataCall = function() {
+            var element = this;
+            this.data.loadList(function() { // Once collections are loaded, load program details;
+                element.data.loadCollections(element.dataLoaded, arguments[0].responseData);
+            });
+        };
 
         //hold onto the app settings
         this.settingsParams = settingsParams;
@@ -76,15 +85,6 @@
         //main application container div
         this.$appContainer = $("#app-container");
 
-        /**
-         * Handle the call to the model to get our data 
-         */
-         this.makeInitialDataCall = function() {
-            var element = this;
-            this.data.loadList(function() { // Once collections are loaded, load program details;
-                element.data.loadCollections(element.dataLoaded, arguments[0].responseData); 
-            });
-        };
 
         /**
          * Callback from XHR to load the data model, this really starts the app UX
@@ -202,7 +202,6 @@
          *
          **************************/
          this.initializeLeftNavView = function() {
-
             var leftNavView = this.leftNavView = new LeftNavView();
             if (this.showSearch) {
                 this.searchInputView = new SearchInputView();
@@ -345,6 +344,7 @@
              oneDView.on('select', function(index) {
                 this.data.setCurrentItem(index);
                 if (this.categoryData[index].type === "subcategory") {
+                    this.loadingSpinner.show.spinner();
                     this.transitionToSubCategory(this.categoryData, index);
                 } else {
                     this.transitionToPlayer(this.categoryData, index);
@@ -397,9 +397,8 @@
              * @param {Object} categoryData
              */
              var successCallback = function(categoryData) {
-
                 this.succeededCategoryIndex = this.leftNavView.confirmedSelection;
-                document.body.style.background = 'url(\'assets/'+ this.succeededCategoryIndex + '.jpg\')';
+                document.body.style.background = 'url(\'assets/' + this.succeededCategoryIndex + '.jpg\')';
                 this.categoryData = categoryData;
                 $("#one-D-view-item-elements").remove();
                 oneDView.render(this.$appContainer, categoryData, this.settingsParams.displayButtons);
@@ -431,12 +430,16 @@
             }
             var subCategoryView = this.subCategoryView = new SubCategoryView();
             this.subCategoryView.data = data.contents;
+            var element = this;
+            subCategoryView.render(this.$appContainer, data.title, data.contents, this.settingsParams.displayButtons, function() {
+                subCategoryView.fadeIn();
+                element.loadingSpinner.hide.spinner(); // Callback from one-d render 'loadComplete' attribute
+            });
+            // subCategoryView.hide();
             this.oneDView.fadeOut();
             this.leftNavView.fadeOut();
-            subCategoryView.render(this.$appContainer, data.title, data.contents, this.settingsParams.displayButtons);
-            subCategoryView.hide();
-            subCategoryView.fadeIn();
             this.selectView(this.subCategoryView);
+            document.getElementById("back").style.opacity = '1';
 
             /** 
              * Event Handler - Select shoveler item
@@ -448,6 +451,7 @@
                 } else {
                     this.transitionToPlayer(this.subCategoryView.data, index);
                 }
+                document.getElementById("back").style.opacity = '0';
             }, this);
 
             /**
@@ -465,6 +469,7 @@
                     this.oneDView.fadeIn();
                     this.selectView(this.oneDView);
                 }
+                document.getElementById("back").style.opacity = '0';
             }, this);
          }.bind(this);
 
@@ -485,24 +490,28 @@
          this.loadingSpinner = {
             show: {
                 overlay: function() {
+                    buttons.suspend();
                     $('#app-overlay').fadeIn(250);
                 },
                 spinner: function() {
+                    buttons.suspend();
                     $('#app-loading-spinner').fadeIn(250);
                 },
                 all: function() {
+                    buttons.suspend();
                     this.overlay();
                     this.spinner();
-                    buttons.suspend();
                 }
             },
 
             hide: {
                 overlay: function() {
                     $('#app-overlay').fadeOut(250);
+                    buttons.reset();
                 },
                 spinner: function() {
                     $('#app-loading-spinner').fadeOut(250);
+                    buttons.reset();
                 },
                 all: function() {
                     this.overlay();
@@ -625,6 +634,7 @@
                 this.playerView = null;
             }
             this.subCategoryView.show();
+            document.getElementById("back").style.opacity = '1';
             this.showHeaderBar();
         };
 
@@ -636,11 +646,7 @@
          this.transitionToPlayer = function(data, index) {
             var playerView;
             this.playerSpinnerHidden = false;
-            if (this.settingsParams.PlaylistView) {
-                playerView = this.playerView = new this.settingsParams.PlaylistView(this.settingsParams);
-            } else {
-                playerView = this.playerView = new this.settingsParams.PlayerView(this.settingsParams);
-            }
+            playerView = this.playerView = new this.settingsParams.PlayerView(this.settingsParams);
             this.oneDView.hide();
             if (this.subCategoryView) {
                 this.subCategoryView.hide();
@@ -650,7 +656,7 @@
 
             //start the loader
             this.loadingSpinner.show.all();
-
+            
             playerView.on('exit', this.exitPlayerView, this);
 
             playerView.on('indexChange', function(index) {
@@ -811,7 +817,7 @@
         //initial feed error callback function for the retry button
         this.initialFeedErrorRetryCallback = function() {
             this.transitionFromErrorDialog();
-            this.data.loadInitialData(this.dataLoaded);
+            this.makeInitialDataCall();
         }.bind(this);
 
         //category error callback function for the OK button

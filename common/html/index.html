@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-<!-- build:template_info -->
-<!-- endbuild -->
 <html lang='en'>
 <head>
     <title>
@@ -28,27 +25,28 @@
  </head>
 
  <body>
-    <div id="app-container" class="app-main-container">
-    </div>
+   <div id="app-container" class="app-main-container">
+   </div>
 
-    <!-- Spinner for startup -->
-    <div id="app-overlay" class="app-overlay-container">
-        <div id="overlay-message" class="app-overlay-message"></div>
+   <!-- Spinner for startup -->
+   <div id="app-overlay" class="app-overlay-container">
+    <div id="overlay-message" class="app-overlay-message"></div>
+</div>
+<div class="spinnerParent">
+    <div id="app-loading-spinner" class="content-load-spinner">
     </div>
-    <div class="spinnerParent">
-        <div id="app-loading-spinner" class="content-load-spinner">
-        </div>
-    </div>
+</div>
 
-    <!-- App Header Template -->
-    <script id="app-header-template" type="text/x-handlebars-template">
-        <div id="app-header-bar" class="app-top-bar">
-         <div class="app-logo"><img src="{{img_logo}}" /></div>
-     </div>
- </script>
+<!-- App Header Template -->
+<script id="app-header-template" type="text/x-handlebars-template">
+    <div id="app-header-bar" class="app-top-bar">
+     <div class="app-logo"><img src="{{img_logo}}" /></div>
+ </div>
+ <div id="back"><i class="fa fa-reply" aria-hidden="true"></i></div>
+</script>
 
- <!-- Left Nav View Template -->
- <script id="left-nav-template" type="text/x-handlebars-template">
+<!-- Left Nav View Template -->
+<script id="left-nav-template" type="text/x-handlebars-template">
     <div id="left-nav" class="leftnav-main-container">
         <div id="left-nav-list-container" class="leftnav-menulist-expanded">
             <div id="left-nav-scrolling-list" class="leftnav-menu-scrolling-list">
@@ -133,7 +131,16 @@
 
 <!-- Custom Controls Template -->
 <script id="controls-view-template" type="text/x-handlebars-template">
-    <img class="player-watermark" src="assets/logo.png">
+    <div class="pauseOverlay">
+        <div class="pause-left">
+            <div class="pause-left-inner">
+                <img class="player-watermark" src="assets/logo.png">
+                <div class="pause-title"></div>
+                <div class="pause-thumb"></div>
+            </div>
+        </div>
+        <div class="pause-right"><span></span></div>
+    </div>
     <div class="player-pause-button">
         <i class="fa fa-pause player-pause-indicator" aria-hidden="true"></i>
     </div>
@@ -154,9 +161,6 @@
         </div>
         <div class="player-controls-timestamp-curtime">00:00</div>
         <div class="player-controls-timestamp-totaltime"></div>
-        <!-- <div class="player-controls-content-title">Content Title</div> -->
-        <!-- <div class="player-controls-button-back"><img class="player-back-button" src="assets/btn_back.png" /></div> -->
-        <!-- <div class="player-controls-content-subtitle">Subtitle</div> -->
     </div>
 </script>
 
@@ -169,8 +173,9 @@
     </div>
 </script>
 
-<script src="https://use.fontawesome.com/aebfcbb97c.js"></script>
-<script type="text/javascript" src="all.min.js"></script>
+<!-- build:js -->
+<!-- gulp will insert scripts for .js file specified in build.json here, or minified / combined / inlined versions -->
+<!-- endbuild -->
 
 </body>
 </html>

@@ -4,14 +4,14 @@
  *
  */
 
- (function(exports) {
+(function(exports) {
     "use strict";
 
     /**
      * @class ContolsView
      * @description The custom controls object, this handles everything about the custom controls.
      */
-     function ControlsView() {
+    function ControlsView() {
         // mixin inheritance, initialize this as an event handler for these events:
         Events.call(this, ['loadingComplete']);
 
@@ -51,7 +51,7 @@
          * @function remove
          * @description remove the controls element from the app
          */
-         this.remove = function() {
+        this.remove = function() {
             this.$containerControls.remove();
             clearTimeout(this.removalTimeout);
         };
@@ -60,7 +60,7 @@
          * @function hide
          * @description hide controls element
          */
-         this.hide = function() {
+        this.hide = function() {
             // using opacity here instead of .show()/.hide() because we have a transition effect that can't be done with
             // display none.
             this.containerControls.style.opacity = "0";
@@ -70,7 +70,7 @@
          * @function show
          * @description show controls element
          */
-         this.show = function() {
+        this.show = function() {
             // using opacity here instead of .show()/.hide() because we have a transition effect that can't be done with
             // display none.
             this.containerControls.style.opacity = "0.99";
@@ -98,7 +98,7 @@
          * @function controlsShowing
          * @description check if controls are currently showing
          */
-         this.controlsShowing = function() {
+        this.controlsShowing = function() {
             return (this.containerControls.style.opacity !== "0");
         };
 
@@ -121,7 +121,7 @@
          * @param {Object} data the data to render
          * @param {Object} playerView the player view
          */
-         this.render = function($container, data, playerView) {
+        this.render = function($container, data, playerView) {
             // Build the  content template and add it
             var html = utils.buildTemplate($("#controls-view-template"), {});
             $container.append(html);
@@ -129,6 +129,10 @@
             this.containerControls = $container.children().last()[0];
             this.pauseIcon = $container.find(".player-pause-button")[0];
             this.playIcon = $container.find(".player-play-button")[0];
+            this.pauseOverlay = $container.find(".pauseOverlay")[0];
+            $(".pause-title").html(data.title);
+            $(".pause-right span").html(data.uniqueDescription);
+            $(".pause-thumb").html('<img src="' + data.imageUrl + '">');
 
             // this.$containerControls.find(".player-controls-content-title").text(data.title);
             // this.$containerControls.find(".player-controls-content-subtitle").text(this.truncateSubtitle(data.uniqueDescription));
@@ -151,7 +155,7 @@
          * @param {Boolean} alwaysIncludeHours the flag to indicate whether to include hours
          * @return {String} 
          */
-         this.convertSecondsToHHMMSS = function(seconds, alwaysIncludeHours) {
+        this.convertSecondsToHHMMSS = function(seconds, alwaysIncludeHours) {
             var hours = Math.floor(seconds / 3600);
             var minutes = Math.floor(seconds / 60) % 60;
             seconds = Math.floor(seconds % 60);
@@ -171,7 +175,7 @@
          * @param {Number} duration the duration of video
          * @param {String} type the type of video status event
          */
-         this.handleVideoStatus = function(currentTime, duration, type) {
+        this.handleVideoStatus = function(currentTime, duration, type) {
             // video has been loaded correctly
             if (!this.totalDurationFound) {
                 this.durationChangeHandler(duration);
@@ -179,20 +183,20 @@
 
             switch (type) {
                 case "paused":
-                this.pausePressed();
-                break;
+                    this.pausePressed();
+                    break;
                 case "durationChange":
-                this.durationChangeHandler(duration);
-                break;
+                    this.durationChangeHandler(duration);
+                    break;
                 case "playing":
-                this.timeUpdateHandler(duration, currentTime);
-                break;
+                    this.timeUpdateHandler(duration, currentTime);
+                    break;
                 case "resumed":
-                this.resumePressed();
-                break;
+                    this.resumePressed();
+                    break;
                 case "seeking":
-                this.seekPressed(currentTime);
-                break;
+                    this.seekPressed(currentTime);
+                    break;
             }
             this.previousTime = currentTime;
         }.bind(this);
@@ -202,7 +206,7 @@
          * @description show the seek/rewind controls
          * @param {Number} currentTime the current time of video playback
          */
-         this.seekPressed = function(currentTime) {
+        this.seekPressed = function(currentTime) {
             var skipTime = Math.round(Math.abs(currentTime - this.previousTime));;
             if (this.previousTime > currentTime) {
                 // skip backwards
@@ -228,7 +232,7 @@
         /**
          * Set forward or rewind indicators
          */
-         this.setIndicator = function(skipType, skipTime) {
+        this.setIndicator = function(skipType, skipTime) {
             var indicator = null;
             var indicatorText = null;
             var indicatorSymbol = null;
@@ -260,7 +264,7 @@
         /**
          * Clear Timeouts
          */
-         this.clearTimeouts = function() {
+        this.clearTimeouts = function() {
             if (this.indicatorTimeout) {
                 clearTimeout(this.indicatorTimeout);
                 this.indicatorTimeout = 0;
@@ -273,7 +277,7 @@
          * @param {Number} videoDuration the video duration
          * @param {Number} videoCurrentTime the current time of video playback
          */
-         this.timeUpdateHandler = function(videoDuration, videoCurrentTime) {
+        this.timeUpdateHandler = function(videoDuration, videoCurrentTime) {
             // Calculate the slider value
             var value = (100 / videoDuration) * videoCurrentTime;
             this.seekHead.style.width = value + "%";
@@ -287,7 +291,7 @@
          * @description Duration change event handler
          * @param {Number} the current duration that was changed.
          */
-         this.durationChangeHandler = function(videoDuration) {
+        this.durationChangeHandler = function(videoDuration) {
             // check if we have found a duration yet, and that duration is a real value
             if (videoDuration) {
                 var duration = this.convertSecondsToHHMMSS(videoDuration);
@@ -306,7 +310,7 @@
          * @function pausePressed
          * @description pause the currently playing video, called when app loses focus
          */
-         this.pausePressed = function() {
+        this.pausePressed = function() {
             if (this.pauseTimeout) {
                 clearTimeout(this.pauseTimeout);
                 this.pauseTimeout = 0;
@@ -321,13 +325,14 @@
             }.bind(this), this.PAUSE_REMOVAL_TIME);
             // cancel any pending timeouts
             clearTimeout(this.removalTimeout);
+            $('.pauseOverlay').addClass('slide');
         };
 
         /**
          * @function resumePressed
          * @description resume the currently playing video, called when app regains focus
          */
-         this.resumePressed = function() {
+        this.resumePressed = function() {
             // hide pause icon
             this.pauseIcon.style.opacity = "0";
             this.playIcon.style.opacity = "0.99";
@@ -336,13 +341,14 @@
             }.bind(this), this.PLAY_REMOVAL_TIME);
             clearTimeout(this.removalTimeout);
             this.showAndHideControls();
+            $('.pauseOverlay').removeClass('slide');
         };
 
         /**
          * @function showAndHideControls
          * @description shows the controls and hides them after 3s, resets the timer if this function is called again.
          */
-         this.showAndHideControls = function() {
+        this.showAndHideControls = function() {
             this.containerControls.style.opacity = "0.99";
             clearTimeout(this.removalTimeout);
             this.removalTimeout = setTimeout(function() {
@@ -357,7 +363,7 @@
          * @description truncate subtitle with ellipsis
          * @param {String} string the subtitle to truncate
          */
-         this.truncateSubtitle = function(string) {
+        this.truncateSubtitle = function(string) {
             if (string) {
                 if (string.length > 150) {
                     return string.substring(0, 149) + '\u2026';

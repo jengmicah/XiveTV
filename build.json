@@ -20,9 +20,14 @@
         "common/images/skip_indicator.png",
         "common/images/loader.png",
         "common/images/bg_overlay.png",
-        "common/assets/images/*.jpg"
+        "common/assets/images/*.jpg",
+        "common/assets/fonts/*"
     ],
     "appJS": [
+        "libs/handlebars-v1.3.0.js",
+        "libs/jquery.js",
+        "common/js/model-json.js",
+        "common/js/app.js",
         "common/js/util.js",
         "common/js/error-handler.js",
         "common/js/dialog-view.js",
@@ -37,13 +42,9 @@
         "common/js/player-view.js",
         "common/js/controls-view.js",
         "common/js/search-input-view.js",
-        "common/js/model-json.js",
-        "common/js/app.js",
-        "init.js"
+        "init.js",
+        "libs/hls.min.js"
     ],
     "libJS": [
-        "libs/handlebars-v1.3.0.js",
-        "libs/jquery.js",
-        "libs/hls.min.js"
     ]
 }

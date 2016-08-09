@@ -1,17 +1,4 @@
-/**
- * CSS variables for use in the firetv.scss file
- *
- * These variables create a single theme for the application.
- *
- * Organization :
- * - TYPES : Variables are separated by type (font-family, font-size, color etc)
- * - NAMES : Are descriptive of the CSS class name they modify
- * - VALUES : All variables below will only be set if they have not be set before.
- *
- * Usage : Variables are used for all colors, font-family and animation speed values. Other variables may be used for
- *         items that are repeated in the styles more than once .
- *
- */
+
 @font-face {
   font-family: 'Raleway-Light';
   font-style: normal;

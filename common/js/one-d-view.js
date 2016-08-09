@@ -86,6 +86,7 @@
             $el.append(html);
 
             this.$el = $el.children().last();
+            this.$el.css({'transition':'0.5s'});
             this.el = this.$el[0];
             //no results found
             if (rowData.length <= 0) {
@@ -294,7 +295,7 @@
                         dirty = true;
                         break;
                     case buttons.DOWN:
-                      if (this.currentView !== this.shovelerView) {
+                        if (this.currentView !== this.shovelerView) {
                             this.transitionToShovelerView();
                         } else {
                             this.trigger('bounce', null);

@@ -4,16 +4,16 @@
  * 
  */
 
-(function (exports) {
+ (function (exports) {
     "use strict";
 
-     var SHOVELER_ROW_ITEM_SELECTED = "shoveler-rowitem-selected";
+    var SHOVELER_ROW_ITEM_SELECTED = "shoveler-rowitem-selected";
 
     /**
      * @class ShovelerView
      * @description The shoveler view object, this handles everything about the shoveler.
      */
-    function ShovelerView() {
+     function ShovelerView() {
         // mixin inheritance, initialize this as an event handler for these events:
         Events.call(this, ['loadComplete', 'exit', 'bounce', 'startScroll', 'indexChange', 'stopScroll', 'select', 'bounce']);
 
@@ -45,7 +45,7 @@
         /**
          * Removes the main content view dom
          */
-        this.remove = function () {
+         this.remove = function () {
             // remove this element from the dom
             this.$el.remove();
         };
@@ -53,14 +53,14 @@
         /**
          * Hides the shoveler view
          */
-        this.hide = function () {
+         this.hide = function () {
             this.$el.css("opacity", "0");
         };
 
         /**
          * Shows the shoveler view
          */
-        this.show = function () {
+         this.show = function () {
             this.$el.css("opacity", "");
         };
 
@@ -88,7 +88,7 @@
          * @param {Element} el one-d-view container
          * @param {Object} row the the data for the row
          */
-        this.render = function (el, row) {
+         this.render = function (el, row) {
             this.parentContainer = el;
             // Build the main content template and add it
             this.titleText = row.title;
@@ -99,6 +99,7 @@
             this.rowsData = row;
             el.append(html);
             this.$el = el.children().last();
+            this.$el.css({'transition':'0.5s'});
 
             //hide the element until we are done with layout
             this.$el.css('opacity', "0");
@@ -128,9 +129,9 @@
                 var $currElt = $(this.$rowElements[i]);
                 var $currImage = $currElt.children("img.shoveler-full-img");
                 if ($currImage.length === 0) {
-                     $currElt.prepend('<img class = "shoveler-full-img" src="'+ this.rowsData[i].imageUrl + '" style="opacity:0"/>');
-                     $currImage = $currElt.children("img.shoveler-full-img");
-                }
+                   $currElt.prepend('<img class = "shoveler-full-img" src="'+ this.rowsData[i].imageUrl + '" style="opacity:0"/>');
+                   $currImage = $currElt.children("img.shoveler-full-img");
+               }
 
                 //set a callback to make sure all images are loaded 
                 this.createImageLoadHandlers($currElt, $currImage, i);
@@ -177,18 +178,18 @@
                 this.elementWidths[i] = $currElt.width();
 
                 if ($currElt.children("img.shoveler-full-img").length > 0) {
-                     $currElt.children("img.shoveler-full-img")[0].style.opacity = "";
-                }
-            }
+                   $currElt.children("img.shoveler-full-img")[0].style.opacity = "";
+               }
+           }
 
-            this.setTransforms(0);
+           this.setTransforms(0);
 
-            window.setTimeout(function() {
-                this.$rowElements.css("transition", "");
-                this.limitTransforms = true;
-                this.finalizeRender();
-            }.bind(this), 500);
-        };
+           window.setTimeout(function() {
+            this.$rowElements.css("transition", "");
+            this.limitTransforms = true;
+            this.finalizeRender();
+        }.bind(this), 500);
+       };
 
        /**
         * Images are loaded and positioned so display the shoveler
@@ -202,7 +203,7 @@
         /**
          * Callback Function to reposition the images from the placeholder positions once they load
          */
-        this.relayoutOnLoadedImages = function () {
+         this.relayoutOnLoadedImages = function () {
             if (--this.loadingImages === 0) {
                 this.layoutElements();
                 // finalize selection on the first element in the shoveler
@@ -227,7 +228,7 @@
          *                                BACK:Back to leftNav State 
          * @param {event} the keydown event
          */
-        this.handleControls = function (e) {
+         this.handleControls = function (e) {
             if (e.type === 'swipe') {
                 if(e.keyCode === buttons.RIGHT) {
                     if(this.currSelection !== 0) {
@@ -237,74 +238,74 @@
                     } else {
                         this.trigger('bounce', e.keyCode);
                     }
-                 } else if(e.keyCode === buttons.LEFT) {
+                } else if(e.keyCode === buttons.LEFT) {
                     if(this.currSelection < this.rowsData.length) {
-                         this.shovelMove(1);
+                       this.shovelMove(1);
                          //stop scroll immediately - swipe only increments 1 right now
-                          this.trigger("stopScroll", this.currSelection);
+                         this.trigger("stopScroll", this.currSelection);
                      } else {
-                         this.trigger('bounce', e.keyCode);
-                     }
+                       this.trigger('bounce', e.keyCode);
+                   }
+               }
+           } else if (e.type === 'buttonpress') {
+            switch (e.keyCode) {
+                case buttons.SELECT:
+                case buttons.PLAY_PAUSE:
+                this.trigger('select', this.currSelection);
+                break;
+
+                case buttons.BACK:
+                this.trigger("exit");
+                break;
+
+                case buttons.UP:
+                case buttons.DOWN:
+                this.trigger("bounce");
+                break;
+
+                case buttons.LEFT:
+                if(this.currSelection !== 0) {
+                    this.shovelMove(-1);
+                } else {
+                    this.trigger('bounce', e.keyCode);
                 }
-            } else if (e.type === 'buttonpress') {
-                switch (e.keyCode) {
-                    case buttons.SELECT:
-                    case buttons.PLAY_PAUSE:
-                        this.trigger('select', this.currSelection);
-                        break;
 
-                    case buttons.BACK:
-                        this.trigger("exit");
-                        break;
+                break;
 
-                    case buttons.UP:
-                    case buttons.DOWN:
-                        this.trigger("bounce");
-                        break;
-
-                    case buttons.LEFT:
-                        if(this.currSelection !== 0) {
-                            this.shovelMove(-1);
-                        } else {
-                            this.trigger('bounce', e.keyCode);
-                        }
-
-                        break;
-
-                    case buttons.RIGHT:
-                        if(this.currSelection < this.rowsData.length) {
-                             this.shovelMove(1);
-                        } else {
-                            this.trigger('bounce', e.keyCode);
-                        }
-                        break;
-                }
-            } else if (e.type === 'buttonrepeat') {
-                switch (e.keyCode) {
-                    case buttons.LEFT:
-                        this.selectRowElement(-1);
-                        break;
-
-                    case buttons.RIGHT:
-                        this.selectRowElement(1);
-                        break;
-                }
-            } else if (e.type === 'buttonrelease') {
-                switch (e.keyCode) {
-                    case buttons.LEFT:
-                    case buttons.RIGHT:
-                        this.trigger("stopScroll", this.currSelection);
-
-
-                        break;
-                }
+                case buttons.RIGHT:
+                if(this.currSelection < this.rowsData.length) {
+                   this.shovelMove(1);
+               } else {
+                this.trigger('bounce', e.keyCode);
             }
-        }.bind(this);
+            break;
+        }
+    } else if (e.type === 'buttonrepeat') {
+        switch (e.keyCode) {
+            case buttons.LEFT:
+            this.selectRowElement(-1);
+            break;
+
+            case buttons.RIGHT:
+            this.selectRowElement(1);
+            break;
+        }
+    } else if (e.type === 'buttonrelease') {
+        switch (e.keyCode) {
+            case buttons.LEFT:
+            case buttons.RIGHT:
+            this.trigger("stopScroll", this.currSelection);
+
+
+            break;
+        }
+    }
+}.bind(this);
 
         /**
          * Does any necessary changes before the scrolling animation begins
          */
-        this.prepareSelectionForAnimation = function() {
+         this.prepareSelectionForAnimation = function() {
             // remove drop shadow and z-index before moving to speed up FPS on animation
             $(this.$rowElements[this.currSelection]).removeClass(SHOVELER_ROW_ITEM_SELECTED);
             $(this.$rowElements[this.currSelection]).css("z-index", "");
@@ -314,7 +315,7 @@
          * Does all final element necessary changes once the selection is finalized by user input(ie stop scrolling completely)
          * @param {number} the currently selected index.
          */
-        this.finalizeSelection = function(currSelection) {
+         this.finalizeSelection = function(currSelection) {
             // add drop shadow to inner image
             $(this.$rowElements[currSelection]).addClass(SHOVELER_ROW_ITEM_SELECTED);
             // raise the outermost selected element div for the drop shadow to look right
@@ -325,19 +326,19 @@
          * Moves the row element to the right or left based on the direction given to it
          * @param {number} the direction to scroll, 1 is  right, -1 is left
          */
-        this.selectRowElement = function (direction) {
+         this.selectRowElement = function (direction) {
 
             if ((direction > 0 && (this.$rowElements.length - 1) === this.currSelection) || 
                 (direction < 0 && this.currSelection === 0 )) {
                 return false;
-            }
+        }
 
-            this.currSelection += direction;
+        this.currSelection += direction;
 
-            this.transitionRow();
+        this.transitionRow();
 
-            return true;
-        }.bind(this);
+        return true;
+    }.bind(this);
 
        /**
         * This will manage the transition of the newly 

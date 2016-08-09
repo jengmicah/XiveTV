@@ -28,6 +28,7 @@
             var html = utils.buildTemplate($("#dialog-template"), dialogData);
             $container.append(html);
             this.$el = $container.children().last();
+            this.$el.css({'transition':'0.5s'});
 
             // set up the button view
             var buttonView = this.buttonView = new ButtonView();
