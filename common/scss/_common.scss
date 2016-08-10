@@ -9,6 +9,9 @@ html, body {
     height   : 100%;
     overflow : hidden;
 }
+html, body, div, p, i, span, p, img, ul, li, ol, h1, h2, h3 {
+    @include transition-duration(0.5s);
+} 
 
 body {
     position : absolute;
@@ -26,15 +29,13 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    @include transition(0.25s);
 }
 
 div {
   @include box-sizing(border-box);
 }
 
-html, body, div, p, i, span, p, img, ul, li, ol, h1, h2, h3 {
-    @include transition-duration(0.5s);
-} 
 
 //
 //Application Styles
