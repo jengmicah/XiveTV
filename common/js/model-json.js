@@ -117,7 +117,6 @@
                     element.categoryData[i] = element.collectionFolder[i].title;
                 }
                 dataLoadedCallback(); // Tell app.js that data is loaded
-                element.preload(true); // Cache images
             });
         }.bind(this);
 
@@ -126,42 +125,22 @@
         }
 
         // Cache the background images asynchronously to disable flickering when switching
-        this.preload = function(waitForOtherResources) {
-            var element = this;
-            var loaded = false,
-                list = [],
-                imgs = Array(8),
-                t = 15 * 1000,
-                timer;
-            if (!waitForOtherResources || document.readyState === 'complete') {
-                loadNow();
-            } else {
-                window.addEventListener("load", function() {
-                    clearTimeout(timer);
-                    loadNow();
-                });
-                // in case window.addEventListener doesn't get called (sometimes some resource gets stuck)
-                // then preload the images anyway after some timeout time
-                timer = setTimeout(loadNow, t);
-            }
+        this.preload = function() {
+            var list = [],
+                imgs = Array(8);
 
-            function loadNow() {
-                if (!loaded) {
-                    loaded = true;
-                    for (var i = 0; i < imgs.length; i++) {
-                        var img = new Image();
-                        img.onload = img.onerror = img.onabort = function() {
-                            var index = list.indexOf(this);
-                            if (index !== -1) {
-                                // remove image from the array once it's loaded
-                                // for memory consumption reasons
-                                list.splice(index, 1);
-                            }
-                        }
-                        list.push(img);
-                        img.src = "assets/" + i + ".jpg";
+            for (var i = 0; i < imgs.length; i++) {
+                var img = new Image();
+                img.onload = img.onerror = img.onabort = function() {
+                    var index = list.indexOf(this);
+                    if (index !== -1) {
+                        // remove image from the array once it's loaded
+                        // for memory consumption reasons
+                        list.splice(index, 1);
                     }
                 }
+                list.push(img);
+                img.src = "assets/" + i + ".jpg";
             }
         }
 

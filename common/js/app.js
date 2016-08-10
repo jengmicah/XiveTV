@@ -48,7 +48,7 @@
         //wrap in a timer to make sure the height and width are updated
         setTimeout(function() {
             if (window.innerWidth < window.innerHeight) {
-                $('#overlay-message').html('please rotate your device back to landscpe');
+                $('#overlay-message').html('Please rotate your device back to landscape');
                 $('#app-overlay').css('display', 'block');
             } else {
                 $('#overlay-message').html('');
@@ -74,6 +74,7 @@
          this.makeInitialDataCall = function() {
             var element = this;
             this.data.loadList(function() { // Once collections are loaded, load program details;
+                element.data.preload();
                 element.data.loadCollections(element.dataLoaded, arguments[0].responseData);
             });
         };

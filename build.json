@@ -8,6 +8,7 @@
         "firetv.scss"
     ],
     "assets": [
+        "common/assets/images/*.jpg",
         "common/images/icon_leftnav_arrowDown.png",
         "common/images/icon_subcat_arrowLeft.png",
         "common/images/bg_app.jpg",
@@ -20,7 +21,6 @@
         "common/images/skip_indicator.png",
         "common/images/loader.png",
         "common/images/bg_overlay.png",
-        "common/assets/images/*.jpg",
         "common/assets/fonts/*"
     ],
     "appJS": [

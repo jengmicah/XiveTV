@@ -8,12 +8,6 @@
     <meta charset="utf-8">
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        /**
-         * This script will set the 'initial-scale' value on the viewport metatag
-         * The scale is used to fit the template on Kindle Fire mobile devices
-         * This must be handled in the head of the document because the scale
-         * is not affected once the page finishes loading
-         */
          var vp = document.getElementById('viewport');
 
          var initialScale = Math.max(screen.width, screen.height)/1920;
@@ -25,28 +19,28 @@
  </head>
 
  <body>
-   <div id="app-container" class="app-main-container">
-   </div>
+     <div id="app-container" class="app-main-container">
+     </div>
 
-   <!-- Spinner for startup -->
-   <div id="app-overlay" class="app-overlay-container">
-    <div id="overlay-message" class="app-overlay-message"></div>
-</div>
-<div class="spinnerParent">
-    <div id="app-loading-spinner" class="content-load-spinner">
+     <!-- Spinner for startup -->
+     <div id="app-overlay" class="app-overlay-container">
+        <div id="overlay-message" class="app-overlay-message"></div>
     </div>
-</div>
+    <div class="spinnerParent">
+        <div id="app-loading-spinner" class="content-load-spinner">
+        </div>
+    </div>
 
-<!-- App Header Template -->
-<script id="app-header-template" type="text/x-handlebars-template">
-    <div id="app-header-bar" class="app-top-bar">
-     <div class="app-logo"><img src="{{img_logo}}" /></div>
- </div>
- <div id="back"><i class="fa fa-reply" aria-hidden="true"></i></div>
-</script>
+    <!-- App Header Template -->
+    <script id="app-header-template" type="text/x-handlebars-template">
+        <div id="app-header-bar" class="app-top-bar">
+           <div class="app-logo"><img src="{{img_logo}}" /></div>
+       </div>
+       <div id="back"><i class="fa fa-reply" aria-hidden="true"></i></div>
+   </script>
 
-<!-- Left Nav View Template -->
-<script id="left-nav-template" type="text/x-handlebars-template">
+   <!-- Left Nav View Template -->
+   <script id="left-nav-template" type="text/x-handlebars-template">
     <div id="left-nav" class="leftnav-main-container">
         <div id="left-nav-list-container" class="leftnav-menulist-expanded">
             <div id="left-nav-scrolling-list" class="leftnav-menu-scrolling-list">
