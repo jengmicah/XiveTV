@@ -72,10 +72,10 @@
          * Handle the call to the model to get our data 
          */
          this.makeInitialDataCall = function() {
-            var element = this;
-            this.data.loadList(function() { // Once collections are loaded, load program details;
-                element.data.preload();
-                element.data.loadCollections(element.dataLoaded, arguments[0].responseData);
+            var element = this; // Keep global as context
+            this.data.loadList(function() { // Once collection list is loaded...
+                element.data.preload(); // Cache bg images
+                element.data.loadCollections(element.dataLoaded, arguments[0].responseData); // Load individual collections
             });
         };
 

@@ -75,25 +75,6 @@
             // display none.
             this.containerControls.style.opacity = "0.99";
         };
-
-        // /**
-        //  * @function hideTitleAndDescription 
-        //  * @description hide title and description from Control View
-        //  **/
-        //  this.hideTitleAndDescription = function () {
-        //      this.$containerControls.find(".player-controls-content-title").hide();
-        //      this.$containerControls.find(".player-controls-content-subtitle").hide();
-        //  };
-
-        // /**
-        //  * @function showTitleAndDescription
-        //  * @description show title and description from Control View
-        //  **/
-        //  this.showTitleAndDescription = function () {
-        //      this.$containerControls.find(".player-controls-content-title").show();
-        //      this.$containerControls.find(".player-controls-content-subtitle").show();
-        //  };
-
         /**
          * @function controlsShowing
          * @description check if controls are currently showing
@@ -101,18 +82,6 @@
         this.controlsShowing = function() {
             return (this.containerControls.style.opacity !== "0");
         };
-
-
-        // /**
-        //  * @function updateTitleAndDescription
-        //  * @description update the title and description 
-        //  * @param {string} set the new title
-        //  * @param {string} set the new description
-        //  */
-        //  this.updateTitleAndDescription = function(title, description) {
-        //     this.$containerControls.find(".player-controls-content-title").text(title);
-        //     this.$containerControls.find(".player-controls-content-subtitle").text(this.truncateSubtitle(description));
-        // }.bind(this);
 
         /**
          * @function render
@@ -238,26 +207,9 @@
             var indicatorSymbol = null;
             if (skipType === "rewind") {
                 indicator = this.$rewindIndicator;
-                // indicatorText = this.$rewindIndicatorText;
-                // indicatorSymbol = "-";
             } else {
                 indicator = this.$forwardIndicator;
-                // indicatorText = this.$forwardIndicatorText;
-                // indicatorSymbol = "+";
             }
-            // if (this.continuousSeek) {
-            // indicator.find(".player-controls-skip-symbol").text("");
-            // indicatorText.text("");
-            // indicator.find(".player-controls-skip-text").text("");
-            // indicator.css("min-width", "100px");
-            // indicator.css("margin-left", "30px");
-            // indicator.find("img").css("margin-left", "40px");
-            // } else {
-            // indicator.find(".player-controls-skip-symbol").text(indicatorSymbol);
-            // indicatorText.text(skipTime);
-            // indicator.find(".player-controls-skip-text").text("s");
-            // indicator.css("margin-left", "-20px");
-            // }
             indicator.css("display", "flex");
         };
 

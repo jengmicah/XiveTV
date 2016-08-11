@@ -229,9 +229,8 @@
         this.render = function($container, data, index) {
             // Build the main content template and add it
             this.items = data;
-            // Request video when user clicks video
+            // Request video when user clicks thumb
             var element = this;
-
             $.ajax({
                 url: "https://cms.xivetv.com/api/v3/video/" + data[index].videoId,
                 // url: settings.video,

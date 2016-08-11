@@ -10,7 +10,6 @@
         // mixin inheritance, initialize this as an event handler for these events:
         Events.call(this, ['error']);
 
-        // this.mediaData = [];
         this.categoryData = []; // Holds the TV program titles (ScienceTV, NatureTV, etc...)
         this.currSubCategory = []; // Holds data in current subcategory
         this.currData = []; // Holds data in current category
@@ -19,11 +18,10 @@
         this.defaultTheme = "default";
         this.currentlySearchData = false;
 
-        // this.collectionList = []; //Holds collectionId's of all collections
         this.collectionFolder = []; //Holds all the TV program objects
         this.mediaFolder = []; //Holds responseData with seriesList and episodeList
 
-        //timeout default to 1 min
+        //timeout 1 min
         this.TIMEOUT = 60000;
 
         /**
@@ -65,7 +63,6 @@
                     }
                 }.bind(this)
             };
-            // utils.ajaxWithRetry(requestData);
             $.ajax(requestData);
         }.bind(this);
 

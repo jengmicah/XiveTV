@@ -14,21 +14,21 @@ html, body, div, p, i, span, p, img, ul, li, ol, h1, h2, h3 {
 } 
 
 body {
-    position : absolute;
-    padding  : 0;
-    margin   : 0;
-    font-size: $font-base-size;
-    font-family : $font-family-light;
-    background-color: $color-app-base-bg;
-    background-repeat: no-repeat;
-    background-origin: center;
-    background-clip: center;
-    background-attachment: fixed;
-    background-size : 100% 100%;
+    position               : absolute;
+    padding                : 0;
+    margin                 : 0;
+    font-size              : $font-base-size;
+    font-family            : $font-family-light;
+    background-color       : $color-app-base-bg;
+    background-repeat      : no-repeat;
+    background-origin      : center;
+    background-clip        : center;
+    background-attachment  : fixed;
+    background-size        : 100% 100%;
     -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    -moz-background-size   : cover;
+    -o-background-size     : cover;
+    background-size        : cover;
     @include transition(0.25s);
 }
 
@@ -48,29 +48,29 @@ div {
 }
 
 .app-top-bar {
-    position : absolute;
-    width    : 25%;
-    height   : 100%;
-    background : $color-app-header-bg;
-    background: -webkit-linear-gradient(left, $color-app-header-bg , rgba(#414447, 0.9)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, $color-app-header-bg rgba(#414447, 0.9)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, $color-app-header-bg, rgba(#414447, 0.9)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, $color-app-header-bg , rgba(#414447, 0.9)); /* Standard syntax */
+    position    : absolute;
+    width       : 25%;
+    height      : 100%;
+    background  : $color-app-header-bg;
+    background  : -webkit-linear-gradient(left, $color-app-header-bg , rgba(#414447, 0.9)); /* For Safari 5.1 to 6.0 */
+    background  : -o-linear-gradient(right, $color-app-header-bg rgba(#414447, 0.9)); /* For Opera 11.1 to 12.0 */
+    background  : -moz-linear-gradient(right, $color-app-header-bg, rgba(#414447, 0.9)); /* For Firefox 3.6 to 15 */
+    background  : linear-gradient(to right, $color-app-header-bg , rgba(#414447, 0.9)); /* Standard syntax */
     border-right: 10px solid #fff;
     @include box-shadow(15px 0px 10px $color-box-shadow);
-    z-index:99;
+    z-index     :99;
 }
 
 .app-logo {
-    width:inherit;
+    width :inherit;
     height:inherit;
     @include transition(0.5s);
 }
 .app-logo img {
-    position : absolute;
-    height:125px;
-    top:50px;right:0;left:0;
-    margin:auto;
+    position: absolute;
+    height  :125px;
+    top     :50px;right:0;left:0;
+    margin  :auto;
 }
 //
 // Left Nav Styles
@@ -78,33 +78,33 @@ div {
 
 #back {
     position:absolute;
-    width:25%;
-    top:0;
-    left:0; 
-    height:100%;
-    opacity:0;
-    z-index:9999;
+    width   :25%;
+    top     :0;
+    left    :0; 
+    height  :100%;
+    opacity :0;
+    z-index :9999;
     @include transition(0s);
 }
 #back i {
-    position:absolute;
+    position :absolute;
     font-size:100px;
-    color:#fff;
-    top:50%;
-    left:50%;
-    margin:auto;
+    color    :#fff;
+    top      :50%;
+    left     :50%;
+    margin   :auto;
     @include transform(translate(-50%,-50%));
 }
 
 .leftnav-main-container {
-    position : absolute;
-    top    : 75px;
-    left   : 0;
-    height : 100%;
-    width  : 25%;
+    position  : absolute;
+    top       : 75px;
+    left      : 0;
+    height    : 100%;
+    width     : 25%;
     // margin : 0 25% 0 0;
     text-align:center;
-    z-index:99;
+    z-index   :99;
 }
 
 .leftnav-main-container.slide {
@@ -112,11 +112,11 @@ div {
 }
 
 .leftnav-menu-list {
-    position : absolute;
-    width    : 100%;
-    height   : 100%;
-    padding  : 0px;
-    background-color : transparent;
+    position        : absolute;
+    width           : 100%;
+    height          : 100%;
+    padding         : 0px;
+    background-color: transparent;
 }
 
 .leftnav-menulist-expanded {
@@ -135,7 +135,7 @@ div {
 
 .leftnav-collapsed-highlight {
     // @include box-shadow(0px 10px 18px 3px rgba(0,0,0,0.44));
-    border: solid;
+    border      : solid;
     border-width: 0;
     border-color: $color-app-dialog-head-border;
 }
@@ -149,24 +149,24 @@ div {
 }
 
 .leftnav-list-item-static.leftnav-list-item-chosen.subcat-header {
-    position: absolute;
-    top: 148px;
-    left:30%;
-    width: 50%;
+    position  : absolute;
+    top       : 148px;
+    left      :30%;
+    width     : 50%;
     background: none;
-    border: none;
+    border    : none;
 }
 
 .leftnav-list-item-static {
-    word-wrap    : break-word;
-    line-height  : $size-leftnav-line-height;
-    font-weight: lighter;
-    font-size: 1.7em;
-    min-height : 90px;
+    word-wrap       : break-word;
+    line-height     : $size-leftnav-line-height;
+    font-weight     : lighter;
+    font-size       : 1.7em;
+    min-height      : 90px;
     // padding      : 0 50px 0 $pos-left-content-position;
-    overflow     : hidden;
-    margin-bottom    : 2px;
-    background-color : $color-menu-item-bg;
+    overflow        : hidden;
+    margin-bottom   : 2px;
+    background-color: $color-menu-item-bg;
     @include transition-property(opacity);
     @include transition-duration($ani-duration-leftnav-item);
     @include display-box;
@@ -222,48 +222,47 @@ div {
 }
 
 .subcategory-container {
-    height: 100%;
-    width: 100%;
+    height  : 100%;
+    width   : 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top     : 0;
+    left    : 0;
     @include transition-property(opacity);
     @include transition-duration($ani-duration-maincontent-opacity);
     @include transition-timing-function(linear);
 }
 
 .one-D-details-summary-text {
-    position : absolute;
-    // top      : 700px;
-    bottom:70px;
-    width    : 75%;
-    height:28%;
-    left     : 25%;
-    color    : $color-title-text;
-    z-index:10;
+    position  : absolute;
+    bottom    :70px;
+    width     : 75%;
+    height    :28%;
+    left      : 25%;
+    color     : $color-title-text;
+    z-index   :10;
     text-align:center;
-    padding:auto 70px;
+    padding   :auto 70px;
     background:rgba(#000, 0.5);
 
     .one-D-summary-title {
-        color       : $color-title-text;
-        font-size   : 1.8em;
-        font-family : $font-family-medium;
-        overflow    : hidden;
+        color      : $color-title-text;
+        font-size  : 1.8em;
+        font-family: $font-family-medium;
+        overflow   : hidden;
         margin-top : 30px;
         @include display-box;
         @include box-orient(vertical);
         @include line-clamp(1);
     }
     .one-D-summary-description {
-        color       : $color-description-text;
-        font-style  : italic;
-        text-align:center;
-        margin:15px auto;
-        width:70%;
-        font-size   : 1.1em;
-        overflow    : hidden;
-        align-items : center;
+        color      : $color-description-text;
+        font-style : italic;
+        text-align :center;
+        margin     :15px auto;
+        width      :70%;
+        font-size  : 1.1em;
+        overflow   : hidden;
+        align-items: center;
         @include display-box;
         @include box-orient(vertical);
         @include line-clamp(3);
@@ -271,8 +270,8 @@ div {
     .one-D-summary-pubdate {
         font-family: $font-family-player;
         font-weight: 200;
-        font-size:1.5em;
-        color : $color-meta-secondary-text;
+        font-size  :1.5em;
+        color      : $color-meta-secondary-text;
         .time-upcoming {
             color: $color-time-upcoming-text;
         }
@@ -285,40 +284,39 @@ div {
 }
 
 .detail-item-button {
-    position : relative;
-    width    : 315px;
-    height   : 73px;
-    padding  : 15px;
-    float    : left;
-    font-size    : 1.4em;
-    margin-right : 20px;
-    text-align   : center;
-    border       : 1px solid transparent;
+    position    : relative;
+    width       : 315px;
+    height      : 73px;
+    padding     : 15px;
+    float       : left;
+    font-size   : 1.4em;
+    margin-right: 20px;
+    text-align  : center;
+    border      : 1px solid transparent;
 }
 
 .detail-item-button-selected {
     @extend .detail-item-button;
-    overflow   : hidden;
-    margin-top : 0px;
-    color            : $color-btn-selected-text;
-    background-color : $color-btn-selected-bg;
-    border: solid;
-    border-color: $color-app-dialog-head-border;
-    border-width: 1px;
+    overflow        : hidden;
+    margin-top      : 0px;
+    color           : $color-btn-selected-text;
+    background-color: $color-btn-selected-bg;
+    border          : solid;
+    border-color    : $color-app-dialog-head-border;
+    border-width    : 1px;
     @include box-shadow(0px 10px 18px 3px $color-box-shadow);
 }
 
 .detail-item-button-static{
     @extend .detail-item-button;
-    color      : $color-btn-text;
-    background-color : $color-btn-bg;
-    line-height: 45px;
+    color           : $color-btn-text;
+    background-color: $color-btn-bg;
+    line-height     : 45px;
 }
 
 #one-D-shoveler-container {
     position : absolute;
     top      : 290px;
-    // left     : 20%;
     width    : 100%;
     height   : 380px;
     z-index  : 0;
@@ -374,10 +372,10 @@ div {
 }
 
 .shoveler-subcat-bg {
-    width: 91px;
-    height: 100%;
-    margin-left: -10px;
-    display: inline-block;
+    width           : 91px;
+    height          : 100%;
+    margin-left     : -10px;
+    display         : inline-block;
     background-image: $img-subcat-bg;
 }
 
@@ -393,11 +391,11 @@ div {
 }
 
 .pauseOverlay {
-    position:absolute;
-    opacity:0.9;
-    z-index:101;
-    width:100vw;
-    height:100vh;
+    position  :absolute;
+    opacity   :0.9;
+    z-index   :101;
+    width     :100vw;
+    height    :100vh;
     background:rgba(#000,0.8);
     text-align:center;
     margin-top:100%;
@@ -410,16 +408,16 @@ div {
 
 .pause-left {
     position:absolute;
-    left:0;
-    padding:100px;
-    width:50%;
-    height:100%;
+    left    :0;
+    padding :100px;
+    width   :50%;
+    height  :100%;
 }
 
 .pause-left-inner {
     position:absolute;
-    width:100%;
-    left:0;
+    width   :100%;
+    left    :0;
 }
 
 .player-watermark {
@@ -427,7 +425,7 @@ div {
 }
 
 .pause-title {
-    margin: 50px 0;
+    margin    : 50px 0;
     color     : $color-description-text;
     text-align:center;
     font-size : 1.8em;
@@ -445,40 +443,40 @@ div {
 
 .pause-right {
     position:absolute;
-    width:50%;
-    height:88%;
-    left:50%;
+    width   :50%;
+    height  :88%;
+    left    :50%;
 }
 
 .pause-right span {
-    width:100%;
-    color       : $color-description-text;
-    font-size   : 1.3em;
-    position:absolute;
-    padding:100px;
-    left:0;
-    top:50%;
+    width    :100%;
+    color    : $color-description-text;
+    font-size: 1.3em;
+    position :absolute;
+    padding  :100px;
+    left     :0;
+    top      :50%;
     @include transform(translateY(-50%));
 }
 
 
 .player-content-video {
-    position : absolute;
-    width    : 100%;
-    height   : 100%;
+    position  : absolute;
+    width     : 100%;
+    height    : 100%;
     background: black;
 }
 
 .player-controls-container {
-    position : absolute;
-    width    : 100%;
-    height   : 12%;
-    padding  : 0 8%;
-    bottom   : 0;
-    opacity  : 0;
-    background-color : $color-player-controls-bg;
+    position        : absolute;
+    width           : 100%;
+    height          : 12%;
+    padding         : 0 8%;
+    bottom          : 0;
+    opacity         : 0;
+    background-color: $color-player-controls-bg;
     @include transition(0.5s);
-    z-index: 102;
+    z-index         : 102;
 }
 
 .player-controls-timeline-container {
@@ -488,103 +486,80 @@ div {
 }
 
 .player-controls-timeline {
-    position : absolute;
-    top      : 0;
-    left     : 0;
-    width    : 100%;
-    height   : 100%;
-    border           : 1px solid $color-timeline-border;
-    // border-radius    : 6px;
-    background-color : $color-timeline-bg;
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    border          : 1px solid $color-timeline-border;
+    background-color: $color-timeline-bg;
 }
 
 .player-controls-timeline-playhead {
-    position : absolute;
-    width  : 0%;
-    height : 24px;
-    // border : 1px solid $color-playhead-border;
-    border-right : 8px solid #fff;
-    margin-top       : -1px;
-    background-color : $color-playhead-bg;
+    position        : absolute;
+    width           : 0%;
+    height          : 24px;
+    border-right    : 8px solid #fff;
+    margin-top      : -1px;
+    background-color: $color-playhead-bg;
 }
 
 .player-controls-skip-indicator {
-    position : absolute;
-    width:200px;
-    height   : 50px;
-    bottom      : 50px;
-    // left     : 600px;
-    font-size      : 1.8em;
-    color          : $color-meta-primary-text;
-    // display        : flex;
-    // background-size : 100% 100%;
-    // background-image: $img-skip-indicator;
-    // min-width: 200px;
-    text-align:center;
+    position           : absolute;
+    width              :200px;
+    height             : 50px;
+    bottom             : 50px;
+    font-size          : 1.8em;
+    color              : $color-meta-primary-text;
+    text-align         :center;
 
     i {
-        margin: auto;
+        margin   : auto;
         font-size: 1em;
-        color:$color-player-controls-bg;
+        color    :$color-player-controls-bg;
     }
-    // .player-controls-skip-symbol {
-    //     margin-left : 15px;
-    //     margin-top  : 15px;
-    // }
-
-    // .player-controls-skip-number {
-    //     margin-top  : 15px;
-    //     font-weight : bold;
-    // }
-
-    // .player-controls-skip-text {
-    //     margin-top  : 16px;
-    //     margin-left : 5px;
-    //     margin-right: 20px;
-    //     font-weight : lighter;
-    // }
 }
 
 #forward-indicator {
-    display : none;
+    display    : none;
     margin-left: -10px;
 }
 
 #rewind-indicator {
-    display : none;
+    display    : none;
     margin-left: -30px;
 }
 
 .player-controls-timestamp {
-    margin-top  : 10px;
-    font-size        : 1.2em;
+    margin-top: 10px;
+    font-size : 1.2em;
 }
 
 .player-controls-timestamp-curtime {
     @extend .player-controls-timestamp;
-    color   : $color-meta-primary-text-player;
-    display : inline-block;
-    float   : left;
+    color      : $color-meta-primary-text-player;
+    display    : inline-block;
+    float      : left;
     font-family: $font-family-player;
 }
 
 .player-controls-timestamp-totaltime {
     @extend .player-controls-timestamp;
-    color   : $color-meta-secondary-text-player;
-    display : inline-block;
-    float   : right;
+    color      : $color-meta-secondary-text-player;
+    display    : inline-block;
+    float      : right;
     font-family: $font-family-player;
 }
 
 .player-controls-content-title {
-    position    : absolute;
-    top         : 80px;
-    height      : 59px;
-    color       : $color-title-text;
-    font-size       : 1.8em;
-    font-family   : $font-family-medium;
-    margin-top  : 20px;
-    overflow    : hidden;
+    position   : absolute;
+    top        : 80px;
+    height     : 59px;
+    color      : $color-title-text;
+    font-size  : 1.8em;
+    font-family: $font-family-medium;
+    margin-top : 20px;
+    overflow   : hidden;
     @include display-box;
     @include box-orient(vertical);
     @include line-clamp(1);
@@ -595,13 +570,13 @@ div {
 }
 
 .player-controls-content-subtitle {
-    position : absolute;
-    top      : 170px;
-    width    : 60%;
-    height   : 72px;
-    color    : $color-description-text;
+    position  : absolute;
+    top       : 170px;
+    width     : 60%;
+    height    : 72px;
+    color     : $color-description-text;
     font-style: italic;
-    font-size: 1.1em;
+    font-size : 1.1em;
     @include display-box;
     @include box-orient(vertical);
     @include line-clamp(2);
@@ -620,7 +595,7 @@ div {
 
 .player-pause-button i,
 .player-play-button i {
-    color: $color-player-controls-bg;
+    color    : $color-player-controls-bg;
     font-size: 6em;
 }
 
@@ -628,22 +603,22 @@ div {
 // Next Video View
 //
 .next-video-main-container {
-    position : absolute;
-    height   : 100%;
-    width    : 30%;
-    right    : 0;
-    display  : flex;
-    color    : $color-meta-secondary-text;
-    background-color : $color-player-controls-bg;
-    flex-direction : column;
+    position        : absolute;
+    height          : 100%;
+    width           : 30%;
+    right           : 0;
+    display         : flex;
+    color           : $color-meta-secondary-text;
+    background-color: $color-player-controls-bg;
+    flex-direction  : column;
 }
 
 .next-video-text {
     margin-top : 60px;
     margin-left: 50px;
     font-weight: bold;
-    font-size: 1.1em;
-    color: $color-meta-primary-text;
+    font-size  : 1.1em;
+    color      : $color-meta-primary-text;
 }
 
 .next-video-thumbnail {
@@ -756,16 +731,16 @@ div {
   padding         : 60px;
   .dialog-title {
     margin-bottom: 30px;
-    font-size   : 48pt;
-    font-family : $font-family-medium;
+    font-size    : 48pt;
+    font-family  : $font-family-medium;
 }
 .dialog-message {
     margin-bottom: 60px;
-    font-size   : 36pt;
+    font-size    : 36pt;
 }
 .dialog-buttons-container {
     justify-content: center;
-    display: flex;
+    display        : flex;
 }
 }
 

@@ -45,6 +45,5 @@
         "init.js",
         "libs/hls.min.js"
     ],
-    "libJS": [
-    ]
+    "libJS": []
 }

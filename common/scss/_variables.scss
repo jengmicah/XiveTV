@@ -1,147 +1,139 @@
-
 @font-face {
-  font-family: 'Raleway-Light';
+  font-family: 'Ubuntu-Light';
   font-style: normal;
   font-weight: 300;
-  src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v11/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(https://fonts.gstatic.com/s/ubuntu/v9/_aijTyevf54tkVDLy-dlnFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 @font-face {
-  font-family: 'Raleway-Medium';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v11/CcKI4k9un7TZVWzRVT-T8_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-@font-face {
-  font-family: 'Raleway-ExtraBold';
-  font-style: normal;
-  font-weight: 800;
-  src: local('Raleway ExtraBold'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-@font-face {
-  font-family: 'Ubuntu';
+  font-family: 'Ubuntu-Regular';
   font-style: normal;
   font-weight: 400;
   src: local('Ubuntu'), url(https://fonts.gstatic.com/s/ubuntu/v9/sDGTilo5QRsfWu6Yc11AXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Ubuntu-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url(https://fonts.gstatic.com/s/ubuntu/v9/OsJ2DjdpjqFRVUSto6IffFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 //
 //Images
 //
 
-$img-icon-leftnav   : url('assets/icon_leftnav_arrowDown.png') !default;
-$img-icon-search    : url('assets/search.png') !default;
-$img-player-indicator-forward : url('assets/forward-arrow.png') !default;
-$img-player-indicator-reverse : url('assets/rewind-arrow.png') !default;
-$img-nextvideo-preview-play   : url('assets/btn_previewPlay.png') !default;
-$img-skip-indicator : url('assets/skip_indicator.png') !default;
-$img-left-arrow     : url('assets/icon_subcat_arrowLeft.png') !default;
-$img-subcat-bg     : url('assets/bg_subcat.png') !default;
-$img-content-loader-spinner : url('assets/loader.png') !default;
-$img-overlay-bg: url('assets/bg_overlay.png') !default;
+$img-icon-leftnav                   : url('assets/icon_leftnav_arrowDown.png') !default;
+$img-icon-search                    : url('assets/search.png') !default;
+$img-player-indicator-forward       : url('assets/forward-arrow.png') !default;
+$img-player-indicator-reverse       : url('assets/rewind-arrow.png') !default;
+$img-nextvideo-preview-play         : url('assets/btn_previewPlay.png') !default;
+$img-skip-indicator                 : url('assets/skip_indicator.png') !default;
+$img-left-arrow                     : url('assets/icon_subcat_arrowLeft.png') !default;
+$img-subcat-bg                      : url('assets/bg_subcat.png') !default;
+$img-content-loader-spinner         : url('assets/loader.png') !default;
+$img-overlay-bg                     : url('assets/bg_overlay.png') !default;
 
 //
 //Fonts - used by FireTV
 //
 
 //font-size
-$font-base-size : 20pt !default;
+$font-base-size                     : 20pt !default;
 
 //font-family
-$font-family-light   : 'Raleway-Light', sans-serif !default;
-$font-family-medium  : 'Raleway-Medium', sans-serif !default;
-$font-family-bold    : 'Raleway-ExtraBold', sans-serif !default;
-$font-family-player    : 'Ubuntu', sans-serif !default;
+$font-family-light                  : 'Ubuntu-Light', sans-serif !default;
+$font-family-medium                 : 'Ubuntu-Regular', sans-serif !default;
+$font-family-bold                   : 'Ubuntu-Medium', sans-serif !default;
+$font-family-player                 : 'Ubuntu-Regular', sans-serif !default;
 
 //Colors
 //
 
-$color-app-base-bg   : #5a656f !default;
-$color-app-header-bg : #5a656f !default;
+$color-app-base-bg                  : #5a656f !default;
+$color-app-header-bg                : #5a656f !default;
 
-$color-overlay-bg   : #fff !default;
-$color-overlay-text : #e8e8e8 !default;
+$color-overlay-bg                   : #fff !default;
+$color-overlay-text                 : #e8e8e8 !default;
 
-$color-app-dialog-container-bg : rgba(0, 0, 0, 0.8);
-$color-app-dialog-bg           : #242527;
-$color-app-dialog-border       : #303539;
-$color-app-dialog-head-border  : #dadada;
-$color-app-dialog-btn-text     : #dadada;
-$color-app-dialog-btn-bg       : #393b3d;
-$color-dialog-btn-highlight-start : #eca21e;
-$color-dialog-btn-highlight-end :  #f0bb58;
-$color-dialog-entitlement-text  : #949393;
-$color-dialog-entitlement-price : #464646;
-$color-dialog-button-hightlight-text : black;
+$color-app-dialog-container-bg      : rgba(0, 0, 0, 0.8);
+$color-app-dialog-bg                : #242527;
+$color-app-dialog-border            : #303539;
+$color-app-dialog-head-border       : #dadada;
+$color-app-dialog-btn-text          : #dadada;
+$color-app-dialog-btn-bg            : #393b3d;
+$color-dialog-btn-highlight-start   : #eca21e;
+$color-dialog-btn-highlight-end     :  #f0bb58;
+$color-dialog-entitlement-text      : #949393;
+$color-dialog-entitlement-price     : #464646;
+$color-dialog-button-hightlight-text: black;
 
-$color-meta-primary-text : #e8e8e8 !default;
-$color-meta-secondary-text: #e8e8e8 !default;
-$color-meta-primary-text-player : #696969 !default;
-$color-meta-secondary-text-player: #696969 !default;
-$color-title-text : #e8e8e8 !default;
-$color-description-text : #e8e8e8 !default;
+$color-meta-primary-text            : #e8e8e8 !default;
+$color-meta-secondary-text          : #e8e8e8 !default;
+$color-meta-primary-text-player     : #696969 !default;
+$color-meta-secondary-text-player   : #696969 !default;
+$color-title-text                   : #e8e8e8 !default;
+$color-description-text             : #e8e8e8 !default;
 
-$color-box-shadow : rgba(0,0,0,0.44) !default;
+$color-box-shadow                   : rgba(0,0,0,0.44) !default;
 
-$color-menu-base-bg : rgba(#000000, 0.9) !default;
+$color-menu-base-bg                 : rgba(#000000, 0.9) !default;
 
-$color-menu-item-text :  rgba(#fff, 0.4) !default;
-// $color-menu-item-bg: rgba(#e8e8e8, 0.1) !default;
-$color-menu-item-bg: transparent !default;
-$color-menu-item-chosen-text    : #fff !default;
-$color-menu-item-chosen-bg: #5a656f !default;
-$color-menu-item-highlight-text: #000 !default;
-// $color-menu-item-highlight-bg: rgba(#e8e8e8, 0.1) !default;
-$color-menu-item-highlight-bg: #fff !default;
-$color-menu-item-selected-text: #000000 !default;
-$color-menu-item-selected-bg: #ffffff !default;
+$color-menu-item-text               :  rgba(#fff, 0.4) !default;
+// $color-menu-item-bg              : rgba(#e8e8e8, 0.1) !default;
+$color-menu-item-bg                 : transparent !default;
+$color-menu-item-chosen-text        : #fff !default;
+$color-menu-item-chosen-bg          : #5a656f !default;
+$color-menu-item-highlight-text     : #000 !default;
+// $color-menu-item-highlight-bg    : rgba(#e8e8e8, 0.1) !default;
+$color-menu-item-highlight-bg       : #fff !default;
+$color-menu-item-selected-text      : #000000 !default;
+$color-menu-item-selected-bg        : #ffffff !default;
 
-$color-menu-search-text: #e8e8e8 !default;
-$color-menu-search-bg: rgba(#e8e8e8, 0.1) !default;
+$color-menu-search-text             : #e8e8e8 !default;
+$color-menu-search-bg               : rgba(#e8e8e8, 0.1) !default;
 
-$color-btn-text: #b9bbbd !default;
-$color-btn-bg : #394149 !default;
-$color-btn-selected-text: #e8e8e8 !default;
-$color-btn-selected-bg: #000000 !default;
-$color-btn-selected-border: #ffffff !default;
+$color-btn-text                     : #b9bbbd !default;
+$color-btn-bg                       : #394149 !default;
+$color-btn-selected-text            : #e8e8e8 !default;
+$color-btn-selected-bg              : #000000 !default;
+$color-btn-selected-border          : #ffffff !default;
 
-$color-spinner-bg : #394149 !default;
+$color-spinner-bg                   : #394149 !default;
 
-$color-player-controls-bg: rgba(#E9EEF2, 0.9) !default;
-$color-timeline-border :  #a9a9a9 !default;
-$color-timeline-bg   :  #a9a9a9 !default;
-$color-playhead-border : #394149 !default;
-$color-playhead-bg   : #1e90ff !default;
+$color-player-controls-bg           : rgba(#E9EEF2, 0.9) !default;
+$color-timeline-border              :  #a9a9a9 !default;
+$color-timeline-bg                  :  #a9a9a9 !default;
+$color-playhead-border              : #394149 !default;
+$color-playhead-bg                  : #1e90ff !default;
 
-$color-thumbnail-border: #ffffff !default;
-$color-time-upcoming-text: #66E066 !default;
+$color-thumbnail-border             : #ffffff !default;
+$color-time-upcoming-text           : #66E066 !default;
 
 
 
 //
 //Dimensions
 //
-$size-leftnav-line-height : 2 !default;
-$size-leftnav-collapsed-height: 92px !default;
+$size-leftnav-line-height           : 2 !default;
+$size-leftnav-collapsed-height      : 92px !default;
 //
 //Positions
 //
-$pos-top-leftnav-content      : 148px !default;
-$pos-left-content-position    : 30% !default;
-$pos-right-leftnav-arrow-icon : right 40px !default;
+$pos-top-leftnav-content            : 148px !default;
+$pos-left-content-position          : 30% !default;
+$pos-right-leftnav-arrow-icon       : right 40px !default;
 
 //
 //Animations
 //
-$ani-durationspeed-fast  : 0.2s !default;
-$ani-durationspeed-med   : 0.25s !default;
+$ani-durationspeed-fast             : 0.2s !default;
+$ani-durationspeed-med              : 0.25s !default;
 
-$ani-duration-leftnav-menu : $ani-durationspeed-med !default;
-$ani-duration-leftnav-item  : $ani-durationspeed-med !default;
-$ani-duration-maincontent-opacity : $ani-durationspeed-fast !default;
-$ani-duration-one-D-container : $ani-durationspeed-med !default;
-$ani-duration-shoveler-item : $ani-durationspeed-med !default;
+$ani-duration-leftnav-menu          : $ani-durationspeed-med !default;
+$ani-duration-leftnav-item          : $ani-durationspeed-med !default;
+$ani-duration-maincontent-opacity   : $ani-durationspeed-fast !default;
+$ani-duration-one-D-container       : $ani-durationspeed-med !default;
+$ani-duration-shoveler-item         : $ani-durationspeed-med !default;
 
-$ani-timedelay-shiner : 4.4s !default;
+$ani-timedelay-shiner               : 4.4s !default;

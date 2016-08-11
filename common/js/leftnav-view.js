@@ -237,21 +237,12 @@
             } else if (e.type === 'buttonpress') {
                 switch (e.keyCode) {
                     case buttons.UP:
-                        // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(-1);
-                        // }
                         break;
                         case buttons.DOWN:
-                        // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(1);
-                        // } else {
-                        //     this.setChosenElement();
-                        //     this.trigger('deselect');
-                        // }
                         break;
                         case buttons.RIGHT:
-                        // this.confirmNavSelection();
-                        // break;
                         case buttons.BACK:
                         this.currSelectedIndex = this.confirmedSelection;
                         this.selectLeftNavItem();
@@ -260,24 +251,16 @@
                         break;
                         case buttons.LEFT: break;
                         case buttons.SELECT:
-                        // if(!this.isDisplayed) {
-                            // this.expand();
-                            // break;
-                        // }
                         this.confirmNavSelection();
                         break;
                     }
                 } else if (e.type === 'buttonrepeat') {
                     switch (e.keyCode) {
                         case buttons.UP:
-                        // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(-1);
-                        // }
                         break;
                         case buttons.DOWN:
-                        // if(this.isDisplayed) {
                             this.incrementCurrentSelectedIndex(1);
-                        // }
                         break;
                     }
                 }
@@ -351,10 +334,6 @@
             if(!this.translateAmount) {
                 this.translateAmount = this.currentSelectionEle.getBoundingClientRect().height + 2;
             }
-
-            //shift the cursor as selection changes
-            // var translateHeight = 0 - (this.translateAmount * this.currSelectedIndex);
-            // this.scrollingContainerEle.style.webkitTransform = "translateY(" + translateHeight + "px)";
         };
 
     }
