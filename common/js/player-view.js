@@ -230,8 +230,7 @@
             // Build the main content template and add it
             this.items = data;
             // Request video when user clicks thumb
-            var element = this;
-            $.ajax({
+            var requestData = {
                 url: "https://cms.xivetv.com/api/v3/video/" + data[index].videoId,
                 // url: settings.video,
                 async: true,
@@ -241,75 +240,79 @@
                 headers: {
                     Authorization: "eyJhdXRoVG9rZW4iOiIiLCJwYXNzd29yZCI6IiIsImF1dGhrZXkiOjEyMzQ1Njc4OSwidXNlcklkIjoiIn0"
                 },
-                timeout: 60000
-            }).done(function(data) {
-                var video_data = data.responseData;
-                element.currentIndex = index;
-                var html = utils.buildTemplate($("#player-view-template"), video_data);
-                $container.append(html);
-                element.$el = $container.children().last();
+                timeout: 60000,
+                success: function(data) {
+                    var video_data = data.responseData;
+                    this.currentIndex = index;
+                    var html = utils.buildTemplate($("#player-view-template"), video_data);
+                    $container.append(html);
+                    this.$el = $container.children().last();
 
-                element.$containerControls = $container.find(".player-controls-container");
-                element.containerControls = element.$containerControls[0];
+                    this.$containerControls = $container.find(".player-controls-container");
+                    this.containerControls = this.$containerControls[0];
 
-                // create the video element
-                element.divElement = document.createElement('div'); // <div> surrounding video element
-                element.divElement.className = 'video-wrapper';
-                element.divElement.style.position = 'relative';
-                element.videoElement = document.createElement('video'); // <video> tag inside div element 
-                element.videoElement.className = 'player-content-video';
-                element.divElement.appendChild(element.videoElement);
+                    // create the video element
+                    this.divElement = document.createElement('div'); // <div> surrounding video element
+                    this.divElement.className = 'video-wrapper';
+                    this.divElement.style.position = 'relative';
+                    this.videoElement = document.createElement('video'); // <video> tag inside div element 
+                    this.videoElement.id = 'player-content-video';
+                    this.divElement.appendChild(this.videoElement);
 
-                // element.handleClosedCaptioning(video_data.tracks);
-                element.$el.append(element.videoElement);
+                    // this.handleClosedCaptioning(video_data.tracks);
+                    this.$el.append(this.videoElement);
 
-                var videoUrl = video_data.jwp_video_url.splice(4, 0, "s");
+                    var videoUrl = video_data.jwp_video_url.splice(4, 0, "s");
 
-                if (Hls.isSupported()) { // hls.js
-                    var hls = new Hls(); // Utilizes HTML5 standard <video> element
-                    hls.loadSource(videoUrl); // Link to video URL
-                    hls.attachMedia(element.videoElement); // Connect library to <video> element
-                    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                        element.videoElement.play();
-                    });
-                }
+                    if (Hls.isSupported()) { // hls.js
+                        var hls = new Hls(); // Utilizes HTML5 standard <video> element
+                        hls.loadSource(videoUrl); // Link to video URL
+                        hls.attachMedia(this.videoElement); // Connect library to <video> element
 
-                element.videoElement.focus();
+                        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                            this.videoElement.play();
+                        });
+                    }
 
-                //add event listeners
-                element.videoElement.addEventListener("canplay", element.canPlayHandler);
-                element.videoElement.addEventListener("ended", element.videoEndedHandler);
-                element.videoElement.addEventListener("timeupdate", element.timeUpdateHandler);
-                element.videoElement.addEventListener("pause", element.pauseEventHandler);
-                element.videoElement.addEventListener("error", element.errorHandler);
+                    this.videoElement.focus();
 
-                //listener for visual on video playback only - remove for non-visual on implementation
-                element.videoElement.addEventListener(utils.vendorPrefix('fullscreenchange').toLowerCase(), element.fullScreenChangeHandler);
+                    //add event listeners
+                    this.videoElement.addEventListener("canplay", this.canPlayHandler);
+                    this.videoElement.addEventListener("ended", this.videoEndedHandler);
+                    this.videoElement.addEventListener("timeupdate", this.timeUpdateHandler);
+                    this.videoElement.addEventListener("pause", this.pauseEventHandler);
+                    this.videoElement.addEventListener("error", this.errorHandler);
 
-                // create controls
+                    //listener for visual on video playback only - remove for non-visual on implementation
+                    this.videoElement.addEventListener(utils.vendorPrefix('fullscreenchange').toLowerCase(), this.fullScreenChangeHandler);
 
-                element.controlsView = new ControlsView();
-                element.controlsView.render(element.$el, video_data, element);
+                    // create controls
 
-                element.videoElement.addEventListener('durationchange', element.durationChangeHandler);
-                element.knownPlayerErrorTriggered = false;
-            }).fail(function(jqXHR, textStatus) {
-                if (jqXHR.status === 0) {
-                    element.trigger("error", ErrorTypes.INITIAL_NETWORK_ERROR, errorHandler.genStack());
-                    return;
-                }
-                switch (textStatus) {
-                    case "timeout":
-                        element.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
-                        break;
-                    case "parsererror":
-                        element.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
-                        break;
-                    default:
-                        element.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
-                        break;
-                }
-            });
+                    this.controlsView = new ControlsView();
+                    this.controlsView.render(this.$el, video_data, this);
+
+                    this.videoElement.addEventListener('durationchange', this.durationChangeHandler);
+                    this.knownPlayerErrorTriggered = false;
+                }.bind(this),
+                error: function(jqXHR, textStatus) {
+                    if (jqXHR.status === 0) {
+                        this.trigger("error", ErrorTypes.INITIAL_NETWORK_ERROR, errorHandler.genStack());
+                        return;
+                    }
+                    switch (textStatus) {
+                        case "timeout":
+                            this.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
+                            break;
+                        case "parsererror":
+                            this.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
+                            break;
+                        default:
+                            this.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
+                            break;
+                    }
+                }.bind(this)
+            };
+            utils.ajaxWithRetry(requestData);
         };
 
         /**

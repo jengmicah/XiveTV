@@ -43,7 +43,8 @@
         "common/js/controls-view.js",
         "common/js/search-input-view.js",
         "init.js",
-        "libs/hls.min.js"
+        "libs/hls.min.js",
+        "libs/html5vast.js"
     ],
     "libJS": []
 }

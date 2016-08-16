@@ -74,8 +74,8 @@
          this.makeInitialDataCall = function() {
             var element = this; // Keep global as context
             this.data.loadList(function() { // Once collection list is loaded...
-                element.data.preload(); // Cache bg images
-                element.data.loadCollections(element.dataLoaded, arguments[0].responseData); // Load individual collections
+                element.data.preload(); // Cache bg images async
+                element.data.loadCollections(element.dataLoaded, arguments[0].responseData); // Load individual collections async
             });
         };
 
@@ -399,7 +399,7 @@
              */
              var successCallback = function(categoryData) {
                 this.succeededCategoryIndex = this.leftNavView.confirmedSelection;
-                document.body.style.background = 'url(\'assets/' + this.succeededCategoryIndex + '.jpg\')';
+                document.getElementById('bg-img').src = 'assets/' + this.succeededCategoryIndex + '.jpg';
                 this.categoryData = categoryData;
                 $("#one-D-view-item-elements").remove();
                 oneDView.render(this.$appContainer, categoryData, this.settingsParams.displayButtons);
@@ -657,7 +657,7 @@
 
             //start the loader
             this.loadingSpinner.show.all();
-            
+
             playerView.on('exit', this.exitPlayerView, this);
 
             playerView.on('indexChange', function(index) {

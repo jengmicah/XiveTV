@@ -8,22 +8,25 @@
     <meta charset="utf-8">
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-         var vp = document.getElementById('viewport');
+       var vp = document.getElementById('viewport');
 
-         var initialScale = Math.max(screen.width, screen.height)/1920;
+       var initialScale = Math.max(screen.width, screen.height)/1920;
 
-         vp.setAttribute('content','width=device-width, initial-scale=' + initialScale + ', maximum-scale=' + initialScale, + 'minimum-scale=' + initialScale);
+       vp.setAttribute('content','width=device-width, initial-scale=' + initialScale + ', maximum-scale=' + initialScale, + 'minimum-scale=' + initialScale);
 
-     </script>
-     <link rel="stylesheet" type="text/css" href="firetv.css" inline>
- </head>
+   </script>
+   <link rel="stylesheet" type="text/css" href="firetv.css" inline>
+</head>
 
- <body>
-     <div id="app-container" class="app-main-container">
-     </div>
+<body>
+    <div id="bg">
+        <img id="bg-img" src="assets/default-bg.jpg" onerror="if (this.src != 'assets/default-bg.jpg') this.src = 'assets/default-bg.jpg';">
+    </div>
+    <div id="app-container" class="app-main-container">
+    </div>
 
-     <!-- Spinner for startup -->
-     <div id="app-overlay" class="app-overlay-container">
+    <!-- Spinner for startup -->
+    <div id="app-overlay" class="app-overlay-container">
         <div id="overlay-message" class="app-overlay-message"></div>
     </div>
     <div class="spinnerParent">
@@ -34,13 +37,13 @@
     <!-- App Header Template -->
     <script id="app-header-template" type="text/x-handlebars-template">
         <div id="app-header-bar" class="app-top-bar">
-           <div class="app-logo"><img src="{{img_logo}}" /></div>
-       </div>
-       <div id="back"><i class="fa fa-reply" aria-hidden="true"></i></div>
-   </script>
+         <div class="app-logo"><img src="{{img_logo}}" /></div>
+     </div>
+     <div id="back"><i class="fa fa-reply" aria-hidden="true"></i></div>
+ </script>
 
-   <!-- Left Nav View Template -->
-   <script id="left-nav-template" type="text/x-handlebars-template">
+ <!-- Left Nav View Template -->
+ <script id="left-nav-template" type="text/x-handlebars-template">
     <div id="left-nav" class="leftnav-main-container">
         <div id="left-nav-list-container" class="leftnav-menulist-expanded">
             <div id="left-nav-scrolling-list" class="leftnav-menu-scrolling-list">

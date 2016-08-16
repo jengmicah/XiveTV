@@ -63,7 +63,8 @@
                     }
                 }.bind(this)
             };
-            $.ajax(requestData);
+            utils.ajaxWithRetry(requestData);
+            // $.ajax(requestData);
         }.bind(this);
 
         this.loadCollections = function(dataLoadedCallback, collectionList) {
@@ -109,12 +110,13 @@
             }
 
             var element = this;
-            $.when.apply($, requests).done(function() { // Make the ajax calls
+            utils.multipleAjax(requests, function() {
                 for (var i = 0; i < element.collectionFolder.length; i++) { // Once all the calls are made, fill the left-nav with titles
                     element.categoryData[i] = element.collectionFolder[i].title;
-                }
-                dataLoadedCallback(); // Tell app.js that data is loaded
+                }   
+                dataLoadedCallback();
             });
+
         }.bind(this);
 
         this.handleCollections = function(collectionDetails) {

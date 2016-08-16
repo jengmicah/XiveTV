@@ -20,15 +20,6 @@ body {
     font-size              : $font-base-size;
     font-family            : $font-family-light;
     background-color       : $color-app-base-bg;
-    background-repeat      : no-repeat;
-    background-origin      : center;
-    background-clip        : center;
-    background-attachment  : fixed;
-    background-size        : 100% 100%;
-    -webkit-background-size: cover;
-    -moz-background-size   : cover;
-    -o-background-size     : cover;
-    background-size        : cover;
     @include transition(0.25s);
 }
 
@@ -36,6 +27,29 @@ div {
   @include box-sizing(border-box);
 }
 
+//
+// Background Image
+//
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+  @include transition(0.35s);
+}
+
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+  @include transition(0.35s);
+}
 
 //
 //Application Styles
@@ -57,7 +71,7 @@ div {
     background  : -moz-linear-gradient(right, $color-app-header-bg, rgba(#414447, 0.9)); /* For Firefox 3.6 to 15 */
     background  : linear-gradient(to right, $color-app-header-bg , rgba(#414447, 0.9)); /* Standard syntax */
     border-right: 10px solid #fff;
-    @include box-shadow(15px 0px 10px $color-box-shadow);
+    // @include box-shadow(15px 0px 10px $color-box-shadow);
     z-index     :99;
 }
 
@@ -88,7 +102,7 @@ div {
 }
 #back i {
     position :absolute;
-    font-size:100px;
+    font-size:6vw;
     color    :#fff;
     top      :50%;
     left     :50%;
@@ -234,22 +248,20 @@ div {
 
 .one-D-details-summary-text {
     position  : absolute;
-    bottom    :70px;
+    bottom    : 8vh;
     width     : 75%;
-    height    :28%;
     left      : 25%;
     color     : $color-title-text;
     z-index   :10;
     text-align:center;
-    padding   :auto 70px;
+    padding   :1.3vw;
     background:rgba(#000, 0.5);
 
     .one-D-summary-title {
         color      : $color-title-text;
-        font-size  : 1.8em;
+        font-size  : 2.3vw;
         font-family: $font-family-medium;
         overflow   : hidden;
-        margin-top : 30px;
         @include display-box;
         @include box-orient(vertical);
         @include line-clamp(1);
@@ -260,7 +272,7 @@ div {
         text-align :center;
         margin     :15px auto;
         width      :70%;
-        font-size  : 1.1em;
+        font-size  : 1.8vw;
         overflow   : hidden;
         align-items: center;
         @include display-box;
@@ -270,7 +282,7 @@ div {
     .one-D-summary-pubdate {
         font-family: $font-family-player;
         font-weight: 200;
-        font-size  :1.5em;
+        font-size  :2.1vw;
         color      : $color-meta-secondary-text;
         .time-upcoming {
             color: $color-time-upcoming-text;
@@ -316,7 +328,8 @@ div {
 
 #one-D-shoveler-container {
     position : absolute;
-    top      : 290px;
+    // top      : 290px;
+    top:25%;
     width    : 100%;
     height   : 380px;
     z-index  : 0;
@@ -421,14 +434,15 @@ div {
 }
 
 .player-watermark {
-    width:300px;
+    margin-top:5vw;
+    width:15vw;
 }
 
 .pause-title {
-    margin    : 50px 0;
+    margin    : 2vw 0;
     color     : $color-description-text;
     text-align:center;
-    font-size : 1.8em;
+    font-size : 2vw;
 }
 
 .pause-thumb {
@@ -449,18 +463,18 @@ div {
 }
 
 .pause-right span {
+    position :absolute;
     width    :100%;
     color    : $color-description-text;
-    font-size: 1.3em;
-    position :absolute;
-    padding  :100px;
+    font-size: 1.5vw;
+    padding  :3vw;
     left     :0;
     top      :50%;
     @include transform(translateY(-50%));
 }
 
 
-.player-content-video {
+#player-content-video {
     position  : absolute;
     width     : 100%;
     height    : 100%;
@@ -481,8 +495,8 @@ div {
 
 .player-controls-timeline-container {
     position   : relative;
-    height     : 24px;
-    margin-top : 25px;
+    height     : 2vh;
+    margin-top : 2vw;
 }
 
 .player-controls-timeline {
@@ -498,41 +512,41 @@ div {
 .player-controls-timeline-playhead {
     position        : absolute;
     width           : 0%;
-    height          : 24px;
-    border-right    : 8px solid #fff;
+    height          : 2vh;
+    border-right    : 0.25vw solid #fff;
     margin-top      : -1px;
     background-color: $color-playhead-bg;
 }
 
 .player-controls-skip-indicator {
     position           : absolute;
-    width              :200px;
-    height             : 50px;
-    bottom             : 50px;
-    font-size          : 1.8em;
+    width              : 3vw;
+    height             : 1vw;
+    bottom             : 3.8vw;
+    font-size          : 1.8vw;
     color              : $color-meta-primary-text;
-    text-align         :center;
+    text-align         : center;
 
     i {
         margin   : auto;
-        font-size: 1em;
+        font-size: 1.5vw;
         color    :$color-player-controls-bg;
     }
 }
 
 #forward-indicator {
     display    : none;
-    margin-left: -10px;
+    margin-left: 3vw;
 }
 
 #rewind-indicator {
     display    : none;
-    margin-left: -30px;
+    margin-left: 2.5vw;
 }
 
 .player-controls-timestamp {
-    margin-top: 10px;
-    font-size : 1.2em;
+    margin-top: 0.8vw;
+    font-size : 1.2vw;
 }
 
 .player-controls-timestamp-curtime {
@@ -585,7 +599,7 @@ div {
 .player-pause-button,
 .player-play-button {
     position   : absolute;
-    top        : 250px;
+    top        : 30%;
     left       : 50%;
     opacity    : 0;
     @include transform(translateX(-50%));
@@ -596,7 +610,7 @@ div {
 .player-pause-button i,
 .player-play-button i {
     color    : $color-player-controls-bg;
-    font-size: 6em;
+    font-size: 6vw;
 }
 
 //
@@ -683,13 +697,13 @@ div {
     width                  : 100%;
     height                 : 100%;
     z-index                : 500;
+    background-color       : $color-overlay-bg;
     background             : $img-overlay-bg no-repeat center center fixed;
     background-size        : 100% 100%;
     -webkit-background-size: cover;
     -moz-background-size   : cover;
     -o-background-size     : cover;
     background-size        : cover;
-    // background-color    : $color-overlay-bg;
 }
 
 .app-overlay-message {
@@ -711,9 +725,9 @@ div {
 .content-load-spinner {
   position       : relative;
   background     :$img-content-loader-spinner no-repeat;
-  background-size: 200px;
-  width          :200px;
-  height         :200px;
+  background-size:9vw;
+  width          :9vw;
+  height         :9vw;
   z-index        : 600;
   opacity        :0.6;
   @include animation(spin 1.5s infinite linear);
@@ -778,3 +792,18 @@ div {
     }
 }
 
+@media only screen and (min-width : 3840px) {
+    .leftnav-list-item-static {
+        font-size:2.2vw;
+    }
+    .app-logo img {
+        height :6vw;
+        top:2vw;
+    }
+    .leftnav-main-container {
+        top:7vw;
+    }
+    #one-D-shoveler-container {
+        height:18vw;
+    }
+}
