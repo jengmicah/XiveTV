@@ -44,7 +44,7 @@
         "common/js/search-input-view.js",
         "init.js",
         "libs/hls.min.js",
-        "libs/html5vast.js"
+        "libs/ads.js"
     ],
     "libJS": []
 }

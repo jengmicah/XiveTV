@@ -4,14 +4,14 @@
  *
  */
 
-(function(exports) {
+ (function(exports) {
     "use strict";
 
     /**
      * @class PlayerView
      * @description The detail view object, this handles everything about the detail view.
      */
-    function PlayerView(settings) {
+     function PlayerView(settings) {
         // mixin inheritance, initialize this as an event handler for these events:
         Events.call(this, ['exit', 'videoStatus', 'indexChange', 'error']);
 
@@ -48,7 +48,7 @@
         /**
          * Handler for video 'canplay' event
          */
-        this.canPlayHandler = function() {
+         this.canPlayHandler = function() {
             this.canplay = true;
             //prevent triggering 'canplay' event when skipping or when video is paused
             if (!this.paused && !this.isSkipping) {
@@ -60,7 +60,7 @@
         /**
          * Handles video element pause event
          */
-        this.pauseEventHandler = function() {
+         this.pauseEventHandler = function() {
             // we trigger the video status in the pause event handler because the pause event can come from the system
             // specifically it can be caused by the voice search functionality of Fire OS
             this.clearTimeouts();
@@ -70,7 +70,7 @@
         /**
          * Handler for video 'ended' event
          */
-        this.videoEndedHandler = function() {
+         this.videoEndedHandler = function() {
             this.clearTimeouts();
             this.trigger('videoStatus', this.videoElement.currentTime, this.videoElement.duration, 'ended');
         }.bind(this);
@@ -87,7 +87,7 @@
          * For non-visual on implimentations you can remove this method
          * as well as the event listener in the render function
          */
-        this.fullScreenChangeHandler = function() {
+         this.fullScreenChangeHandler = function() {
             if (this.fullscreenOpen) {
                 this.videoEndedHandler();
                 this.fullscreenOpen = false;
@@ -99,14 +99,14 @@
         /*
          * Controls currently showing status indicator
          */
-        this.controlsCurrentlyShowing = function() {
+         this.controlsCurrentlyShowing = function() {
             return this.controlsView.controlsShowing();
         }.bind(this);
 
         /*
          * Handler for the 'durationchange' event
          */
-        this.durationChangeHandler = function() {
+         this.durationChangeHandler = function() {
             if (this.videoElement.duration && this.videoElement.duration > 0) {
                 this.durationFound = true;
             }
@@ -115,7 +115,7 @@
         /*
          * Handler for the 'timeupdate' event
          */
-        this.timeUpdateHandler = function() {
+         this.timeUpdateHandler = function() {
             this.clearTimeouts();
             if (!this.videoElement.paused) {
                 this.playerTimeout = setTimeout(function() {
@@ -138,7 +138,7 @@
         /*
          * Handler for the media 'error' event
          */
-        this.errorHandler = function(e) {
+         this.errorHandler = function(e) {
             this.clearTimeouts();
             if (this.knownPlayerErrorTriggered) {
                 return;
@@ -148,24 +148,24 @@
                 switch (e.target.error.code) {
                     //A network error of some description caused the user agent to stop fetching the media resource, after the resource was established to be usable.
                     case e.target.error.MEDIA_ERR_NETWORK:
-                        errType = ErrorTypes.NETWORK_ERROR;
-                        this.knownPlayerErrorTriggered = true;
-                        break;
+                    errType = ErrorTypes.NETWORK_ERROR;
+                    this.knownPlayerErrorTriggered = true;
+                    break;
                         //An error of some description occurred while decoding the media resource, after the resource was established to be usable.
-                    case e.target.error.MEDIA_ERR_DECODE:
+                        case e.target.error.MEDIA_ERR_DECODE:
                         errType = ErrorTypes.CONTENT_DECODE_ERROR;
                         this.knownPlayerErrorTriggered = true;
                         break;
                         //The media resource indicated by the src attribute was not suitable.
-                    case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                        case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
                         errType = ErrorTypes.CONTENT_SRC_ERROR;
                         this.knownPlayerErrorTriggered = true;
                         break;
-                    default:
+                        default:
                         errType = ErrorTypes.UNKNOWN_ERROR;
                         break;
-                }
-            } else {
+                    }
+                } else {
                 // no error code, default to unknown type
                 errType = ErrorTypes.UNKNOWN_ERROR;
             }
@@ -175,7 +175,7 @@
         /**
          * Remove the video element from the app
          */
-        this.remove = function() {
+         this.remove = function() {
             this.videoElement.removeEventListener("error", this.errorHandler);
             this.clearTimeouts();
             // this.videoElement.pause();
@@ -188,7 +188,7 @@
         /**
          * Clear timeouts
          */
-        this.clearTimeouts = function() {
+         this.clearTimeouts = function() {
             if (this.playerTimeout) {
                 clearTimeout(this.playerTimeout);
                 this.playerTimeout = 0;
@@ -202,14 +202,14 @@
         /**
          * Hides the video
          */
-        this.hide = function() {
+         this.hide = function() {
             this.$el.css("visibility", "hidden");
         };
 
         /**
          * Show the video
          */
-        this.show = function() {
+         this.show = function() {
             this.$el.css("visibility", "");
             if (this.durationFound) {
                 this.controlsView.showAndHideControls();
@@ -219,14 +219,14 @@
         /**
          * Prototype string splicing function for securing HTTP request
          */
-        String.prototype.splice = function(idx, rem, str) {
+         String.prototype.splice = function(idx, rem, str) {
             return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
         };
 
         /**
          * Creates the main content view from the template and appends it to the given element
          */
-        this.render = function($container, data, index) {
+         this.render = function($container, data, index) {
             // Build the main content template and add it
             this.items = data;
             // Request video when user clicks thumb
@@ -253,14 +253,16 @@
 
                     // create the video element
                     this.divElement = document.createElement('div'); // <div> surrounding video element
-                    this.divElement.className = 'video-wrapper';
+                    this.divElement.id = 'content';
                     this.divElement.style.position = 'relative';
                     this.videoElement = document.createElement('video'); // <video> tag inside div element 
-                    this.videoElement.id = 'player-content-video';
+                    this.videoElement.id = 'contentElement';
                     this.divElement.appendChild(this.videoElement);
+                    this.adElement = document.createElement('div');
+                    this.adElement.id = 'adContainer';
 
-                    // this.handleClosedCaptioning(video_data.tracks);
                     this.$el.append(this.videoElement);
+                    this.$el.append(this.adElement);
 
                     var videoUrl = video_data.jwp_video_url.splice(4, 0, "s");
 
@@ -270,7 +272,10 @@
                         hls.attachMedia(this.videoElement); // Connect library to <video> element
 
                         hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                            this.videoElement.play();
+                            // Initialize Google IMA SDK in ads.js
+                            init();
+                            // Play videoElement
+                            this.videoElement.playVideo();
                         });
                     }
 
@@ -287,7 +292,6 @@
                     this.videoElement.addEventListener(utils.vendorPrefix('fullscreenchange').toLowerCase(), this.fullScreenChangeHandler);
 
                     // create controls
-
                     this.controlsView = new ControlsView();
                     this.controlsView.render(this.$el, video_data, this);
 
@@ -301,14 +305,14 @@
                     }
                     switch (textStatus) {
                         case "timeout":
-                            this.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
-                            break;
+                        this.trigger("error", ErrorTypes.INITIAL_FEED_TIMEOUT, errorHandler.genStack());
+                        break;
                         case "parsererror":
-                            this.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
-                            break;
+                        this.trigger("error", ErrorTypes.INITIAL_PARSING_ERROR, errorHandler.genStack());
+                        break;
                         default:
-                            this.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
-                            break;
+                        this.trigger("error", ErrorTypes.INITIAL_FEED_ERROR, errorHandler.genStack());
+                        break;
                     }
                 }.bind(this)
             };
@@ -318,7 +322,9 @@
         /**
          *  Start the video playing
          */
-        this.playVideo = function() {
+         this.playVideo = function() {
+            // Play Ad
+            playAds();
             this.videoElement.play();
             this.paused = false;
             buttons.setButtonIntervals(this.BUTTON_INTERVALS);
@@ -328,7 +334,7 @@
         /**
          *  Pause the currently playing video
          */
-        this.pauseVideo = function() {
+         this.pauseVideo = function() {
             // this no longer directly sends a video status event, as the pause can come from Fire OS and not just
             // user input, so this strictly calls the video element pause
             if (!this.isSkipping) {
@@ -340,7 +346,7 @@
         /**
          * Resume the currently playing video
          */
-        this.resumeVideo = function() {
+         this.resumeVideo = function() {
             this.videoElement.play();
             this.paused = false;
             this.trigger('videoStatus', this.videoElement.currentTime, this.videoElement.duration, 'resumed');
@@ -349,7 +355,7 @@
         /**
          * Navigate to a position in the video
          */
-        this.seekVideo = function(position) {
+         this.seekVideo = function(position) {
             this.controlsView.continuousSeek = false;
             this.trigger('videoStatus', this.videoElement.currentTime, this.videoElement.duration, 'playing');
             this.videoElement.currentTime = position;
@@ -360,7 +366,7 @@
          * Navigate to a position in the video, used when holding down the buttons
          * @param {number} the seek direction, positive for forward, negative for reverse
          */
-        this.seekVideoRepeat = function(direction) {
+         this.seekVideoRepeat = function(direction) {
             this.controlsView.continuousSeek = true;
             var newPosition = null;
             if (direction > 0) {
@@ -400,58 +406,58 @@
         /**
          * Handle button events, connected to video API for a few operations
          */
-        this.handleControls = function(e) {
+         this.handleControls = function(e) {
             if (e.type === 'buttonpress') {
                 this.isSkipping = false;
                 switch (e.keyCode) {
                     case buttons.BACK:
-                        this.trigger('exit');
-                        break;
+                    this.trigger('exit');
+                    break;
 
                     case buttons.LEFT:
                     case buttons.REWIND:
-                        this.seekVideo(this.videoElement.currentTime - this.skipLength);
+                    this.seekVideo(this.videoElement.currentTime - this.skipLength);
 
-                        break;
+                    break;
 
                     case buttons.RIGHT:
                     case buttons.FAST_FORWARD:
-                        this.seekVideo(this.videoElement.currentTime + this.skipLength);
+                    this.seekVideo(this.videoElement.currentTime + this.skipLength);
 
-                        break;
+                    break;
 
                     case buttons.SELECT:
                     case buttons.PLAY_PAUSE:
-                        if (this.videoElement.paused) {
-                            this.resumeVideo();
-                        } else {
-                            this.pauseVideo();
-                        }
-                        break;
+                    if (this.videoElement.paused) {
+                        this.resumeVideo();
+                    } else {
+                        this.pauseVideo();
+                    }
+                    break;
                     case buttons.UP:
-                        this.controlsView.showAndHideControls();
-                        break;
+                    this.controlsView.showAndHideControls();
+                    break;
                     case buttons.DOWN:
-                        if (!this.videoElement.paused) {
-                            this.controlsView.hide();
-                        }
-                        break;
+                    if (!this.videoElement.paused) {
+                        this.controlsView.hide();
+                    }
+                    break;
                 }
             } else if (e.type === 'buttonrepeat') {
                 switch (e.keyCode) {
                     case buttons.LEFT:
                     case buttons.REWIND:
-                        this.isSkipping = true;
-                        this.seekVideoRepeat(-1);
+                    this.isSkipping = true;
+                    this.seekVideoRepeat(-1);
 
-                        break;
+                    break;
 
                     case buttons.RIGHT:
                     case buttons.FAST_FORWARD:
-                        this.isSkipping = true;
-                        this.seekVideoRepeat(1);
+                    this.isSkipping = true;
+                    this.seekVideoRepeat(1);
 
-                        break;
+                    break;
                 }
 
             } else if (this.isSkipping && e.type === 'buttonrelease') {
@@ -467,7 +473,7 @@
         /**
          * If closed caption tracks are available, display options to enable and select them
          */
-        this.handleClosedCaptioning = function(tracks) {
+         this.handleClosedCaptioning = function(tracks) {
             // TODO: we likely will move this out and make the options part of the controls, however for now we
             //  default to the first track if available
             if (tracks && tracks.length > 0) {
